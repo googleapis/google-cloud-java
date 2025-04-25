@@ -38,6 +38,7 @@ public interface FailedLocationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

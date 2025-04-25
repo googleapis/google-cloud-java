@@ -39,6 +39,7 @@ public interface ValueListFilterOrBuilder
    * @return The enum numeric value on the wire for valuePresentList.
    */
   int getValuePresentListValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ValueListFilterOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ValueListFilterOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ValueListFilterOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *

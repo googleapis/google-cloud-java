@@ -34,6 +34,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.ModelMetadata)
     ModelMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModelMetadata.newBuilder() to construct.
   private ModelMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -106,6 +107,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getModelFeaturesCount() {
     return internalGetModelFeatures().getMap().size();
   }
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetModelFeatures().getMap().containsKey(key);
   }
+
   /** Use {@link #getModelFeaturesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -129,6 +132,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       getModelFeatures() {
     return getModelFeaturesMap();
   }
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       getModelFeaturesMap() {
     return internalGetModelFeatures().getMap();
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
         internalGetModelFeatures().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -353,6 +359,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -584,7 +591,8 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ModelFeaturesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ModelFeaturesConverter modelFeaturesConverter =
         new ModelFeaturesConverter();
@@ -625,6 +633,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getModelFeaturesCount() {
       return internalGetModelFeatures().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -641,6 +650,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetModelFeatures().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getModelFeaturesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -648,6 +658,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
         getModelFeatures() {
       return getModelFeaturesMap();
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
         getModelFeaturesMap() {
       return internalGetModelFeatures().getImmutableMap();
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableModelFeatures().ensureBuilderMap();
       return map.containsKey(key) ? modelFeaturesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableModelFeatures().clear();
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableModelFeatures().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.speech.v2.ModelFeatures>
@@ -733,6 +748,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return internalGetMutableModelFeatures().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class ModelMetadata extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

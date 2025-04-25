@@ -83,6 +83,7 @@ public enum ActorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTOR_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int ACTOR_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum ActorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>USER = 1;</code>
    */
   public static final int USER_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum ActorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SYSTEM = 2;</code>
    */
   public static final int SYSTEM_VALUE = 2;
+
   /**
    *
    *

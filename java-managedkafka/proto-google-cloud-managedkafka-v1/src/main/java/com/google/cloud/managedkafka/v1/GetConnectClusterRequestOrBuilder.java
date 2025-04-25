@@ -40,6 +40,7 @@ public interface GetConnectClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

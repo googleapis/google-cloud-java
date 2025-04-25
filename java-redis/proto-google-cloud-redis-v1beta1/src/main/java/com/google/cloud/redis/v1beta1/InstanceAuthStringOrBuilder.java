@@ -36,6 +36,7 @@ public interface InstanceAuthStringOrBuilder
    * @return The authString.
    */
   java.lang.String getAuthString();
+
   /**
    *
    *

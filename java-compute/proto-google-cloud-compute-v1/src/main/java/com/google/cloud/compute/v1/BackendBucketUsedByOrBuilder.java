@@ -36,6 +36,7 @@ public interface BackendBucketUsedByOrBuilder
    * @return Whether the reference field is set.
    */
   boolean hasReference();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BackendBucketUsedByOrBuilder
    * @return The reference.
    */
   java.lang.String getReference();
+
   /**
    *
    *

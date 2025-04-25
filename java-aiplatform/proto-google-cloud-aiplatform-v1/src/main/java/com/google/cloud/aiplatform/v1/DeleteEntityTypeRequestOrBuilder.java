@@ -40,6 +40,7 @@ public interface DeleteEntityTypeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

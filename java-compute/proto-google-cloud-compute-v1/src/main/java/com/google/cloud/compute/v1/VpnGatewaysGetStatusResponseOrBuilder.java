@@ -30,12 +30,14 @@ public interface VpnGatewaysGetStatusResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    * <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code>
    *
    * @return The result.
    */
   com.google.cloud.compute.v1.VpnGatewayStatus getResult();
+
   /** <code>optional .google.cloud.compute.v1.VpnGatewayStatus result = 139315229;</code> */
   com.google.cloud.compute.v1.VpnGatewayStatusOrBuilder getResultOrBuilder();
 }

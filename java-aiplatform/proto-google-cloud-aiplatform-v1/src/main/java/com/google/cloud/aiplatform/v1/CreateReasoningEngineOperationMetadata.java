@@ -36,6 +36,7 @@ public final class CreateReasoningEngineOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.CreateReasoningEngineOperationMetadata)
     CreateReasoningEngineOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateReasoningEngineOperationMetadata.newBuilder() to construct.
   private CreateReasoningEngineOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class CreateReasoningEngineOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class CreateReasoningEngineOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class CreateReasoningEngineOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -283,6 +287,7 @@ public final class CreateReasoningEngineOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +501,7 @@ public final class CreateReasoningEngineOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -510,6 +516,7 @@ public final class CreateReasoningEngineOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -530,6 +537,7 @@ public final class CreateReasoningEngineOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class CreateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -573,6 +582,7 @@ public final class CreateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +612,7 @@ public final class CreateReasoningEngineOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +632,7 @@ public final class CreateReasoningEngineOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +648,7 @@ public final class CreateReasoningEngineOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -655,6 +668,7 @@ public final class CreateReasoningEngineOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *

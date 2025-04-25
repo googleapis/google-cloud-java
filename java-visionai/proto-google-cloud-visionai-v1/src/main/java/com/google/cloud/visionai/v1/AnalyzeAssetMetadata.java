@@ -33,6 +33,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnalyzeAssetMetadata)
     AnalyzeAssetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeAssetMetadata.newBuilder() to construct.
   private AnalyzeAssetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
      *
@@ -87,6 +89,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
      * @return The statusMessage.
      */
     java.lang.String getStatusMessage();
+
     /**
      * <code>string status_message = 3;</code>
      *
@@ -106,6 +109,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
      * @return Whether the searchCapability field is set.
      */
     boolean hasSearchCapability();
+
     /**
      *
      *
@@ -118,6 +122,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
      * @return The searchCapability.
      */
     com.google.cloud.visionai.v1.SearchCapability getSearchCapability();
+
     /**
      *
      *
@@ -129,6 +134,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.visionai.v1.SearchCapabilityOrBuilder getSearchCapabilityOrBuilder();
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus)
       AnalysisStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnalysisStatus.newBuilder() to construct.
     private AnalysisStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -237,6 +244,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -247,6 +255,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        * <code>IN_PROGRESS = 1;</code>
        */
       public static final int IN_PROGRESS_VALUE = 1;
+
       /**
        *
        *
@@ -257,6 +266,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
        * <code>SUCCEEDED = 2;</code>
        */
       public static final int SUCCEEDED_VALUE = 2;
+
       /**
        *
        *
@@ -358,6 +368,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 2;
     private int state_ = 0;
+
     /**
      * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
      *
@@ -367,6 +378,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
      *
@@ -385,6 +397,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object statusMessage_ = "";
+
     /**
      * <code>string status_message = 3;</code>
      *
@@ -402,6 +415,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      * <code>string status_message = 3;</code>
      *
@@ -422,6 +436,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
 
     public static final int SEARCH_CAPABILITY_FIELD_NUMBER = 4;
     private com.google.cloud.visionai.v1.SearchCapability searchCapability_;
+
     /**
      *
      *
@@ -437,6 +452,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasSearchCapability() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -454,6 +470,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.visionai.v1.SearchCapability.getDefaultInstance()
           : searchCapability_;
     }
+
     /**
      *
      *
@@ -661,6 +678,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
        *
@@ -910,6 +929,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       public int getStateValue() {
         return state_;
       }
+
       /**
        * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
        *
@@ -922,6 +942,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
        *
@@ -936,6 +957,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State.UNRECOGNIZED
             : result;
       }
+
       /**
        * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
        *
@@ -952,6 +974,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        * <code>.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus.State state = 2;</code>
        *
@@ -965,6 +988,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object statusMessage_ = "";
+
       /**
        * <code>string status_message = 3;</code>
        *
@@ -981,6 +1005,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string status_message = 3;</code>
        *
@@ -997,6 +1022,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string status_message = 3;</code>
        *
@@ -1012,6 +1038,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        * <code>string status_message = 3;</code>
        *
@@ -1023,6 +1050,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        * <code>string status_message = 3;</code>
        *
@@ -1046,6 +1074,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.SearchCapability.Builder,
               com.google.cloud.visionai.v1.SearchCapabilityOrBuilder>
           searchCapabilityBuilder_;
+
       /**
        *
        *
@@ -1060,6 +1089,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       public boolean hasSearchCapability() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1080,6 +1110,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
           return searchCapabilityBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1102,6 +1133,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1122,6 +1154,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1150,6 +1183,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1169,6 +1203,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1183,6 +1218,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return getSearchCapabilityFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1201,6 +1237,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
               : searchCapability_;
         }
       }
+
       /**
        *
        *
@@ -1300,6 +1337,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus>
       analysisStatus_;
+
   /**
    *
    *
@@ -1316,6 +1354,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       getAnalysisStatusList() {
     return analysisStatus_;
   }
+
   /**
    *
    *
@@ -1333,6 +1372,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       getAnalysisStatusOrBuilderList() {
     return analysisStatus_;
   }
+
   /**
    *
    *
@@ -1348,6 +1388,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   public int getAnalysisStatusCount() {
     return analysisStatus_.size();
   }
+
   /**
    *
    *
@@ -1364,6 +1405,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       int index) {
     return analysisStatus_.get(index);
   }
+
   /**
    *
    *
@@ -1383,6 +1425,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -1398,6 +1441,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1413,6 +1457,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -1429,6 +1474,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1444,6 +1490,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1459,6 +1506,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1662,6 +1710,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1978,6 +2027,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return analysisStatusBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1996,6 +2046,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return analysisStatusBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2015,6 +2066,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return analysisStatusBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2040,6 +2092,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2063,6 +2116,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2088,6 +2142,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2113,6 +2168,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2135,6 +2191,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2158,6 +2215,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2182,6 +2240,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2203,6 +2262,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2224,6 +2284,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2239,6 +2300,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         getAnalysisStatusBuilder(int index) {
       return getAnalysisStatusFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2258,6 +2320,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return analysisStatusBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2278,6 +2341,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(analysisStatus_);
       }
     }
+
     /**
      *
      *
@@ -2296,6 +2360,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2315,6 +2380,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.visionai.v1.AnalyzeAssetMetadata.AnalysisStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2357,6 +2423,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -2371,6 +2438,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2389,6 +2457,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2411,6 +2480,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2500,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2457,6 +2528,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2476,6 +2548,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2490,6 +2563,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2506,6 +2580,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -2538,6 +2613,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2552,6 +2628,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2572,6 +2649,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2594,6 +2672,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2692,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2640,6 +2720,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2740,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2755,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2691,6 +2774,7 @@ public final class AnalyzeAssetMetadata extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *

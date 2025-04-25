@@ -38,6 +38,7 @@ public interface DatasetSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface DatasetSchemaOrBuilder
    * @return Whether the documentSchema field is set.
    */
   boolean hasDocumentSchema();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface DatasetSchemaOrBuilder
    * @return The documentSchema.
    */
   com.google.cloud.documentai.v1beta3.DocumentSchema getDocumentSchema();
+
   /**
    *
    *

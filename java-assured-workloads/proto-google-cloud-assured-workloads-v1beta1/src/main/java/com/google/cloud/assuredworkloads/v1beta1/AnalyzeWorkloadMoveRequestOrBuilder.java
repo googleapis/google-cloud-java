@@ -40,6 +40,7 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    * @return Whether the project field is set.
    */
   boolean hasProject();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface AnalyzeWorkloadMoveRequestOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *

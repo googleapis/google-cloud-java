@@ -72,6 +72,7 @@ public enum SchemaFileFormat implements com.google.protobuf.ProtocolMessageEnum 
    * <code>SCHEMA_FILE_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int SCHEMA_FILE_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum SchemaFileFormat implements com.google.protobuf.ProtocolMessageEnum 
    * <code>NO_SCHEMA_FILE = 1;</code>
    */
   public static final int NO_SCHEMA_FILE_VALUE = 1;
+
   /**
    *
    *

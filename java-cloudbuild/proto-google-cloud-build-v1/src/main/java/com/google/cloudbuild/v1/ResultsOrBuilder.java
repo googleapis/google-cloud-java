@@ -34,6 +34,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
   java.util.List<com.google.cloudbuild.v1.BuiltImage> getImagesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
   com.google.cloudbuild.v1.BuiltImage getImages(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
   int getImagesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.BuiltImage images = 2;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.BuiltImageOrBuilder> getImagesOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ResultsOrBuilder
    * @return A list containing the buildStepImages.
    */
   java.util.List<java.lang.String> getBuildStepImagesList();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface ResultsOrBuilder
    * @return The count of buildStepImages.
    */
   int getBuildStepImagesCount();
+
   /**
    *
    *
@@ -115,6 +121,7 @@ public interface ResultsOrBuilder
    * @return The buildStepImages at the given index.
    */
   java.lang.String getBuildStepImages(int index);
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface ResultsOrBuilder
    * @return The artifactManifest.
    */
   java.lang.String getArtifactManifest();
+
   /**
    *
    *
@@ -189,6 +197,7 @@ public interface ResultsOrBuilder
    * @return A list containing the buildStepOutputs.
    */
   java.util.List<com.google.protobuf.ByteString> getBuildStepOutputsList();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface ResultsOrBuilder
    * @return The count of buildStepOutputs.
    */
   int getBuildStepOutputsCount();
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public interface ResultsOrBuilder
    * @return Whether the artifactTiming field is set.
    */
   boolean hasArtifactTiming();
+
   /**
    *
    *
@@ -251,6 +262,7 @@ public interface ResultsOrBuilder
    * @return The artifactTiming.
    */
   com.google.cloudbuild.v1.TimeSpan getArtifactTiming();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
    */
   java.util.List<com.google.cloudbuild.v1.UploadedPythonPackage> getPythonPackagesList();
+
   /**
    *
    *
@@ -282,6 +295,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
    */
   com.google.cloudbuild.v1.UploadedPythonPackage getPythonPackages(int index);
+
   /**
    *
    *
@@ -292,6 +306,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedPythonPackage python_packages = 8;</code>
    */
   int getPythonPackagesCount();
+
   /**
    *
    *
@@ -303,6 +318,7 @@ public interface ResultsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.UploadedPythonPackageOrBuilder>
       getPythonPackagesOrBuilderList();
+
   /**
    *
    *
@@ -324,6 +340,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
    */
   java.util.List<com.google.cloudbuild.v1.UploadedMavenArtifact> getMavenArtifactsList();
+
   /**
    *
    *
@@ -334,6 +351,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
    */
   com.google.cloudbuild.v1.UploadedMavenArtifact getMavenArtifacts(int index);
+
   /**
    *
    *
@@ -344,6 +362,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedMavenArtifact maven_artifacts = 9;</code>
    */
   int getMavenArtifactsCount();
+
   /**
    *
    *
@@ -355,6 +374,7 @@ public interface ResultsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.UploadedMavenArtifactOrBuilder>
       getMavenArtifactsOrBuilderList();
+
   /**
    *
    *
@@ -379,6 +399,7 @@ public interface ResultsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloudbuild.v1.UploadedGoModule> getGoModulesList();
+
   /**
    *
    *
@@ -392,6 +413,7 @@ public interface ResultsOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.UploadedGoModule getGoModules(int index);
+
   /**
    *
    *
@@ -405,6 +427,7 @@ public interface ResultsOrBuilder
    * </code>
    */
   int getGoModulesCount();
+
   /**
    *
    *
@@ -419,6 +442,7 @@ public interface ResultsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.UploadedGoModuleOrBuilder>
       getGoModulesOrBuilderList();
+
   /**
    *
    *
@@ -443,6 +467,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
    */
   java.util.List<com.google.cloudbuild.v1.UploadedNpmPackage> getNpmPackagesList();
+
   /**
    *
    *
@@ -453,6 +478,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
    */
   com.google.cloudbuild.v1.UploadedNpmPackage getNpmPackages(int index);
+
   /**
    *
    *
@@ -463,6 +489,7 @@ public interface ResultsOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.UploadedNpmPackage npm_packages = 12;</code>
    */
   int getNpmPackagesCount();
+
   /**
    *
    *
@@ -474,6 +501,7 @@ public interface ResultsOrBuilder
    */
   java.util.List<? extends com.google.cloudbuild.v1.UploadedNpmPackageOrBuilder>
       getNpmPackagesOrBuilderList();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface LaunchFlexTemplateRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface LaunchFlexTemplateRequestOrBuilder
    * @return Whether the launchParameter field is set.
    */
   boolean hasLaunchParameter();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface LaunchFlexTemplateRequestOrBuilder
    * @return The launchParameter.
    */
   com.google.dataflow.v1beta3.LaunchFlexTemplateParameter getLaunchParameter();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface LaunchFlexTemplateRequestOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *

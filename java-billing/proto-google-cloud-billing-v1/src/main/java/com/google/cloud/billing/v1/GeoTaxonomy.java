@@ -33,6 +33,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.billing.v1.GeoTaxonomy)
     GeoTaxonomyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GeoTaxonomy.newBuilder() to construct.
   private GeoTaxonomy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -129,6 +130,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>GLOBAL = 1;</code>
      */
     public static final int GLOBAL_VALUE = 1;
+
     /**
      *
      *
@@ -150,6 +153,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
      * <code>REGIONAL = 2;</code>
      */
     public static final int REGIONAL_VALUE = 2;
+
     /**
      *
      *
@@ -249,6 +253,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -264,6 +269,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -287,6 +293,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList regions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -302,6 +309,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRegionsList() {
     return regions_;
   }
+
   /**
    *
    *
@@ -317,6 +325,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   public int getRegionsCount() {
     return regions_.size();
   }
+
   /**
    *
    *
@@ -333,6 +342,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRegions(int index) {
     return regions_.get(index);
   }
+
   /**
    *
    *
@@ -524,6 +534,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -727,6 +738,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -760,6 +773,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.billing.v1.GeoTaxonomy.Type.forNumber(type_);
       return result == null ? com.google.cloud.billing.v1.GeoTaxonomy.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -798,6 +813,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +841,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -841,6 +858,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       regions_.makeImmutable();
       return regions_;
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public int getRegionsCount() {
       return regions_.size();
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRegions(int index) {
       return regions_.get(index);
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRegionsBytes(int index) {
       return regions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +957,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +978,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +998,7 @@ public final class GeoTaxonomy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

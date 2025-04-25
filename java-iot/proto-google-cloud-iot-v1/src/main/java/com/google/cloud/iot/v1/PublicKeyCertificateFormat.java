@@ -66,6 +66,7 @@ public enum PublicKeyCertificateFormat implements com.google.protobuf.ProtocolMe
    * <code>UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT = 0;</code>
    */
   public static final int UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT_VALUE = 0;
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ComputeEngineMigrationTarget)
     ComputeEngineMigrationTargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeEngineMigrationTarget.newBuilder() to construct.
   private ComputeEngineMigrationTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int SHAPE_FIELD_NUMBER = 1;
   private com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor shape_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
   public boolean hasShape() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
         ? com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor.getDefaultInstance()
         : shape_;
   }
+
   /**
    *
    *
@@ -278,6 +282,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -485,6 +490,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
             com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor.Builder,
             com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptorOrBuilder>
         shapeBuilder_;
+
     /**
      *
      *
@@ -499,6 +505,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
     public boolean hasShape() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -519,6 +526,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
         return shapeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -542,6 +550,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -562,6 +571,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -592,6 +602,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -611,6 +622,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +638,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
       onChanged();
       return getShapeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -645,6 +658,7 @@ public final class ComputeEngineMigrationTarget extends com.google.protobuf.Gene
             : shape_;
       }
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface AlloyDbConnectionProfileOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AlloyDbConnectionProfileOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface AlloyDbConnectionProfileOrBuilder
    * @return The settings.
    */
   com.google.cloud.clouddms.v1.AlloyDbSettings getSettings();
+
   /**
    *
    *

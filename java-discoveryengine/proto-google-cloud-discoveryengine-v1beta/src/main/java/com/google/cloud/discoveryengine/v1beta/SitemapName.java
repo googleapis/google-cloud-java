@@ -343,7 +343,8 @@ public class SitemapName implements ResourceName {
     private Builder(SitemapName sitemapName) {
       Preconditions.checkArgument(
           Objects.equals(sitemapName.pathTemplate, PROJECT_LOCATION_DATA_STORE_SITEMAP),
-          "toBuilder is only supported when SitemapName has the pattern of projects/{project}/locations/{location}/dataStores/{data_store}/siteSearchEngine/sitemaps/{sitemap}");
+          "toBuilder is only supported when SitemapName has the pattern of"
+              + " projects/{project}/locations/{location}/dataStores/{data_store}/siteSearchEngine/sitemaps/{sitemap}");
       this.project = sitemapName.project;
       this.location = sitemapName.location;
       this.dataStore = sitemapName.dataStore;

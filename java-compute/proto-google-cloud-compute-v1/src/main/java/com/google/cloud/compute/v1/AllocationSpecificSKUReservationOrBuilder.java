@@ -36,6 +36,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return Whether the assuredCount field is set.
    */
   boolean hasAssuredCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return Whether the inUseCount field is set.
    */
   boolean hasInUseCount();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return Whether the instanceProperties field is set.
    */
   boolean hasInstanceProperties();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUAllocationReservedInstanceProperties
       getInstanceProperties();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return Whether the sourceInstanceTemplate field is set.
    */
   boolean hasSourceInstanceTemplate();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * @return The sourceInstanceTemplate.
    */
   java.lang.String getSourceInstanceTemplate();
+
   /**
    *
    *

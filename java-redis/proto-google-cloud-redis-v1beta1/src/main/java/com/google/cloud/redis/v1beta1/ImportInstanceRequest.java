@@ -33,6 +33,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.ImportInstanceRequest)
     ImportInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportInstanceRequest.newBuilder() to construct.
   private ImportInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
 
   public static final int INPUT_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.redis.v1beta1.InputConfig inputConfig_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
   public boolean hasInputConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.redis.v1beta1.InputConfig.getDefaultInstance()
         : inputConfig_;
   }
+
   /**
    *
    *
@@ -348,6 +354,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -633,6 +643,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.redis.v1beta1.InputConfig.Builder,
             com.google.cloud.redis.v1beta1.InputConfigOrBuilder>
         inputConfigBuilder_;
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
     public boolean hasInputConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
         return inputConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +813,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +852,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class ImportInstanceRequest extends com.google.protobuf.GeneratedMe
             : inputConfig_;
       }
     }
+
     /**
      *
      *

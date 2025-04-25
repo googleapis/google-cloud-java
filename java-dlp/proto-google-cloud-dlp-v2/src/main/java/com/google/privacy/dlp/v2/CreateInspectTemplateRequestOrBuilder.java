@@ -57,6 +57,7 @@ public interface CreateInspectTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public interface CreateInspectTemplateRequestOrBuilder
    * @return Whether the inspectTemplate field is set.
    */
   boolean hasInspectTemplate();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface CreateInspectTemplateRequestOrBuilder
    * @return The inspectTemplate.
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface CreateInspectTemplateRequestOrBuilder
    * @return The templateId.
    */
   java.lang.String getTemplateId();
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public interface CreateInspectTemplateRequestOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface AddAssetsToGroupRequestOrBuilder
    * @return The group.
    */
   java.lang.String getGroup();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface AddAssetsToGroupRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface AddAssetsToGroupRequestOrBuilder
    * @return Whether the assets field is set.
    */
   boolean hasAssets();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface AddAssetsToGroupRequestOrBuilder
    * @return The assets.
    */
   com.google.cloud.migrationcenter.v1.AssetList getAssets();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1.Xss)
     XssOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Xss.newBuilder() to construct.
   private Xss(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -250,6 +251,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>ATTACK_VECTOR_UNSPECIFIED = 0;</code>
      */
     public static final int ATTACK_VECTOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -260,6 +262,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL_STORAGE = 1;</code>
      */
     public static final int LOCAL_STORAGE_VALUE = 1;
+
     /**
      *
      *
@@ -270,6 +273,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>SESSION_STORAGE = 2;</code>
      */
     public static final int SESSION_STORAGE_VALUE = 2;
+
     /**
      *
      *
@@ -280,6 +284,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>WINDOW_NAME = 3;</code>
      */
     public static final int WINDOW_NAME_VALUE = 3;
+
     /**
      *
      *
@@ -290,6 +295,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>REFERRER = 4;</code>
      */
     public static final int REFERRER_VALUE = 4;
+
     /**
      *
      *
@@ -300,6 +306,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>FORM_INPUT = 5;</code>
      */
     public static final int FORM_INPUT_VALUE = 5;
+
     /**
      *
      *
@@ -310,6 +317,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>COOKIE = 6;</code>
      */
     public static final int COOKIE_VALUE = 6;
+
     /**
      *
      *
@@ -320,6 +328,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>POST_MESSAGE = 7;</code>
      */
     public static final int POST_MESSAGE_VALUE = 7;
+
     /**
      *
      *
@@ -330,6 +339,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>GET_PARAMETERS = 8;</code>
      */
     public static final int GET_PARAMETERS_VALUE = 8;
+
     /**
      *
      *
@@ -340,6 +350,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>URL_FRAGMENT = 9;</code>
      */
     public static final int URL_FRAGMENT_VALUE = 9;
+
     /**
      *
      *
@@ -350,6 +361,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>HTML_COMMENT = 10;</code>
      */
     public static final int HTML_COMMENT_VALUE = 10;
+
     /**
      *
      *
@@ -360,6 +372,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>POST_PARAMETERS = 11;</code>
      */
     public static final int POST_PARAMETERS_VALUE = 11;
+
     /**
      *
      *
@@ -370,6 +383,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>PROTOCOL = 12;</code>
      */
     public static final int PROTOCOL_VALUE = 12;
+
     /**
      *
      *
@@ -380,6 +394,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>STORED_XSS = 13;</code>
      */
     public static final int STORED_XSS_VALUE = 13;
+
     /**
      *
      *
@@ -390,6 +405,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
      * <code>SAME_ORIGIN = 14;</code>
      */
     public static final int SAME_ORIGIN_VALUE = 14;
+
     /**
      *
      *
@@ -516,6 +532,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList stackTraces_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -530,6 +547,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getStackTracesList() {
     return stackTraces_;
   }
+
   /**
    *
    *
@@ -544,6 +562,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   public int getStackTracesCount() {
     return stackTraces_.size();
   }
+
   /**
    *
    *
@@ -559,6 +578,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getStackTraces(int index) {
     return stackTraces_.get(index);
   }
+
   /**
    *
    *
@@ -579,6 +599,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -602,6 +623,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -628,6 +650,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ATTACK_VECTOR_FIELD_NUMBER = 3;
   private int attackVector_ = 0;
+
   /**
    *
    *
@@ -643,6 +666,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
   public int getAttackVectorValue() {
     return attackVector_;
   }
+
   /**
    *
    *
@@ -667,6 +691,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storedXssSeedingUrl_ = "";
+
   /**
    *
    *
@@ -690,6 +715,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -911,6 +937,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1152,6 +1179,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       stackTraces_.makeImmutable();
       return stackTraces_;
     }
+
     /**
      *
      *
@@ -1181,6 +1210,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public int getStackTracesCount() {
       return stackTraces_.size();
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getStackTraces(int index) {
       return stackTraces_.get(index);
     }
+
     /**
      *
      *
@@ -1211,6 +1242,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStackTracesBytes(int index) {
       return stackTraces_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1289,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1309,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -1340,6 +1377,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1362,6 +1400,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1383,6 +1422,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1440,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1465,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int attackVector_ = 0;
+
     /**
      *
      *
@@ -1439,6 +1481,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     public int getAttackVectorValue() {
       return attackVector_;
     }
+
     /**
      *
      *
@@ -1457,6 +1500,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1520,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.websecurityscanner.v1.Xss.AttackVector.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1497,6 +1542,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1516,6 +1562,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object storedXssSeedingUrl_ = "";
+
     /**
      *
      *
@@ -1538,6 +1585,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1608,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1630,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1598,6 +1648,7 @@ public final class Xss extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

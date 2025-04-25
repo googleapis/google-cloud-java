@@ -38,6 +38,7 @@ public interface ListingOrBuilder
    * @return Whether the bigqueryDataset field is set.
    */
   boolean hasBigqueryDataset();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListingOrBuilder
    * @return The bigqueryDataset.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource getBigqueryDataset();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ListingOrBuilder
    * @return Whether the pubsubTopic field is set.
    */
   boolean hasPubsubTopic();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ListingOrBuilder
    * @return The pubsubTopic.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSource getPubsubTopic();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface ListingOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface ListingOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface ListingOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface ListingOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public interface ListingOrBuilder
    * @return The documentation.
    */
   java.lang.String getDocumentation();
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public interface ListingOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public interface ListingOrBuilder
    * @return Whether the dataProvider field is set.
    */
   boolean hasDataProvider();
+
   /**
    *
    *
@@ -320,6 +331,7 @@ public interface ListingOrBuilder
    * @return The dataProvider.
    */
   com.google.cloud.bigquery.analyticshub.v1.DataProvider getDataProvider();
+
   /**
    *
    *
@@ -347,6 +359,7 @@ public interface ListingOrBuilder
    * @return A list containing the categories.
    */
   java.util.List<com.google.cloud.bigquery.analyticshub.v1.Listing.Category> getCategoriesList();
+
   /**
    *
    *
@@ -361,6 +374,7 @@ public interface ListingOrBuilder
    * @return The count of categories.
    */
   int getCategoriesCount();
+
   /**
    *
    *
@@ -376,6 +390,7 @@ public interface ListingOrBuilder
    * @return The categories at the given index.
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.Category getCategories(int index);
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public interface ListingOrBuilder
    * @return A list containing the enum numeric values on the wire for categories.
    */
   java.util.List<java.lang.Integer> getCategoriesValueList();
+
   /**
    *
    *
@@ -421,6 +437,7 @@ public interface ListingOrBuilder
    * @return Whether the publisher field is set.
    */
   boolean hasPublisher();
+
   /**
    *
    *
@@ -436,6 +453,7 @@ public interface ListingOrBuilder
    * @return The publisher.
    */
   com.google.cloud.bigquery.analyticshub.v1.Publisher getPublisher();
+
   /**
    *
    *
@@ -464,6 +482,7 @@ public interface ListingOrBuilder
    * @return The requestAccess.
    */
   java.lang.String getRequestAccess();
+
   /**
    *
    *
@@ -494,6 +513,7 @@ public interface ListingOrBuilder
    * @return Whether the restrictedExportConfig field is set.
    */
   boolean hasRestrictedExportConfig();
+
   /**
    *
    *
@@ -510,6 +530,7 @@ public interface ListingOrBuilder
    */
   com.google.cloud.bigquery.analyticshub.v1.Listing.RestrictedExportConfig
       getRestrictedExportConfig();
+
   /**
    *
    *
@@ -539,6 +560,7 @@ public interface ListingOrBuilder
    * @return Whether the discoveryType field is set.
    */
   boolean hasDiscoveryType();
+
   /**
    *
    *
@@ -553,6 +575,7 @@ public interface ListingOrBuilder
    * @return The enum numeric value on the wire for discoveryType.
    */
   int getDiscoveryTypeValue();
+
   /**
    *
    *
@@ -582,6 +605,7 @@ public interface ListingOrBuilder
    * @return The enum numeric value on the wire for resourceType.
    */
   int getResourceTypeValue();
+
   /**
    *
    *
@@ -612,6 +636,7 @@ public interface ListingOrBuilder
    * @return Whether the logLinkedDatasetQueryUserEmail field is set.
    */
   boolean hasLogLinkedDatasetQueryUserEmail();
+
   /**
    *
    *

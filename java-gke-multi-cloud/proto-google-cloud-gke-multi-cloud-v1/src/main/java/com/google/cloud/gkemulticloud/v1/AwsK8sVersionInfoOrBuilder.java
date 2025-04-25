@@ -36,6 +36,7 @@ public interface AwsK8sVersionInfoOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
@@ -95,6 +96,7 @@ public interface AwsK8sVersionInfoOrBuilder
    * @return Whether the endOfLifeDate field is set.
    */
   boolean hasEndOfLifeDate();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface AwsK8sVersionInfoOrBuilder
    * @return The endOfLifeDate.
    */
   com.google.type.Date getEndOfLifeDate();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface AwsK8sVersionInfoOrBuilder
    * @return Whether the releaseDate field is set.
    */
   boolean hasReleaseDate();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface AwsK8sVersionInfoOrBuilder
    * @return The releaseDate.
    */
   com.google.type.Date getReleaseDate();
+
   /**
    *
    *

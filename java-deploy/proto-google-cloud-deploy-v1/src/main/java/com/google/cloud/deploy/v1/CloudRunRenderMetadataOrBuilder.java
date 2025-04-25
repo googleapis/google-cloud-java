@@ -39,6 +39,7 @@ public interface CloudRunRenderMetadataOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

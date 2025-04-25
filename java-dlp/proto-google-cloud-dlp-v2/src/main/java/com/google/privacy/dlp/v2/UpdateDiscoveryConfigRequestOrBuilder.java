@@ -39,6 +39,7 @@ public interface UpdateDiscoveryConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface UpdateDiscoveryConfigRequestOrBuilder
    * @return Whether the discoveryConfig field is set.
    */
   boolean hasDiscoveryConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateDiscoveryConfigRequestOrBuilder
    * @return The discoveryConfig.
    */
   com.google.privacy.dlp.v2.DiscoveryConfig getDiscoveryConfig();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface UpdateDiscoveryConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface UpdateDiscoveryConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

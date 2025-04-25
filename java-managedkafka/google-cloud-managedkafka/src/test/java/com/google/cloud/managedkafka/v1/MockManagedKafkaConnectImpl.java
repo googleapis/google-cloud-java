@@ -117,7 +117,8 @@ public class MockManagedKafkaConnectImpl extends ManagedKafkaConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConnectCluster, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConnectCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -138,7 +139,8 @@ public class MockManagedKafkaConnectImpl extends ManagedKafkaConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConnectCluster, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateConnectCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -159,7 +161,8 @@ public class MockManagedKafkaConnectImpl extends ManagedKafkaConnectImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConnectCluster, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConnectCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

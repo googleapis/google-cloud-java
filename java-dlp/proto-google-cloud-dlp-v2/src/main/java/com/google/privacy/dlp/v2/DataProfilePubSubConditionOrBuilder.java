@@ -37,6 +37,7 @@ public interface DataProfilePubSubConditionOrBuilder
    * @return Whether the expressions field is set.
    */
   boolean hasExpressions();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface DataProfilePubSubConditionOrBuilder
    * @return The expressions.
    */
   com.google.privacy.dlp.v2.DataProfilePubSubCondition.PubSubExpressions getExpressions();
+
   /**
    *
    *

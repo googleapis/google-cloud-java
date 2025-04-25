@@ -37,6 +37,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The enum numeric value on the wire for databaseVersion.
    */
   int getDatabaseVersionValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 2;</code>
    */
   int getUserLabelsCount();
+
   /**
    *
    *
@@ -79,9 +81,11 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 2;</code>
    */
   boolean containsUserLabels(java.lang.String key);
+
   /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; user_labels = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface CloudSqlSettingsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The tier.
    */
   java.lang.String getTier();
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return Whether the storageAutoResizeLimit field is set.
    */
   boolean hasStorageAutoResizeLimit();
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The storageAutoResizeLimit.
    */
   com.google.protobuf.Int64Value getStorageAutoResizeLimit();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The enum numeric value on the wire for activationPolicy.
    */
   int getActivationPolicyValue();
+
   /**
    *
    *
@@ -257,6 +267,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return Whether the ipConfig field is set.
    */
   boolean hasIpConfig();
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The ipConfig.
    */
   com.google.cloud.clouddms.v1.SqlIpConfig getIpConfig();
+
   /**
    *
    *
@@ -300,6 +312,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return Whether the autoStorageIncrease field is set.
    */
   boolean hasAutoStorageIncrease();
+
   /**
    *
    *
@@ -316,6 +329,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The autoStorageIncrease.
    */
   com.google.protobuf.BoolValue getAutoStorageIncrease();
+
   /**
    *
    *
@@ -343,6 +357,7 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 8;</code>
    */
   int getDatabaseFlagsCount();
+
   /**
    *
    *
@@ -355,9 +370,11 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 8;</code>
    */
   boolean containsDatabaseFlags(java.lang.String key);
+
   /** Use {@link #getDatabaseFlagsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDatabaseFlags();
+
   /**
    *
    *
@@ -370,6 +387,7 @@ public interface CloudSqlSettingsOrBuilder
    * <code>map&lt;string, string&gt; database_flags = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDatabaseFlagsMap();
+
   /**
    *
    *
@@ -386,6 +404,7 @@ public interface CloudSqlSettingsOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -411,6 +430,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The enum numeric value on the wire for dataDiskType.
    */
   int getDataDiskTypeValue();
+
   /**
    *
    *
@@ -437,6 +457,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return Whether the dataDiskSizeGb field is set.
    */
   boolean hasDataDiskSizeGb();
+
   /**
    *
    *
@@ -450,6 +471,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The dataDiskSizeGb.
    */
   com.google.protobuf.Int64Value getDataDiskSizeGb();
+
   /**
    *
    *
@@ -475,6 +497,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *
@@ -503,6 +526,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The secondaryZone.
    */
   java.lang.String getSecondaryZone();
+
   /**
    *
    *
@@ -532,6 +556,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The sourceId.
    */
   java.lang.String getSourceId();
+
   /**
    *
    *
@@ -559,6 +584,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The rootPassword.
    */
   java.lang.String getRootPassword();
+
   /**
    *
    *
@@ -597,6 +623,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The collation.
    */
   java.lang.String getCollation();
+
   /**
    *
    *
@@ -622,6 +649,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The cmekKeyName.
    */
   java.lang.String getCmekKeyName();
+
   /**
    *
    *
@@ -653,6 +681,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The enum numeric value on the wire for availabilityType.
    */
   int getAvailabilityTypeValue();
+
   /**
    *
    *
@@ -686,6 +715,7 @@ public interface CloudSqlSettingsOrBuilder
    * @return The enum numeric value on the wire for edition.
    */
   int getEditionValue();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListProcessorVersionsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1.ProcessorVersion processor_versions = 1;</code>
    */
   java.util.List<com.google.cloud.documentai.v1.ProcessorVersion> getProcessorVersionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListProcessorVersionsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1.ProcessorVersion processor_versions = 1;</code>
    */
   com.google.cloud.documentai.v1.ProcessorVersion getProcessorVersions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListProcessorVersionsResponseOrBuilder
    * <code>repeated .google.cloud.documentai.v1.ProcessorVersion processor_versions = 1;</code>
    */
   int getProcessorVersionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListProcessorVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1.ProcessorVersionOrBuilder>
       getProcessorVersionsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListProcessorVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

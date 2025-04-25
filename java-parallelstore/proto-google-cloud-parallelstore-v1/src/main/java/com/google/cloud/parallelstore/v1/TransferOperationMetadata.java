@@ -33,6 +33,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1.TransferOperationMetadata)
     TransferOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransferOperationMetadata.newBuilder() to construct.
   private TransferOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -131,6 +133,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -164,6 +167,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_PARALLELSTORE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasSourceParallelstore() {
     return sourceCase_ == 7;
   }
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1.SourceParallelstore.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int SOURCE_GCS_BUCKET_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasSourceGcsBucket() {
     return sourceCase_ == 8;
   }
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1.SourceGcsBucket.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATION_GCS_BUCKET_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -296,6 +306,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasDestinationGcsBucket() {
     return destinationCase_ == 9;
   }
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1.DestinationGcsBucket.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -337,6 +349,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   }
 
   public static final int DESTINATION_PARALLELSTORE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -354,6 +367,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasDestinationParallelstore() {
     return destinationCase_ == 10;
   }
+
   /**
    *
    *
@@ -374,6 +388,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
     return com.google.cloud.parallelstore.v1.DestinationParallelstore.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -396,6 +411,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   public static final int COUNTERS_FIELD_NUMBER = 3;
   private com.google.cloud.parallelstore.v1.TransferCounters counters_;
+
   /**
    *
    *
@@ -413,6 +429,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public boolean hasCounters() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -432,6 +449,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         ? com.google.cloud.parallelstore.v1.TransferCounters.getDefaultInstance()
         : counters_;
   }
+
   /**
    *
    *
@@ -452,6 +470,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 6;
   private int transferType_ = 0;
+
   /**
    *
    *
@@ -469,6 +488,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public int getTransferTypeValue() {
     return transferType_;
   }
+
   /**
    *
    *
@@ -493,6 +513,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.parallelstore.v1.TransferErrorSummary> errorSummary_;
+
   /**
    *
    *
@@ -510,6 +531,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       getErrorSummaryList() {
     return errorSummary_;
   }
+
   /**
    *
    *
@@ -527,6 +549,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       getErrorSummaryOrBuilderList() {
     return errorSummary_;
   }
+
   /**
    *
    *
@@ -543,6 +566,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public int getErrorSummaryCount() {
     return errorSummary_.size();
   }
+
   /**
    *
    *
@@ -559,6 +583,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
   public com.google.cloud.parallelstore.v1.TransferErrorSummary getErrorSummary(int index) {
     return errorSummary_.get(index);
   }
+
   /**
    *
    *
@@ -844,6 +869,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1246,6 +1272,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1.SourceParallelstore.Builder,
             com.google.cloud.parallelstore.v1.SourceParallelstoreOrBuilder>
         sourceParallelstoreBuilder_;
+
     /**
      *
      *
@@ -1263,6 +1290,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasSourceParallelstore() {
       return sourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -1290,6 +1318,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.SourceParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1344,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1367,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1404,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1432,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1415,6 +1448,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getSourceParallelstoreBuilder() {
       return getSourceParallelstoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1438,6 +1472,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.SourceParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1478,6 +1513,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1.SourceGcsBucket.Builder,
             com.google.cloud.parallelstore.v1.SourceGcsBucketOrBuilder>
         sourceGcsBucketBuilder_;
+
     /**
      *
      *
@@ -1495,6 +1531,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasSourceGcsBucket() {
       return sourceCase_ == 8;
     }
+
     /**
      *
      *
@@ -1522,6 +1559,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.SourceGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1546,6 +1584,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1607,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1642,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1629,6 +1670,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1643,6 +1685,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public com.google.cloud.parallelstore.v1.SourceGcsBucket.Builder getSourceGcsBucketBuilder() {
       return getSourceGcsBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1666,6 +1709,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.SourceGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1706,6 +1750,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1.DestinationGcsBucket.Builder,
             com.google.cloud.parallelstore.v1.DestinationGcsBucketOrBuilder>
         destinationGcsBucketBuilder_;
+
     /**
      *
      *
@@ -1723,6 +1768,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasDestinationGcsBucket() {
       return destinationCase_ == 9;
     }
+
     /**
      *
      *
@@ -1750,6 +1796,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.DestinationGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1775,6 +1822,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1845,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1833,6 +1882,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1910,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1926,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getDestinationGcsBucketBuilder() {
       return getDestinationGcsBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1898,6 +1950,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.DestinationGcsBucket.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1939,6 +1992,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1.DestinationParallelstore.Builder,
             com.google.cloud.parallelstore.v1.DestinationParallelstoreOrBuilder>
         destinationParallelstoreBuilder_;
+
     /**
      *
      *
@@ -1956,6 +2010,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasDestinationParallelstore() {
       return destinationCase_ == 10;
     }
+
     /**
      *
      *
@@ -1984,6 +2039,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.DestinationParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2009,6 +2065,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2031,6 +2088,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2126,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       destinationCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2095,6 +2154,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2110,6 +2170,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         getDestinationParallelstoreBuilder() {
       return getDestinationParallelstoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2133,6 +2194,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return com.google.cloud.parallelstore.v1.DestinationParallelstore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2175,6 +2237,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             com.google.cloud.parallelstore.v1.TransferCounters.Builder,
             com.google.cloud.parallelstore.v1.TransferCountersOrBuilder>
         countersBuilder_;
+
     /**
      *
      *
@@ -2191,6 +2254,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public boolean hasCounters() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2213,6 +2277,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return countersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2237,6 +2302,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2259,6 +2325,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2289,6 +2356,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2310,6 +2378,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2326,6 +2395,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return getCountersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2346,6 +2416,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
             : counters_;
       }
     }
+
     /**
      *
      *
@@ -2375,6 +2446,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     }
 
     private int transferType_ = 0;
+
     /**
      *
      *
@@ -2392,6 +2464,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
     public int getTransferTypeValue() {
       return transferType_;
     }
+
     /**
      *
      *
@@ -2412,6 +2485,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2505,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
           com.google.cloud.parallelstore.v1.TransferType.forNumber(transferType_);
       return result == null ? com.google.cloud.parallelstore.v1.TransferType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2454,6 +2529,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2588,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return errorSummaryBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2531,6 +2608,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return errorSummaryBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2550,6 +2628,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return errorSummaryBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2576,6 +2655,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2679,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2705,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2732,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2756,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2696,6 +2780,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2720,6 +2805,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2742,6 +2828,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2764,6 +2851,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -2780,6 +2868,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         int index) {
       return getErrorSummaryFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2800,6 +2889,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return errorSummaryBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2820,6 +2910,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(errorSummary_);
       }
     }
+
     /**
      *
      *
@@ -2836,6 +2927,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
       return getErrorSummaryFieldBuilder()
           .addBuilder(com.google.cloud.parallelstore.v1.TransferErrorSummary.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2854,6 +2946,7 @@ public final class TransferOperationMetadata extends com.google.protobuf.Generat
           .addBuilder(
               index, com.google.cloud.parallelstore.v1.TransferErrorSummary.getDefaultInstance());
     }
+
     /**
      *
      *

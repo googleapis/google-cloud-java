@@ -36,6 +36,7 @@ public interface SdpFindingOrBuilder
    * @return The infoType.
    */
   java.lang.String getInfoType();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface SdpFindingOrBuilder
    * @return The enum numeric value on the wire for likelihood.
    */
   int getLikelihoodValue();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface SdpFindingOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SdpFindingOrBuilder
    * @return The location.
    */
   com.google.cloud.modelarmor.v1.SdpFinding.SdpFindingLocation getLocation();
+
   /**
    *
    *

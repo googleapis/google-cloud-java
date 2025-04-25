@@ -37,6 +37,7 @@ public interface GetScanConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

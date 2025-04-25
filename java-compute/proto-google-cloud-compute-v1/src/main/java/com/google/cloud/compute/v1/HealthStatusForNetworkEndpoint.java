@@ -32,6 +32,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.HealthStatusForNetworkEndpoint)
     HealthStatusForNetworkEndpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HealthStatusForNetworkEndpoint.newBuilder() to construct.
   private HealthStatusForNetworkEndpoint(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -110,12 +111,16 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
      * <code>UNDEFINED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_HEALTH_STATE_VALUE = 0;
+
     /** <code>DRAINING = 480455402;</code> */
     public static final int DRAINING_VALUE = 480455402;
+
     /** <code>HEALTHY = 439801213;</code> */
     public static final int HEALTHY_VALUE = 439801213;
+
     /** <code>UNHEALTHY = 462118084;</code> */
     public static final int UNHEALTHY_VALUE = 462118084;
+
     /** <code>UNKNOWN = 433141802;</code> */
     public static final int UNKNOWN_VALUE = 433141802;
 
@@ -333,6 +338,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
   private com.google.cloud.compute.v1.BackendServiceReference backendService_;
+
   /**
    *
    *
@@ -349,6 +355,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasBackendService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -367,6 +374,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.BackendServiceReference.getDefaultInstance()
         : backendService_;
   }
+
   /**
    *
    *
@@ -386,6 +394,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
   private com.google.cloud.compute.v1.ForwardingRuleReference forwardingRule_;
+
   /**
    *
    *
@@ -402,6 +411,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasForwardingRule() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -420,6 +430,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.ForwardingRuleReference.getDefaultInstance()
         : forwardingRule_;
   }
+
   /**
    *
    *
@@ -439,6 +450,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
   private com.google.cloud.compute.v1.HealthCheckReference healthCheck_;
+
   /**
    *
    *
@@ -454,6 +466,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasHealthCheck() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -471,6 +484,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.HealthCheckReference.getDefaultInstance()
         : healthCheck_;
   }
+
   /**
    *
    *
@@ -489,6 +503,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
   private com.google.cloud.compute.v1.HealthCheckServiceReference healthCheckService_;
+
   /**
    *
    *
@@ -506,6 +521,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasHealthCheckService() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -525,6 +541,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.HealthCheckServiceReference.getDefaultInstance()
         : healthCheckService_;
   }
+
   /**
    *
    *
@@ -548,6 +565,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthState_ = "";
+
   /**
    *
    *
@@ -564,6 +582,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasHealthState() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -588,6 +607,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -617,6 +637,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ipv6HealthState_ = "";
+
   /**
    *
    *
@@ -633,6 +654,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
   public boolean hasIpv6HealthState() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -657,6 +679,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -921,6 +944,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1219,6 +1243,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.BackendServiceReference.Builder,
             com.google.cloud.compute.v1.BackendServiceReferenceOrBuilder>
         backendServiceBuilder_;
+
     /**
      *
      *
@@ -1234,6 +1259,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasBackendService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1255,6 +1281,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return backendServiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1278,6 +1305,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1327,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1328,6 +1357,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1378,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1394,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return getBackendServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1383,6 +1415,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             : backendService_;
       }
     }
+
     /**
      *
      *
@@ -1416,6 +1449,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.ForwardingRuleReference.Builder,
             com.google.cloud.compute.v1.ForwardingRuleReferenceOrBuilder>
         forwardingRuleBuilder_;
+
     /**
      *
      *
@@ -1431,6 +1465,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasForwardingRule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1452,6 +1487,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return forwardingRuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1511,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1496,6 +1533,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1525,6 +1563,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1584,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1600,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return getForwardingRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1580,6 +1621,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             : forwardingRule_;
       }
     }
+
     /**
      *
      *
@@ -1613,6 +1655,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.HealthCheckReference.Builder,
             com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder>
         healthCheckBuilder_;
+
     /**
      *
      *
@@ -1627,6 +1670,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasHealthCheck() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1647,6 +1691,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return healthCheckBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1714,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1689,6 +1735,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1717,6 +1764,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1784,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1799,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return getHealthCheckFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1768,6 +1818,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             : healthCheck_;
       }
     }
+
     /**
      *
      *
@@ -1800,6 +1851,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.HealthCheckServiceReference.Builder,
             com.google.cloud.compute.v1.HealthCheckServiceReferenceOrBuilder>
         healthCheckServiceBuilder_;
+
     /**
      *
      *
@@ -1816,6 +1868,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasHealthCheckService() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1838,6 +1891,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return healthCheckServiceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1863,6 +1917,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1885,6 +1940,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1972,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1994,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1954,6 +2012,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return getHealthCheckServiceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1975,6 +2034,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
             : healthCheckService_;
       }
     }
+
     /**
      *
      *
@@ -2004,6 +2064,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     }
 
     private java.lang.Object healthState_ = "";
+
     /**
      *
      *
@@ -2019,6 +2080,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasHealthState() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2042,6 +2104,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2128,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2151,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2105,6 +2170,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2196,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     }
 
     private java.lang.Object ipv6HealthState_ = "";
+
     /**
      *
      *
@@ -2145,6 +2212,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
     public boolean hasIpv6HealthState() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2168,6 +2236,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2191,6 +2260,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2213,6 +2283,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2231,6 +2302,7 @@ public final class HealthStatusForNetworkEndpoint extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.EnvVar> getEnvList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.EnvVar getEnv(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * </code>
    */
   int getEnvCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.EnvVarOrBuilder> getEnvOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * @return Whether the postStartupScriptConfig field is set.
    */
   boolean hasPostStartupScriptConfig();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface NotebookSoftwareConfigOrBuilder
    * @return The postStartupScriptConfig.
    */
   com.google.cloud.aiplatform.v1.PostStartupScriptConfig getPostStartupScriptConfig();
+
   /**
    *
    *

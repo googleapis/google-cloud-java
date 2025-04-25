@@ -39,6 +39,7 @@ public interface CreateCatalogRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CreateCatalogRequestOrBuilder
    * @return Whether the catalog field is set.
    */
   boolean hasCatalog();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateCatalogRequestOrBuilder
    * @return The catalog.
    */
   com.google.cloud.bigquery.biglake.v1.Catalog getCatalog();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateCatalogRequestOrBuilder
    * @return The catalogId.
    */
   java.lang.String getCatalogId();
+
   /**
    *
    *

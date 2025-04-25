@@ -37,6 +37,7 @@ public interface RuntimeProjectAttachmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RuntimeProjectAttachmentOrBuilder
    * @return The runtimeProject.
    */
   java.lang.String getRuntimeProject();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface RuntimeProjectAttachmentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RuntimeProjectAttachmentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

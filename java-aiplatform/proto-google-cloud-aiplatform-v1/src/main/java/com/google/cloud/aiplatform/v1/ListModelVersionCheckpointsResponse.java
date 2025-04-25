@@ -35,6 +35,7 @@ public final class ListModelVersionCheckpointsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListModelVersionCheckpointsResponse)
     ListModelVersionCheckpointsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListModelVersionCheckpointsResponse.newBuilder() to construct.
   private ListModelVersionCheckpointsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListModelVersionCheckpointsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.ModelVersionCheckpoint> checkpoints_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListModelVersionCheckpointsResponse
       getCheckpointsList() {
     return checkpoints_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListModelVersionCheckpointsResponse
       getCheckpointsOrBuilderList() {
     return checkpoints_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ListModelVersionCheckpointsResponse
   public int getCheckpointsCount() {
     return checkpoints_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class ListModelVersionCheckpointsResponse
   public com.google.cloud.aiplatform.v1.ModelVersionCheckpoint getCheckpoints(int index) {
     return checkpoints_.get(index);
   }
+
   /**
    *
    *
@@ -144,6 +150,7 @@ public final class ListModelVersionCheckpointsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class ListModelVersionCheckpointsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +377,7 @@ public final class ListModelVersionCheckpointsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -657,6 +666,7 @@ public final class ListModelVersionCheckpointsResponse
         return checkpointsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -673,6 +683,7 @@ public final class ListModelVersionCheckpointsResponse
         return checkpointsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class ListModelVersionCheckpointsResponse
         return checkpointsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +896,7 @@ public final class ListModelVersionCheckpointsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +910,7 @@ public final class ListModelVersionCheckpointsResponse
         int index) {
       return getCheckpointsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class ListModelVersionCheckpointsResponse
         return checkpointsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class ListModelVersionCheckpointsResponse
         return java.util.Collections.unmodifiableList(checkpoints_);
       }
     }
+
     /**
      *
      *
@@ -936,6 +960,7 @@ public final class ListModelVersionCheckpointsResponse
       return getCheckpointsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.ModelVersionCheckpoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -951,6 +976,7 @@ public final class ListModelVersionCheckpointsResponse
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.ModelVersionCheckpoint.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -983,6 +1009,7 @@ public final class ListModelVersionCheckpointsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1008,6 +1035,7 @@ public final class ListModelVersionCheckpointsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1061,7 @@ public final class ListModelVersionCheckpointsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1086,7 @@ public final class ListModelVersionCheckpointsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1107,7 @@ public final class ListModelVersionCheckpointsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

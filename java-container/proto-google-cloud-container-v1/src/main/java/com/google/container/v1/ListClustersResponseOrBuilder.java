@@ -35,6 +35,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
   java.util.List<com.google.container.v1.Cluster> getClustersList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
   com.google.container.v1.Cluster getClusters(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
   int getClustersCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
   java.util.List<? extends com.google.container.v1.ClusterOrBuilder> getClustersOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ListClustersResponseOrBuilder
    * @return A list containing the missingZones.
    */
   java.util.List<java.lang.String> getMissingZonesList();
+
   /**
    *
    *
@@ -106,6 +111,7 @@ public interface ListClustersResponseOrBuilder
    * @return The count of missingZones.
    */
   int getMissingZonesCount();
+
   /**
    *
    *
@@ -120,6 +126,7 @@ public interface ListClustersResponseOrBuilder
    * @return The missingZones at the given index.
    */
   java.lang.String getMissingZones(int index);
+
   /**
    *
    *

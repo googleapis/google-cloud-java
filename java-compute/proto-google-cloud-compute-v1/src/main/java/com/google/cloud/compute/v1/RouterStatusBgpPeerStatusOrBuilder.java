@@ -34,6 +34,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getAdvertisedRoutesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   com.google.cloud.compute.v1.Route getAdvertisedRoutes(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
    */
   int getAdvertisedRoutesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
       getAdvertisedRoutesOrBuilderList();
+
   /**
    *
    *
@@ -82,12 +86,14 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the bfdStatus field is set.
    */
   boolean hasBfdStatus();
+
   /**
    * <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code>
    *
    * @return The bfdStatus.
    */
   com.google.cloud.compute.v1.BfdStatus getBfdStatus();
+
   /** <code>optional .google.cloud.compute.v1.BfdStatus bfd_status = 395631729;</code> */
   com.google.cloud.compute.v1.BfdStatusOrBuilder getBfdStatusOrBuilder();
 
@@ -103,6 +109,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the enableIpv4 field is set.
    */
   boolean hasEnableIpv4();
+
   /**
    *
    *
@@ -128,6 +135,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the enableIpv6 field is set.
    */
   boolean hasEnableIpv6();
+
   /**
    *
    *
@@ -153,6 +161,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the ipAddress field is set.
    */
   boolean hasIpAddress();
+
   /**
    *
    *
@@ -165,6 +174,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -190,6 +200,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the ipv4NexthopAddress field is set.
    */
   boolean hasIpv4NexthopAddress();
+
   /**
    *
    *
@@ -202,6 +213,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The ipv4NexthopAddress.
    */
   java.lang.String getIpv4NexthopAddress();
+
   /**
    *
    *
@@ -227,6 +239,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the ipv6NexthopAddress field is set.
    */
   boolean hasIpv6NexthopAddress();
+
   /**
    *
    *
@@ -239,6 +252,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The ipv6NexthopAddress.
    */
   java.lang.String getIpv6NexthopAddress();
+
   /**
    *
    *
@@ -264,6 +278,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the linkedVpnTunnel field is set.
    */
   boolean hasLinkedVpnTunnel();
+
   /**
    *
    *
@@ -276,6 +291,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The linkedVpnTunnel.
    */
   java.lang.String getLinkedVpnTunnel();
+
   /**
    *
    *
@@ -301,6 +317,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the md5AuthEnabled field is set.
    */
   boolean hasMd5AuthEnabled();
+
   /**
    *
    *
@@ -326,6 +343,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -338,6 +356,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -363,6 +382,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the numLearnedRoutes field is set.
    */
   boolean hasNumLearnedRoutes();
+
   /**
    *
    *
@@ -388,6 +408,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the peerIpAddress field is set.
    */
   boolean hasPeerIpAddress();
+
   /**
    *
    *
@@ -400,6 +421,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The peerIpAddress.
    */
   java.lang.String getPeerIpAddress();
+
   /**
    *
    *
@@ -425,6 +447,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the peerIpv4NexthopAddress field is set.
    */
   boolean hasPeerIpv4NexthopAddress();
+
   /**
    *
    *
@@ -437,6 +460,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The peerIpv4NexthopAddress.
    */
   java.lang.String getPeerIpv4NexthopAddress();
+
   /**
    *
    *
@@ -462,6 +486,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the peerIpv6NexthopAddress field is set.
    */
   boolean hasPeerIpv6NexthopAddress();
+
   /**
    *
    *
@@ -474,6 +499,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The peerIpv6NexthopAddress.
    */
   java.lang.String getPeerIpv6NexthopAddress();
+
   /**
    *
    *
@@ -499,6 +525,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the routerApplianceInstance field is set.
    */
   boolean hasRouterApplianceInstance();
+
   /**
    *
    *
@@ -511,6 +538,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The routerApplianceInstance.
    */
   java.lang.String getRouterApplianceInstance();
+
   /**
    *
    *
@@ -536,6 +564,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -548,6 +577,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The state.
    */
   java.lang.String getState();
+
   /**
    *
    *
@@ -574,6 +604,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -587,6 +618,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -614,6 +646,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the statusReason field is set.
    */
   boolean hasStatusReason();
+
   /**
    *
    *
@@ -627,6 +660,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The statusReason.
    */
   java.lang.String getStatusReason();
+
   /**
    *
    *
@@ -653,6 +687,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the uptime field is set.
    */
   boolean hasUptime();
+
   /**
    *
    *
@@ -665,6 +700,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The uptime.
    */
   java.lang.String getUptime();
+
   /**
    *
    *
@@ -690,6 +726,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return Whether the uptimeSeconds field is set.
    */
   boolean hasUptimeSeconds();
+
   /**
    *
    *
@@ -702,6 +739,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * @return The uptimeSeconds.
    */
   java.lang.String getUptimeSeconds();
+
   /**
    *
    *

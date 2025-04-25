@@ -33,6 +33,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult)
     DataDiscoveryResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataDiscoveryResult.newBuilder() to construct.
   private DataDiscoveryResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      * @return The dataset.
      */
     java.lang.String getDataset();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      * @return The location.
      */
     java.lang.String getLocation();
+
     /**
      *
      *
@@ -120,6 +123,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      */
     com.google.protobuf.ByteString getLocationBytes();
   }
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing)
       BigQueryPublishingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BigQueryPublishing.newBuilder() to construct.
     private BigQueryPublishing(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -169,6 +174,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object dataset_ = "";
+
     /**
      *
      *
@@ -194,6 +200,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -224,6 +231,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -247,6 +255,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return s;
       }
     }
+
     /**
      *
      *
@@ -442,6 +451,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private java.lang.Object dataset_ = "";
+
       /**
        *
        *
@@ -675,6 +686,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -699,6 +711,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -722,6 +735,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -741,6 +755,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -767,6 +782,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private java.lang.Object location_ = "";
+
       /**
        *
        *
@@ -789,6 +805,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -811,6 +828,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -832,6 +850,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -849,6 +868,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1061,6 +1081,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
      */
     int getFilesetsUpdated();
   }
+
   /**
    *
    *
@@ -1075,6 +1096,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics)
       ScanStatisticsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ScanStatistics.newBuilder() to construct.
     private ScanStatistics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1105,6 +1127,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int SCANNED_FILE_COUNT_FIELD_NUMBER = 1;
     private int scannedFileCount_ = 0;
+
     /**
      *
      *
@@ -1123,6 +1146,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int DATA_PROCESSED_BYTES_FIELD_NUMBER = 2;
     private long dataProcessedBytes_ = 0L;
+
     /**
      *
      *
@@ -1141,6 +1165,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int FILES_EXCLUDED_FIELD_NUMBER = 3;
     private int filesExcluded_ = 0;
+
     /**
      *
      *
@@ -1159,6 +1184,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int TABLES_CREATED_FIELD_NUMBER = 4;
     private int tablesCreated_ = 0;
+
     /**
      *
      *
@@ -1177,6 +1203,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int TABLES_DELETED_FIELD_NUMBER = 5;
     private int tablesDeleted_ = 0;
+
     /**
      *
      *
@@ -1195,6 +1222,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int TABLES_UPDATED_FIELD_NUMBER = 6;
     private int tablesUpdated_ = 0;
+
     /**
      *
      *
@@ -1213,6 +1241,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int FILESETS_CREATED_FIELD_NUMBER = 7;
     private int filesetsCreated_ = 0;
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int FILESETS_DELETED_FIELD_NUMBER = 8;
     private int filesetsDeleted_ = 0;
+
     /**
      *
      *
@@ -1249,6 +1279,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
     public static final int FILESETS_UPDATED_FIELD_NUMBER = 9;
     private int filesetsUpdated_ = 0;
+
     /**
      *
      *
@@ -1499,6 +1530,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1793,6 +1825,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       private int bitField0_;
 
       private int scannedFileCount_;
+
       /**
        *
        *
@@ -1808,6 +1841,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getScannedFileCount() {
         return scannedFileCount_;
       }
+
       /**
        *
        *
@@ -1827,6 +1861,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1846,6 +1881,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private long dataProcessedBytes_;
+
       /**
        *
        *
@@ -1861,6 +1897,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public long getDataProcessedBytes() {
         return dataProcessedBytes_;
       }
+
       /**
        *
        *
@@ -1880,6 +1917,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1899,6 +1937,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int filesExcluded_;
+
       /**
        *
        *
@@ -1914,6 +1953,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getFilesExcluded() {
         return filesExcluded_;
       }
+
       /**
        *
        *
@@ -1933,6 +1973,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1952,6 +1993,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int tablesCreated_;
+
       /**
        *
        *
@@ -1967,6 +2009,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getTablesCreated() {
         return tablesCreated_;
       }
+
       /**
        *
        *
@@ -1986,6 +2029,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2005,6 +2049,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int tablesDeleted_;
+
       /**
        *
        *
@@ -2020,6 +2065,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getTablesDeleted() {
         return tablesDeleted_;
       }
+
       /**
        *
        *
@@ -2039,6 +2085,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2058,6 +2105,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int tablesUpdated_;
+
       /**
        *
        *
@@ -2073,6 +2121,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getTablesUpdated() {
         return tablesUpdated_;
       }
+
       /**
        *
        *
@@ -2092,6 +2141,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2111,6 +2161,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int filesetsCreated_;
+
       /**
        *
        *
@@ -2126,6 +2177,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getFilesetsCreated() {
         return filesetsCreated_;
       }
+
       /**
        *
        *
@@ -2145,6 +2197,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2164,6 +2217,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int filesetsDeleted_;
+
       /**
        *
        *
@@ -2179,6 +2233,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getFilesetsDeleted() {
         return filesetsDeleted_;
       }
+
       /**
        *
        *
@@ -2198,6 +2253,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2217,6 +2273,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
 
       private int filesetsUpdated_;
+
       /**
        *
        *
@@ -2232,6 +2289,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       public int getFilesetsUpdated() {
         return filesetsUpdated_;
       }
+
       /**
        *
        *
@@ -2251,6 +2309,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2339,6 +2398,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int BIGQUERY_PUBLISHING_FIELD_NUMBER = 1;
   private com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing bigqueryPublishing_;
+
   /**
    *
    *
@@ -2356,6 +2416,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
   public boolean hasBigqueryPublishing() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2376,6 +2437,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing.getDefaultInstance()
         : bigqueryPublishing_;
   }
+
   /**
    *
    *
@@ -2397,6 +2459,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
 
   public static final int SCAN_STATISTICS_FIELD_NUMBER = 2;
   private com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics scanStatistics_;
+
   /**
    *
    *
@@ -2414,6 +2477,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
   public boolean hasScanStatistics() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2433,6 +2497,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.getDefaultInstance()
         : scanStatistics_;
   }
+
   /**
    *
    *
@@ -2630,6 +2695,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2857,6 +2923,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishing.Builder,
             com.google.cloud.dataplex.v1.DataDiscoveryResult.BigQueryPublishingOrBuilder>
         bigqueryPublishingBuilder_;
+
     /**
      *
      *
@@ -2873,6 +2940,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     public boolean hasBigqueryPublishing() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2897,6 +2965,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return bigqueryPublishingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2922,6 +2991,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2945,6 +3015,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2977,6 +3048,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -2998,6 +3070,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3015,6 +3088,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBigqueryPublishingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3037,6 +3111,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             : bigqueryPublishing_;
       }
     }
+
     /**
      *
      *
@@ -3071,6 +3146,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatistics.Builder,
             com.google.cloud.dataplex.v1.DataDiscoveryResult.ScanStatisticsOrBuilder>
         scanStatisticsBuilder_;
+
     /**
      *
      *
@@ -3087,6 +3163,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
     public boolean hasScanStatistics() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3109,6 +3186,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
         return scanStatisticsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3134,6 +3212,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3156,6 +3235,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3188,6 +3268,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -3209,6 +3290,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3226,6 +3308,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return getScanStatisticsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3247,6 +3330,7 @@ public final class DataDiscoveryResult extends com.google.protobuf.GeneratedMess
             : scanStatistics_;
       }
     }
+
     /**
      *
      *

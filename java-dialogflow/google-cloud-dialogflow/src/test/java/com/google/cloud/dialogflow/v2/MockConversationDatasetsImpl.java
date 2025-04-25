@@ -73,7 +73,8 @@ public class MockConversationDatasetsImpl extends ConversationDatasetsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConversationDataset, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConversationDataset, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -94,7 +95,8 @@ public class MockConversationDatasetsImpl extends ConversationDatasetsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConversationDataset, expected %s or %s",
+                  "Unrecognized response type %s for method GetConversationDataset, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversationDataset.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +118,8 @@ public class MockConversationDatasetsImpl extends ConversationDatasetsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConversationDatasets, expected %s or %s",
+                  "Unrecognized response type %s for method ListConversationDatasets, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConversationDatasetsResponse.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +140,8 @@ public class MockConversationDatasetsImpl extends ConversationDatasetsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConversationDataset, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConversationDataset, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +162,8 @@ public class MockConversationDatasetsImpl extends ConversationDatasetsImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ImportConversationData, expected %s or %s",
+                  "Unrecognized response type %s for method ImportConversationData, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

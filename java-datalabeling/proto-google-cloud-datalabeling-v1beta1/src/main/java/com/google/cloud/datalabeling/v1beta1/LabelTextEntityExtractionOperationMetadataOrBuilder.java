@@ -36,6 +36,7 @@ public interface LabelTextEntityExtractionOperationMetadataOrBuilder
    * @return Whether the basicConfig field is set.
    */
   boolean hasBasicConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LabelTextEntityExtractionOperationMetadataOrBuilder
    * @return The basicConfig.
    */
   com.google.cloud.datalabeling.v1beta1.HumanAnnotationConfig getBasicConfig();
+
   /**
    *
    *

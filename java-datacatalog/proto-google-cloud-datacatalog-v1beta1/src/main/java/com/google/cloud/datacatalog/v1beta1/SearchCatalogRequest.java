@@ -34,6 +34,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.SearchCatalogRequest)
     SearchCatalogRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchCatalogRequest.newBuilder() to construct.
   private SearchCatalogRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the includeOrgIds.
      */
     java.util.List<java.lang.String> getIncludeOrgIdsList();
+
     /**
      *
      *
@@ -99,6 +101,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The count of includeOrgIds.
      */
     int getIncludeOrgIdsCount();
+
     /**
      *
      *
@@ -114,6 +117,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The includeOrgIds at the given index.
      */
     java.lang.String getIncludeOrgIds(int index);
+
     /**
      *
      *
@@ -144,6 +148,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the includeProjectIds.
      */
     java.util.List<java.lang.String> getIncludeProjectIdsList();
+
     /**
      *
      *
@@ -158,6 +163,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The count of includeProjectIds.
      */
     int getIncludeProjectIdsCount();
+
     /**
      *
      *
@@ -173,6 +179,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The includeProjectIds at the given index.
      */
     java.lang.String getIncludeProjectIds(int index);
+
     /**
      *
      *
@@ -252,6 +259,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return A list containing the restrictedLocations.
      */
     java.util.List<java.lang.String> getRestrictedLocationsList();
+
     /**
      *
      *
@@ -299,6 +307,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The count of restrictedLocations.
      */
     int getRestrictedLocationsCount();
+
     /**
      *
      *
@@ -347,6 +356,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      * @return The restrictedLocations at the given index.
      */
     java.lang.String getRestrictedLocations(int index);
+
     /**
      *
      *
@@ -396,6 +406,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getRestrictedLocationsBytes(int index);
   }
+
   /**
    *
    *
@@ -410,6 +421,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope)
       ScopeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Scope.newBuilder() to construct.
     private Scope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -447,6 +459,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includeOrgIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -463,6 +476,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getIncludeOrgIdsList() {
       return includeOrgIds_;
     }
+
     /**
      *
      *
@@ -479,6 +493,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public int getIncludeOrgIdsCount() {
       return includeOrgIds_.size();
     }
+
     /**
      *
      *
@@ -496,6 +511,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getIncludeOrgIds(int index) {
       return includeOrgIds_.get(index);
     }
+
     /**
      *
      *
@@ -519,6 +535,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList includeProjectIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -535,6 +552,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getIncludeProjectIdsList() {
       return includeProjectIds_;
     }
+
     /**
      *
      *
@@ -551,6 +569,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public int getIncludeProjectIdsCount() {
       return includeProjectIds_.size();
     }
+
     /**
      *
      *
@@ -568,6 +587,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getIncludeProjectIds(int index) {
       return includeProjectIds_.get(index);
     }
+
     /**
      *
      *
@@ -588,6 +608,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
     public static final int INCLUDE_GCP_PUBLIC_DATASETS_FIELD_NUMBER = 7;
     private boolean includeGcpPublicDatasets_ = false;
+
     /**
      *
      *
@@ -612,6 +633,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList restrictedLocations_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -661,6 +683,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ProtocolStringList getRestrictedLocationsList() {
       return restrictedLocations_;
     }
+
     /**
      *
      *
@@ -710,6 +733,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public int getRestrictedLocationsCount() {
       return restrictedLocations_.size();
     }
+
     /**
      *
      *
@@ -760,6 +784,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public java.lang.String getRestrictedLocations(int index) {
       return restrictedLocations_.get(index);
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1286,6 +1312,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1303,6 +1330,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         includeOrgIds_.makeImmutable();
         return includeOrgIds_;
       }
+
       /**
        *
        *
@@ -1319,6 +1347,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public int getIncludeOrgIdsCount() {
         return includeOrgIds_.size();
       }
+
       /**
        *
        *
@@ -1336,6 +1365,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public java.lang.String getIncludeOrgIds(int index) {
         return includeOrgIds_.get(index);
       }
+
       /**
        *
        *
@@ -1353,6 +1383,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getIncludeOrgIdsBytes(int index) {
         return includeOrgIds_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1378,6 +1409,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1402,6 +1434,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1423,6 +1456,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1443,6 +1477,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1478,6 +1513,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1495,6 +1531,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         includeProjectIds_.makeImmutable();
         return includeProjectIds_;
       }
+
       /**
        *
        *
@@ -1511,6 +1548,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public int getIncludeProjectIdsCount() {
         return includeProjectIds_.size();
       }
+
       /**
        *
        *
@@ -1528,6 +1566,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public java.lang.String getIncludeProjectIds(int index) {
         return includeProjectIds_.get(index);
       }
+
       /**
        *
        *
@@ -1545,6 +1584,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getIncludeProjectIdsBytes(int index) {
         return includeProjectIds_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1570,6 +1610,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1594,6 +1635,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1615,6 +1657,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1635,6 +1678,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1662,6 +1706,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
 
       private boolean includeGcpPublicDatasets_;
+
       /**
        *
        *
@@ -1680,6 +1725,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public boolean getIncludeGcpPublicDatasets() {
         return includeGcpPublicDatasets_;
       }
+
       /**
        *
        *
@@ -1702,6 +1748,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1732,6 +1779,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         }
         bitField0_ |= 0x00000008;
       }
+
       /**
        *
        *
@@ -1782,6 +1830,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         restrictedLocations_.makeImmutable();
         return restrictedLocations_;
       }
+
       /**
        *
        *
@@ -1831,6 +1880,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public int getRestrictedLocationsCount() {
         return restrictedLocations_.size();
       }
+
       /**
        *
        *
@@ -1881,6 +1931,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public java.lang.String getRestrictedLocations(int index) {
         return restrictedLocations_.get(index);
       }
+
       /**
        *
        *
@@ -1931,6 +1982,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       public com.google.protobuf.ByteString getRestrictedLocationsBytes(int index) {
         return restrictedLocations_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1989,6 +2041,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2046,6 +2099,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2100,6 +2154,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2153,6 +2208,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2282,6 +2338,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int SCOPE_FIELD_NUMBER = 6;
   private com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope scope_;
+
   /**
    *
    *
@@ -2302,6 +2359,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
   public boolean hasScope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2324,6 +2382,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.getDefaultInstance()
         : scope_;
   }
+
   /**
    *
    *
@@ -2350,6 +2409,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -2384,6 +2444,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2421,6 +2482,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -2442,6 +2504,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -2470,6 +2533,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2503,6 +2567,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object orderBy_ = "";
+
   /**
    *
    *
@@ -2534,6 +2599,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2767,6 +2833,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3029,6 +3096,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.Scope.Builder,
             com.google.cloud.datacatalog.v1beta1.SearchCatalogRequest.ScopeOrBuilder>
         scopeBuilder_;
+
     /**
      *
      *
@@ -3048,6 +3116,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public boolean hasScope() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3073,6 +3142,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return scopeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3100,6 +3170,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3125,6 +3196,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3160,6 +3232,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3184,6 +3257,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3278,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getScopeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3228,6 +3303,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
             : scope_;
       }
     }
+
     /**
      *
      *
@@ -3260,6 +3336,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -3293,6 +3370,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3326,6 +3404,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3358,6 +3437,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3386,6 +3466,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3421,6 +3502,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -3437,6 +3519,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -3457,6 +3540,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3477,6 +3561,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -3504,6 +3589,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3531,6 +3617,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3557,6 +3644,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3579,6 +3667,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3608,6 +3697,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object orderBy_ = "";
+
     /**
      *
      *
@@ -3638,6 +3728,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3668,6 +3759,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3697,6 +3789,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3722,6 +3815,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

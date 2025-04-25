@@ -33,6 +33,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction)
     DataProfileActionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataProfileAction.newBuilder() to construct.
   private DataProfileAction(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -136,6 +137,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -146,6 +148,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * <code>NEW_PROFILE = 1;</code>
      */
     public static final int NEW_PROFILE_VALUE = 1;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * <code>CHANGED_PROFILE = 2;</code>
      */
     public static final int CHANGED_PROFILE_VALUE = 2;
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * <code>SCORE_INCREASED = 3;</code>
      */
     public static final int SCORE_INCREASED_VALUE = 3;
+
     /**
      *
      *
@@ -308,6 +313,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return Whether the profileTable field is set.
      */
     boolean hasProfileTable();
+
     /**
      *
      *
@@ -345,6 +351,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The profileTable.
      */
     com.google.privacy.dlp.v2.BigQueryTable getProfileTable();
+
     /**
      *
      *
@@ -399,6 +406,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return Whether the sampleFindingsTable field is set.
      */
     boolean hasSampleFindingsTable();
+
     /**
      *
      *
@@ -417,6 +425,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The sampleFindingsTable.
      */
     com.google.privacy.dlp.v2.BigQueryTable getSampleFindingsTable();
+
     /**
      *
      *
@@ -434,6 +443,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSampleFindingsTableOrBuilder();
   }
+
   /**
    *
    *
@@ -449,6 +459,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.Export)
       ExportOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Export.newBuilder() to construct.
     private Export(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -480,6 +491,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int PROFILE_TABLE_FIELD_NUMBER = 1;
     private com.google.privacy.dlp.v2.BigQueryTable profileTable_;
+
     /**
      *
      *
@@ -520,6 +532,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasProfileTable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -562,6 +575,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
           : profileTable_;
     }
+
     /**
      *
      *
@@ -605,6 +619,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     public static final int SAMPLE_FINDINGS_TABLE_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.BigQueryTable sampleFindingsTable_;
+
     /**
      *
      *
@@ -626,6 +641,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasSampleFindingsTable() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -649,6 +665,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance()
           : sampleFindingsTable_;
     }
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1082,6 +1100,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               com.google.privacy.dlp.v2.BigQueryTable.Builder,
               com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
           profileTableBuilder_;
+
       /**
        *
        *
@@ -1121,6 +1140,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasProfileTable() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1166,6 +1186,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return profileTableBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1213,6 +1234,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1258,6 +1280,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1310,6 +1333,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1354,6 +1378,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1393,6 +1418,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getProfileTableFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1436,6 +1462,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               : profileTable_;
         }
       }
+
       /**
        *
        *
@@ -1493,6 +1520,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               com.google.privacy.dlp.v2.BigQueryTable.Builder,
               com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
           sampleFindingsTableBuilder_;
+
       /**
        *
        *
@@ -1513,6 +1541,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasSampleFindingsTable() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1539,6 +1568,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return sampleFindingsTableBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1567,6 +1597,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1593,6 +1624,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1627,6 +1659,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1652,6 +1685,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1672,6 +1706,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getSampleFindingsTableFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1696,6 +1731,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               : sampleFindingsTable_;
         }
       }
+
       /**
        *
        *
@@ -1810,6 +1846,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -1837,6 +1874,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for event.
      */
     int getEventValue();
+
     /**
      *
      *
@@ -1864,6 +1902,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return Whether the pubsubCondition field is set.
      */
     boolean hasPubsubCondition();
+
     /**
      *
      *
@@ -1877,6 +1916,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The pubsubCondition.
      */
     com.google.privacy.dlp.v2.DataProfilePubSubCondition getPubsubCondition();
+
     /**
      *
      *
@@ -1905,6 +1945,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for detailOfMessage.
      */
     int getDetailOfMessageValue();
+
     /**
      *
      *
@@ -1922,6 +1963,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.DetailLevel getDetailOfMessage();
   }
+
   /**
    *
    *
@@ -1938,6 +1980,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.PubSubNotification)
       PubSubNotificationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PubSubNotification.newBuilder() to construct.
     private PubSubNotification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2033,6 +2076,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>DETAIL_LEVEL_UNSPECIFIED = 0;</code>
        */
       public static final int DETAIL_LEVEL_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2043,6 +2087,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>TABLE_PROFILE = 1;</code>
        */
       public static final int TABLE_PROFILE_VALUE = 1;
+
       /**
        *
        *
@@ -2053,6 +2098,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * <code>RESOURCE_NAME = 2;</code>
        */
       public static final int RESOURCE_NAME_VALUE = 2;
+
       /**
        *
        *
@@ -2156,6 +2202,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -2180,6 +2227,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -2207,6 +2255,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     public static final int EVENT_FIELD_NUMBER = 2;
     private int event_ = 0;
+
     /**
      *
      *
@@ -2223,6 +2272,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public int getEventValue() {
       return event_;
     }
+
     /**
      *
      *
@@ -2246,6 +2296,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     public static final int PUBSUB_CONDITION_FIELD_NUMBER = 3;
     private com.google.privacy.dlp.v2.DataProfilePubSubCondition pubsubCondition_;
+
     /**
      *
      *
@@ -2262,6 +2313,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasPubsubCondition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2280,6 +2332,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           ? com.google.privacy.dlp.v2.DataProfilePubSubCondition.getDefaultInstance()
           : pubsubCondition_;
     }
+
     /**
      *
      *
@@ -2300,6 +2353,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     public static final int DETAIL_OF_MESSAGE_FIELD_NUMBER = 4;
     private int detailOfMessage_ = 0;
+
     /**
      *
      *
@@ -2319,6 +2373,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public int getDetailOfMessageValue() {
       return detailOfMessage_;
     }
+
     /**
      *
      *
@@ -2548,6 +2603,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2798,6 +2854,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object topic_ = "";
+
       /**
        *
        *
@@ -2821,6 +2878,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2844,6 +2902,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2866,6 +2925,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2884,6 +2944,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2909,6 +2970,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
 
       private int event_ = 0;
+
       /**
        *
        *
@@ -2925,6 +2987,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public int getEventValue() {
         return event_;
       }
+
       /**
        *
        *
@@ -2944,6 +3007,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2964,6 +3028,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             ? com.google.privacy.dlp.v2.DataProfileAction.EventType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -2986,6 +3051,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3011,6 +3077,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               com.google.privacy.dlp.v2.DataProfilePubSubCondition.Builder,
               com.google.privacy.dlp.v2.DataProfilePubSubConditionOrBuilder>
           pubsubConditionBuilder_;
+
       /**
        *
        *
@@ -3026,6 +3093,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasPubsubCondition() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -3047,6 +3115,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return pubsubConditionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3071,6 +3140,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3092,6 +3162,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3122,6 +3193,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -3142,6 +3214,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3158,6 +3231,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getPubsubConditionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3178,6 +3252,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
               : pubsubCondition_;
         }
       }
+
       /**
        *
        *
@@ -3206,6 +3281,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
 
       private int detailOfMessage_ = 0;
+
       /**
        *
        *
@@ -3225,6 +3301,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public int getDetailOfMessageValue() {
         return detailOfMessage_;
       }
+
       /**
        *
        *
@@ -3247,6 +3324,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3273,6 +3351,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3299,6 +3378,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3392,6 +3472,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3406,6 +3487,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.PublishToChronicle)
       PublishToChronicleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishToChronicle.newBuilder() to construct.
     private PublishToChronicle(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3586,6 +3668,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3821,6 +3904,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -3837,6 +3921,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter)
       PublishToSecurityCommandCenterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PublishToSecurityCommandCenter.newBuilder() to construct.
     private PublishToSecurityCommandCenter(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -4026,6 +4111,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4284,6 +4370,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
         getTagConditionsList();
+
     /**
      *
      *
@@ -4297,6 +4384,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition getTagConditions(
         int index);
+
     /**
      *
      *
@@ -4309,6 +4397,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     int getTagConditionsCount();
+
     /**
      *
      *
@@ -4324,6 +4413,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             ? extends
                 com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagConditionOrBuilder>
         getTagConditionsOrBuilderList();
+
     /**
      *
      *
@@ -4356,6 +4446,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return A list containing the profileGenerationsToTag.
      */
     java.util.List<com.google.privacy.dlp.v2.ProfileGeneration> getProfileGenerationsToTagList();
+
     /**
      *
      *
@@ -4374,6 +4465,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The count of profileGenerationsToTag.
      */
     int getProfileGenerationsToTagCount();
+
     /**
      *
      *
@@ -4393,6 +4485,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return The profileGenerationsToTag at the given index.
      */
     com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index);
+
     /**
      *
      *
@@ -4411,6 +4504,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      * @return A list containing the enum numeric values on the wire for profileGenerationsToTag.
      */
     java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList();
+
     /**
      *
      *
@@ -4451,6 +4545,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
      */
     boolean getLowerDataRiskToLow();
   }
+
   /**
    *
    *
@@ -4470,6 +4565,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources)
       TagResourcesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TagResources.newBuilder() to construct.
     private TagResources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4518,6 +4614,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return Whether the tag field is set.
        */
       boolean hasTag();
+
       /**
        *
        *
@@ -4530,6 +4627,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return The tag.
        */
       com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue getTag();
+
       /**
        *
        *
@@ -4554,6 +4652,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return Whether the sensitivityScore field is set.
        */
       boolean hasSensitivityScore();
+
       /**
        *
        *
@@ -4567,6 +4666,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return The sensitivityScore.
        */
       com.google.privacy.dlp.v2.SensitivityScore getSensitivityScore();
+
       /**
        *
        *
@@ -4581,6 +4681,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
       com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition.TypeCase getTypeCase();
     }
+
     /**
      *
      *
@@ -4596,6 +4697,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition)
         TagConditionOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use TagCondition.newBuilder() to construct.
       private TagCondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4642,6 +4744,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         private TypeCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -4674,6 +4777,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
       public static final int TAG_FIELD_NUMBER = 1;
       private com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue tag_;
+
       /**
        *
        *
@@ -4689,6 +4793,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasTag() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4706,6 +4811,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             ? com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.getDefaultInstance()
             : tag_;
       }
+
       /**
        *
        *
@@ -4724,6 +4830,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int SENSITIVITY_SCORE_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -4740,6 +4847,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasSensitivityScore() {
         return typeCase_ == 2;
       }
+
       /**
        *
        *
@@ -4759,6 +4867,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -4970,6 +5079,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -5235,6 +5345,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.Builder,
                 com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValueOrBuilder>
             tagBuilder_;
+
         /**
          *
          *
@@ -5249,6 +5360,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         public boolean hasTag() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -5270,6 +5382,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return tagBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -5293,6 +5406,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5314,6 +5428,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5344,6 +5459,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
+
         /**
          *
          *
@@ -5363,6 +5479,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5378,6 +5495,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           onChanged();
           return getTagFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -5398,6 +5516,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 : tag_;
           }
         }
+
         /**
          *
          *
@@ -5429,6 +5548,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.SensitivityScore.Builder,
                 com.google.privacy.dlp.v2.SensitivityScoreOrBuilder>
             sensitivityScoreBuilder_;
+
         /**
          *
          *
@@ -5445,6 +5565,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         public boolean hasSensitivityScore() {
           return typeCase_ == 2;
         }
+
         /**
          *
          *
@@ -5471,6 +5592,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -5494,6 +5616,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -5515,6 +5638,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -5548,6 +5672,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -5574,6 +5699,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
+
         /**
          *
          *
@@ -5587,6 +5713,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
           return getSensitivityScoreFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -5608,6 +5735,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -5729,6 +5857,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return Whether the namespacedValue field is set.
        */
       boolean hasNamespacedValue();
+
       /**
        *
        *
@@ -5743,6 +5872,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
        * @return The namespacedValue.
        */
       java.lang.String getNamespacedValue();
+
       /**
        *
        *
@@ -5760,6 +5890,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
       com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue.FormatCase getFormatCase();
     }
+
     /**
      *
      *
@@ -5774,6 +5905,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileAction.TagResources.TagValue)
         TagValueOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use TagValue.newBuilder() to construct.
       private TagValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5818,6 +5950,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         private FormatCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -5849,6 +5982,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
 
       public static final int NAMESPACED_VALUE_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -5865,6 +5999,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean hasNamespacedValue() {
         return formatCase_ == 1;
       }
+
       /**
        *
        *
@@ -5894,6 +6029,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return s;
         }
       }
+
       /**
        *
        *
@@ -6100,6 +6236,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -6338,6 +6475,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         public boolean hasNamespacedValue() {
           return formatCase_ == 1;
         }
+
         /**
          *
          *
@@ -6368,6 +6506,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -6398,6 +6537,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -6421,6 +6561,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -6442,6 +6583,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           }
           return this;
         }
+
         /**
          *
          *
@@ -6539,6 +6681,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     @SuppressWarnings("serial")
     private java.util.List<com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition>
         tagConditions_;
+
     /**
      *
      *
@@ -6555,6 +6698,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getTagConditionsList() {
       return tagConditions_;
     }
+
     /**
      *
      *
@@ -6573,6 +6717,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getTagConditionsOrBuilderList() {
       return tagConditions_;
     }
+
     /**
      *
      *
@@ -6588,6 +6733,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public int getTagConditionsCount() {
       return tagConditions_.size();
     }
+
     /**
      *
      *
@@ -6604,6 +6750,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         int index) {
       return tagConditions_.get(index);
     }
+
     /**
      *
      *
@@ -6639,6 +6786,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                     : result;
               }
             };
+
     /**
      *
      *
@@ -6663,6 +6811,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>(
           profileGenerationsToTag_, profileGenerationsToTag_converter_);
     }
+
     /**
      *
      *
@@ -6684,6 +6833,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public int getProfileGenerationsToTagCount() {
       return profileGenerationsToTag_.size();
     }
+
     /**
      *
      *
@@ -6706,6 +6856,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index) {
       return profileGenerationsToTag_converter_.convert(profileGenerationsToTag_.get(index));
     }
+
     /**
      *
      *
@@ -6727,6 +6878,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList() {
       return profileGenerationsToTag_;
     }
+
     /**
      *
      *
@@ -6754,6 +6906,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
 
     public static final int LOWER_DATA_RISK_TO_LOW_FIELD_NUMBER = 3;
     private boolean lowerDataRiskToLow_ = false;
+
     /**
      *
      *
@@ -6976,6 +7129,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7303,6 +7457,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return tagConditionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -7321,6 +7476,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return tagConditionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -7340,6 +7496,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return tagConditionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -7365,6 +7522,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7389,6 +7547,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7414,6 +7573,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7439,6 +7599,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7462,6 +7623,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7486,6 +7648,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7510,6 +7673,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7531,6 +7695,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7552,6 +7717,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -7567,6 +7733,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           getTagConditionsBuilder(int index) {
         return getTagConditionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -7586,6 +7753,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return tagConditionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -7607,6 +7775,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           return java.util.Collections.unmodifiableList(tagConditions_);
         }
       }
+
       /**
        *
        *
@@ -7625,6 +7794,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7644,6 +7814,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
                 com.google.privacy.dlp.v2.DataProfileAction.TagResources.TagCondition
                     .getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7691,6 +7862,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000002;
         }
       }
+
       /**
        *
        *
@@ -7714,6 +7886,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             java.lang.Integer, com.google.privacy.dlp.v2.ProfileGeneration>(
             profileGenerationsToTag_, profileGenerationsToTag_converter_);
       }
+
       /**
        *
        *
@@ -7734,6 +7907,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public int getProfileGenerationsToTagCount() {
         return profileGenerationsToTag_.size();
       }
+
       /**
        *
        *
@@ -7755,6 +7929,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public com.google.privacy.dlp.v2.ProfileGeneration getProfileGenerationsToTag(int index) {
         return profileGenerationsToTag_converter_.convert(profileGenerationsToTag_.get(index));
       }
+
       /**
        *
        *
@@ -7784,6 +7959,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7811,6 +7987,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7838,6 +8015,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7861,6 +8039,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7881,6 +8060,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public java.util.List<java.lang.Integer> getProfileGenerationsToTagValueList() {
         return java.util.Collections.unmodifiableList(profileGenerationsToTag_);
       }
+
       /**
        *
        *
@@ -7902,6 +8082,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public int getProfileGenerationsToTagValue(int index) {
         return profileGenerationsToTag_.get(index);
       }
+
       /**
        *
        *
@@ -7927,6 +8108,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7951,6 +8133,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7980,6 +8163,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
 
       private boolean lowerDataRiskToLow_;
+
       /**
        *
        *
@@ -8002,6 +8186,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       public boolean getLowerDataRiskToLow() {
         return lowerDataRiskToLow_;
       }
+
       /**
        *
        *
@@ -8028,6 +8213,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8137,6 +8323,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     private ActionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -8176,6 +8363,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int EXPORT_DATA_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -8191,6 +8379,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   public boolean hasExportData() {
     return actionCase_ == 1;
   }
+
   /**
    *
    *
@@ -8209,6 +8398,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
     return com.google.privacy.dlp.v2.DataProfileAction.Export.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8227,6 +8417,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PUB_SUB_NOTIFICATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -8243,6 +8434,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   public boolean hasPubSubNotification() {
     return actionCase_ == 2;
   }
+
   /**
    *
    *
@@ -8262,6 +8454,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
     return com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8282,6 +8475,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PUBLISH_TO_CHRONICLE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -8301,6 +8495,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   public boolean hasPublishToChronicle() {
     return actionCase_ == 3;
   }
+
   /**
    *
    *
@@ -8323,6 +8518,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
     return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8346,6 +8542,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PUBLISH_TO_SCC_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -8363,6 +8560,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   public boolean hasPublishToScc() {
     return actionCase_ == 4;
   }
+
   /**
    *
    *
@@ -8385,6 +8583,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     return com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8407,6 +8606,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int TAG_RESOURCES_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -8422,6 +8622,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
   public boolean hasTagResources() {
     return actionCase_ == 8;
   }
+
   /**
    *
    *
@@ -8440,6 +8641,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     }
     return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8696,6 +8898,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8983,6 +9186,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.DataProfileAction.Export.Builder,
             com.google.privacy.dlp.v2.DataProfileAction.ExportOrBuilder>
         exportDataBuilder_;
+
     /**
      *
      *
@@ -8998,6 +9202,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasExportData() {
       return actionCase_ == 1;
     }
+
     /**
      *
      *
@@ -9023,6 +9228,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.Export.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9045,6 +9251,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -9065,6 +9272,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -9097,6 +9305,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -9122,6 +9331,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -9134,6 +9344,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public com.google.privacy.dlp.v2.DataProfileAction.Export.Builder getExportDataBuilder() {
       return getExportDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9154,6 +9365,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.Export.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9192,6 +9404,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.Builder,
             com.google.privacy.dlp.v2.DataProfileAction.PubSubNotificationOrBuilder>
         pubSubNotificationBuilder_;
+
     /**
      *
      *
@@ -9208,6 +9421,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasPubSubNotification() {
       return actionCase_ == 2;
     }
+
     /**
      *
      *
@@ -9234,6 +9448,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9258,6 +9473,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9279,6 +9495,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9315,6 +9532,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9341,6 +9559,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -9355,6 +9574,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getPubSubNotificationBuilder() {
       return getPubSubNotificationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9377,6 +9597,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.PubSubNotification.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9417,6 +9638,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.Builder,
             com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicleOrBuilder>
         publishToChronicleBuilder_;
+
     /**
      *
      *
@@ -9436,6 +9658,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasPublishToChronicle() {
       return actionCase_ == 3;
     }
+
     /**
      *
      *
@@ -9465,6 +9688,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9492,6 +9716,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9516,6 +9741,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9555,6 +9781,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9584,6 +9811,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -9601,6 +9829,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getPublishToChronicleBuilder() {
       return getPublishToChronicleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9626,6 +9855,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.PublishToChronicle.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9669,6 +9899,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenter.Builder,
             com.google.privacy.dlp.v2.DataProfileAction.PublishToSecurityCommandCenterOrBuilder>
         publishToSccBuilder_;
+
     /**
      *
      *
@@ -9686,6 +9917,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasPublishToScc() {
       return actionCase_ == 4;
     }
+
     /**
      *
      *
@@ -9717,6 +9949,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9742,6 +9975,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9765,6 +9999,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9803,6 +10038,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -9830,6 +10066,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -9845,6 +10082,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getPublishToSccBuilder() {
       return getPublishToSccFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9870,6 +10108,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9914,6 +10153,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
             com.google.privacy.dlp.v2.DataProfileAction.TagResources.Builder,
             com.google.privacy.dlp.v2.DataProfileAction.TagResourcesOrBuilder>
         tagResourcesBuilder_;
+
     /**
      *
      *
@@ -9929,6 +10169,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
     public boolean hasTagResources() {
       return actionCase_ == 8;
     }
+
     /**
      *
      *
@@ -9954,6 +10195,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9976,6 +10218,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -9996,6 +10239,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -10030,6 +10274,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       actionCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -10055,6 +10300,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -10068,6 +10314,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         getTagResourcesBuilder() {
       return getTagResourcesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10089,6 +10336,7 @@ public final class DataProfileAction extends com.google.protobuf.GeneratedMessag
         return com.google.privacy.dlp.v2.DataProfileAction.TagResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *

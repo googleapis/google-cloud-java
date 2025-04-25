@@ -33,6 +33,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.chat.v1.UpdateSpaceRequest)
     UpdateSpaceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSpaceRequest.newBuilder() to construct.
   private UpdateSpaceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SPACE_FIELD_NUMBER = 1;
   private com.google.chat.v1.Space space_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasSpace() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public com.google.chat.v1.Space getSpace() {
     return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -268,6 +274,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -345,6 +352,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int USE_ADMIN_ACCESS_FIELD_NUMBER = 3;
   private boolean useAdminAccess_ = false;
+
   /**
    *
    *
@@ -557,6 +565,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -791,6 +800,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
             com.google.chat.v1.Space.Builder,
             com.google.chat.v1.SpaceOrBuilder>
         spaceBuilder_;
+
     /**
      *
      *
@@ -807,6 +817,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasSpace() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -827,6 +838,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return spaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -851,6 +863,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +885,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +915,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +937,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +954,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getSpaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -956,6 +973,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return space_ == null ? com.google.chat.v1.Space.getDefaultInstance() : space_;
       }
     }
+
     /**
      *
      *
@@ -989,6 +1007,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1064,6 +1083,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1145,6 +1165,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1249,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1330,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1419,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1500,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1551,6 +1576,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1630,6 +1656,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1718,6 +1745,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean useAdminAccess_;
+
     /**
      *
      *
@@ -1744,6 +1772,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
     public boolean getUseAdminAccess() {
       return useAdminAccess_;
     }
+
     /**
      *
      *
@@ -1774,6 +1803,7 @@ public final class UpdateSpaceRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

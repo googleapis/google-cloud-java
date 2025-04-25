@@ -39,6 +39,7 @@ public interface FetchDataSourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

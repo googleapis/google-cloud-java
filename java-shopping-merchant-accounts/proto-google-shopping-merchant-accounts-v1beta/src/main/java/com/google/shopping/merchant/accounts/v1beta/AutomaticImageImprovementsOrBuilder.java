@@ -41,6 +41,7 @@ public interface AutomaticImageImprovementsOrBuilder
    * @return Whether the accountImageImprovementsSettings field is set.
    */
   boolean hasAccountImageImprovementsSettings();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface AutomaticImageImprovementsOrBuilder
   com.google.shopping.merchant.accounts.v1beta.AutomaticImageImprovements
           .ImageImprovementsAccountLevelSettings
       getAccountImageImprovementsSettings();
+
   /**
    *
    *

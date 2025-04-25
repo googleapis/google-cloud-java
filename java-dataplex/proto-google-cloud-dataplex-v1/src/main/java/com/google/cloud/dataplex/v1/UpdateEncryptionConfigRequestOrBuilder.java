@@ -38,6 +38,7 @@ public interface UpdateEncryptionConfigRequestOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateEncryptionConfigRequestOrBuilder
    * @return The encryptionConfig.
    */
   com.google.cloud.dataplex.v1.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdateEncryptionConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateEncryptionConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

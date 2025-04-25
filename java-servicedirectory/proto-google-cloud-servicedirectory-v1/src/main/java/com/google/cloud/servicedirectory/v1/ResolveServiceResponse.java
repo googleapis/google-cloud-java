@@ -34,6 +34,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.servicedirectory.v1.ResolveServiceResponse)
     ResolveServiceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResolveServiceResponse.newBuilder() to construct.
   private ResolveServiceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int SERVICE_FIELD_NUMBER = 1;
   private com.google.cloud.servicedirectory.v1.Service service_;
+
   /**
    * <code>.google.cloud.servicedirectory.v1.Service service = 1;</code>
    *
@@ -74,6 +76,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
   public boolean hasService() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>.google.cloud.servicedirectory.v1.Service service = 1;</code>
    *
@@ -85,6 +88,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
         ? com.google.cloud.servicedirectory.v1.Service.getDefaultInstance()
         : service_;
   }
+
   /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
   @java.lang.Override
   public com.google.cloud.servicedirectory.v1.ServiceOrBuilder getServiceOrBuilder() {
@@ -258,6 +262,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -462,6 +467,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
             com.google.cloud.servicedirectory.v1.Service.Builder,
             com.google.cloud.servicedirectory.v1.ServiceOrBuilder>
         serviceBuilder_;
+
     /**
      * <code>.google.cloud.servicedirectory.v1.Service service = 1;</code>
      *
@@ -470,6 +476,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
     public boolean hasService() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>.google.cloud.servicedirectory.v1.Service service = 1;</code>
      *
@@ -484,6 +491,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
         return serviceBuilder_.getMessage();
       }
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public Builder setService(com.google.cloud.servicedirectory.v1.Service value) {
       if (serviceBuilder_ == null) {
@@ -498,6 +506,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public Builder setService(
         com.google.cloud.servicedirectory.v1.Service.Builder builderForValue) {
@@ -510,6 +519,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public Builder mergeService(com.google.cloud.servicedirectory.v1.Service value) {
       if (serviceBuilder_ == null) {
@@ -529,6 +539,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public Builder clearService() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -540,12 +551,14 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public com.google.cloud.servicedirectory.v1.Service.Builder getServiceBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getServiceFieldBuilder().getBuilder();
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     public com.google.cloud.servicedirectory.v1.ServiceOrBuilder getServiceOrBuilder() {
       if (serviceBuilder_ != null) {
@@ -556,6 +569,7 @@ public final class ResolveServiceResponse extends com.google.protobuf.GeneratedM
             : service_;
       }
     }
+
     /** <code>.google.cloud.servicedirectory.v1.Service service = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.servicedirectory.v1.Service,

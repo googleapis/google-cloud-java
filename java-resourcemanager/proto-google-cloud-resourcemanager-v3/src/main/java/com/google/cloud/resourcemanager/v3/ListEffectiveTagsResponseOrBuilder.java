@@ -34,6 +34,7 @@ public interface ListEffectiveTagsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.EffectiveTag effective_tags = 1;</code>
    */
   java.util.List<com.google.cloud.resourcemanager.v3.EffectiveTag> getEffectiveTagsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEffectiveTagsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.EffectiveTag effective_tags = 1;</code>
    */
   com.google.cloud.resourcemanager.v3.EffectiveTag getEffectiveTags(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEffectiveTagsResponseOrBuilder
    * <code>repeated .google.cloud.resourcemanager.v3.EffectiveTag effective_tags = 1;</code>
    */
   int getEffectiveTagsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEffectiveTagsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.resourcemanager.v3.EffectiveTagOrBuilder>
       getEffectiveTagsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ListEffectiveTagsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

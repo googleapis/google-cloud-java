@@ -33,6 +33,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.IngestAssetResponse)
     IngestAssetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IngestAssetResponse.newBuilder() to construct.
   private IngestAssetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int SUCCESSFULLY_INGESTED_PARTITION_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.Partition.TemporalPartition successfullyIngestedPartition_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
   public boolean hasSuccessfullyIngestedPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance()
         : successfullyIngestedPartition_;
   }
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -495,6 +500,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
             com.google.cloud.visionai.v1.Partition.TemporalPartition.Builder,
             com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
         successfullyIngestedPartitionBuilder_;
+
     /**
      *
      *
@@ -511,6 +517,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
     public boolean hasSuccessfullyIngestedPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
         return successfullyIngestedPartitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -559,6 +567,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -650,6 +662,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSuccessfullyIngestedPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class IngestAssetResponse extends com.google.protobuf.GeneratedMess
             : successfullyIngestedPartition_;
       }
     }
+
     /**
      *
      *

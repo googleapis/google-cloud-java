@@ -39,6 +39,7 @@ public interface CreateRestoreRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateRestoreRequestOrBuilder
    * @return Whether the restore field is set.
    */
   boolean hasRestore();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface CreateRestoreRequestOrBuilder
    * @return The restore.
    */
   com.google.cloud.gkebackup.v1.Restore getRestore();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateRestoreRequestOrBuilder
    * @return The restoreId.
    */
   java.lang.String getRestoreId();
+
   /**
    *
    *

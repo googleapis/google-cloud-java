@@ -36,6 +36,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.Job> getCreateRolloutJobsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Job getCreateRolloutJobs(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   int getCreateRolloutJobsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ChildRolloutJobsOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.JobOrBuilder>
       getCreateRolloutJobsOrBuilderList();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.Job> getAdvanceRolloutJobsList();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Job getAdvanceRolloutJobs(int index);
+
   /**
    *
    *
@@ -122,6 +128,7 @@ public interface ChildRolloutJobsOrBuilder
    * </code>
    */
   int getAdvanceRolloutJobsCount();
+
   /**
    *
    *
@@ -135,6 +142,7 @@ public interface ChildRolloutJobsOrBuilder
    */
   java.util.List<? extends com.google.cloud.deploy.v1.JobOrBuilder>
       getAdvanceRolloutJobsOrBuilderList();
+
   /**
    *
    *

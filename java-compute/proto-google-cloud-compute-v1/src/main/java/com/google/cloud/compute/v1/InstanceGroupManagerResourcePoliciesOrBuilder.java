@@ -36,6 +36,7 @@ public interface InstanceGroupManagerResourcePoliciesOrBuilder
    * @return Whether the workloadPolicy field is set.
    */
   boolean hasWorkloadPolicy();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstanceGroupManagerResourcePoliciesOrBuilder
    * @return The workloadPolicy.
    */
   java.lang.String getWorkloadPolicy();
+
   /**
    *
    *

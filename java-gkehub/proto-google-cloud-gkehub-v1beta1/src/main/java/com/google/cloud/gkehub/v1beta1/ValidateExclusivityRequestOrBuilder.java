@@ -39,6 +39,7 @@ public interface ValidateExclusivityRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ValidateExclusivityRequestOrBuilder
    * @return The crManifest.
    */
   java.lang.String getCrManifest();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface ValidateExclusivityRequestOrBuilder
    * @return The intendedMembership.
    */
   java.lang.String getIntendedMembership();
+
   /**
    *
    *

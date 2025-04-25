@@ -37,6 +37,7 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface JobOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface JobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.TaskGroup> getTaskGroupsList();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface JobOrBuilder
    * </code>
    */
   com.google.cloud.batch.v1alpha.TaskGroup getTaskGroups(int index);
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface JobOrBuilder
    * </code>
    */
   int getTaskGroupsCount();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.TaskGroupOrBuilder>
       getTaskGroupsOrBuilderList();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for schedulingPolicy.
    */
   int getSchedulingPolicyValue();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobDependency dependencies = 6;</code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.JobDependency> getDependenciesList();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobDependency dependencies = 6;</code>
    */
   com.google.cloud.batch.v1alpha.JobDependency getDependencies(int index);
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobDependency dependencies = 6;</code>
    */
   int getDependenciesCount();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.JobDependencyOrBuilder>
       getDependenciesOrBuilderList();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface JobOrBuilder
    * @return Whether the allocationPolicy field is set.
    */
   boolean hasAllocationPolicy();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface JobOrBuilder
    * @return The allocationPolicy.
    */
   com.google.cloud.batch.v1alpha.AllocationPolicy getAllocationPolicy();
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -324,9 +338,11 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -348,6 +364,7 @@ public interface JobOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -373,6 +390,7 @@ public interface JobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public interface JobOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -423,6 +442,7 @@ public interface JobOrBuilder
    * @return The status.
    */
   com.google.cloud.batch.v1alpha.JobStatus getStatus();
+
   /**
    *
    *
@@ -451,6 +471,7 @@ public interface JobOrBuilder
    */
   @java.lang.Deprecated
   boolean hasNotification();
+
   /**
    *
    *
@@ -466,6 +487,7 @@ public interface JobOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.batch.v1alpha.JobNotification getNotification();
+
   /**
    *
    *
@@ -491,6 +513,7 @@ public interface JobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -504,6 +527,7 @@ public interface JobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -529,6 +553,7 @@ public interface JobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -542,6 +567,7 @@ public interface JobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -566,6 +592,7 @@ public interface JobOrBuilder
    * @return Whether the logsPolicy field is set.
    */
   boolean hasLogsPolicy();
+
   /**
    *
    *
@@ -578,6 +605,7 @@ public interface JobOrBuilder
    * @return The logsPolicy.
    */
   com.google.cloud.batch.v1alpha.LogsPolicy getLogsPolicy();
+
   /**
    *
    *
@@ -599,6 +627,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobNotification notifications = 14;</code>
    */
   java.util.List<com.google.cloud.batch.v1alpha.JobNotification> getNotificationsList();
+
   /**
    *
    *
@@ -609,6 +638,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobNotification notifications = 14;</code>
    */
   com.google.cloud.batch.v1alpha.JobNotification getNotifications(int index);
+
   /**
    *
    *
@@ -619,6 +649,7 @@ public interface JobOrBuilder
    * <code>repeated .google.cloud.batch.v1alpha.JobNotification notifications = 14;</code>
    */
   int getNotificationsCount();
+
   /**
    *
    *
@@ -630,6 +661,7 @@ public interface JobOrBuilder
    */
   java.util.List<? extends com.google.cloud.batch.v1alpha.JobNotificationOrBuilder>
       getNotificationsOrBuilderList();
+
   /**
    *
    *

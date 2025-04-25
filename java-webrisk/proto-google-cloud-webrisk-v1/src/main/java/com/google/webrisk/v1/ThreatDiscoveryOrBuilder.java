@@ -36,6 +36,7 @@ public interface ThreatDiscoveryOrBuilder
    * @return The enum numeric value on the wire for platform.
    */
   int getPlatformValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ThreatDiscoveryOrBuilder
    * @return A list containing the regionCodes.
    */
   java.util.List<java.lang.String> getRegionCodesList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ThreatDiscoveryOrBuilder
    * @return The count of regionCodes.
    */
   int getRegionCodesCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ThreatDiscoveryOrBuilder
    * @return The regionCodes at the given index.
    */
   java.lang.String getRegionCodes(int index);
+
   /**
    *
    *

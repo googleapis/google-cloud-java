@@ -33,6 +33,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.developerconnect.v1.GitHubEnterpriseConfig)
     GitHubEnterpriseConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GitHubEnterpriseConfig.newBuilder() to construct.
   private GitHubEnterpriseConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object hostUri_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int APP_ID_FIELD_NUMBER = 2;
   private long appId_ = 0L;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appSlug_ = "";
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object privateKeySecretVersion_ = "";
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object webhookSecretSecretVersion_ = "";
+
   /**
    *
    *
@@ -277,6 +286,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -306,6 +316,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int APP_INSTALLATION_ID_FIELD_NUMBER = 8;
   private long appInstallationId_ = 0L;
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object installationUri_ = "";
+
   /**
    *
    *
@@ -350,6 +362,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -377,6 +390,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   public static final int SERVICE_DIRECTORY_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.developerconnect.v1.ServiceDirectoryConfig serviceDirectoryConfig_;
+
   /**
    *
    *
@@ -398,6 +412,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
   public boolean hasServiceDirectoryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -421,6 +436,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         ? com.google.cloud.developerconnect.v1.ServiceDirectoryConfig.getDefaultInstance()
         : serviceDirectoryConfig_;
   }
+
   /**
    *
    *
@@ -448,6 +464,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serverVersion_ = "";
+
   /**
    *
    *
@@ -471,6 +488,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -499,6 +517,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sslCaCertificate_ = "";
+
   /**
    *
    *
@@ -522,6 +541,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -795,6 +815,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1128,6 +1149,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object hostUri_ = "";
+
     /**
      *
      *
@@ -1150,6 +1172,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1195,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1193,6 +1217,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1210,6 +1235,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1260,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private long appId_;
+
     /**
      *
      *
@@ -1249,6 +1276,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public long getAppId() {
       return appId_;
     }
+
     /**
      *
      *
@@ -1268,6 +1296,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1316,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object appSlug_ = "";
+
     /**
      *
      *
@@ -1309,6 +1339,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1362,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1352,6 +1384,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1402,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1427,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object privateKeySecretVersion_ = "";
+
     /**
      *
      *
@@ -1418,6 +1453,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1443,6 +1479,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1467,6 +1504,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1525,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1553,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object webhookSecretSecretVersion_ = "";
+
     /**
      *
      *
@@ -1539,6 +1579,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1605,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1588,6 +1630,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1651,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1679,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private long appInstallationId_;
+
     /**
      *
      *
@@ -1650,6 +1695,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public long getAppInstallationId() {
       return appInstallationId_;
     }
+
     /**
      *
      *
@@ -1669,6 +1715,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1735,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object installationUri_ = "";
+
     /**
      *
      *
@@ -1711,6 +1759,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1734,6 +1783,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1806,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1774,6 +1825,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1856,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.developerconnect.v1.ServiceDirectoryConfig.Builder,
             com.google.cloud.developerconnect.v1.ServiceDirectoryConfigOrBuilder>
         serviceDirectoryConfigBuilder_;
+
     /**
      *
      *
@@ -1824,6 +1877,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     public boolean hasServiceDirectoryConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -1850,6 +1904,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return serviceDirectoryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1879,6 +1934,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1905,6 +1961,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +1998,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1966,6 +2024,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2046,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return getServiceDirectoryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2012,6 +2072,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
             : serviceDirectoryConfig_;
       }
     }
+
     /**
      *
      *
@@ -2045,6 +2106,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object serverVersion_ = "";
+
     /**
      *
      *
@@ -2067,6 +2129,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2089,6 +2152,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2110,6 +2174,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2127,6 +2192,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2151,6 +2217,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object sslCaCertificate_ = "";
+
     /**
      *
      *
@@ -2173,6 +2240,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2195,6 +2263,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2216,6 +2285,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2233,6 +2303,7 @@ public final class GitHubEnterpriseConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

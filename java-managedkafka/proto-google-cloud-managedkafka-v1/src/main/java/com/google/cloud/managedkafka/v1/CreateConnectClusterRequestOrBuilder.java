@@ -40,6 +40,7 @@ public interface CreateConnectClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateConnectClusterRequestOrBuilder
    * @return The connectClusterId.
    */
   java.lang.String getConnectClusterId();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface CreateConnectClusterRequestOrBuilder
    * @return Whether the connectCluster field is set.
    */
   boolean hasConnectCluster();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateConnectClusterRequestOrBuilder
    * @return The connectCluster.
    */
   com.google.cloud.managedkafka.v1.ConnectCluster getConnectCluster();
+
   /**
    *
    *
@@ -163,6 +167,7 @@ public interface CreateConnectClusterRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

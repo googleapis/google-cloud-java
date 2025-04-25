@@ -34,6 +34,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AccessConfig> getAccessConfigsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
    */
   com.google.cloud.compute.v1.AccessConfig getAccessConfigs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig access_configs = 111058326;</code>
    */
   int getAccessConfigsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AccessConfigOrBuilder>
       getAccessConfigsOrBuilderList();
+
   /**
    *
    *
@@ -86,6 +90,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AliasIpRange> getAliasIpRangesList();
+
   /**
    *
    *
@@ -96,6 +101,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
    */
   com.google.cloud.compute.v1.AliasIpRange getAliasIpRanges(int index);
+
   /**
    *
    *
@@ -106,6 +112,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ip_ranges = 165085631;</code>
    */
   int getAliasIpRangesCount();
+
   /**
    *
    *
@@ -117,6 +124,7 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
       getAliasIpRangesOrBuilderList();
+
   /**
    *
    *
@@ -140,6 +148,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the fingerprint field is set.
    */
   boolean hasFingerprint();
+
   /**
    *
    *
@@ -152,6 +161,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The fingerprint.
    */
   java.lang.String getFingerprint();
+
   /**
    *
    *
@@ -177,6 +187,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the internalIpv6PrefixLength field is set.
    */
   boolean hasInternalIpv6PrefixLength();
+
   /**
    *
    *
@@ -200,6 +211,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AccessConfig> getIpv6AccessConfigsList();
+
   /**
    *
    *
@@ -210,6 +222,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
    */
   com.google.cloud.compute.v1.AccessConfig getIpv6AccessConfigs(int index);
+
   /**
    *
    *
@@ -220,6 +233,7 @@ public interface NetworkInterfaceOrBuilder
    * <code>repeated .google.cloud.compute.v1.AccessConfig ipv6_access_configs = 483472110;</code>
    */
   int getIpv6AccessConfigsCount();
+
   /**
    *
    *
@@ -231,6 +245,7 @@ public interface NetworkInterfaceOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AccessConfigOrBuilder>
       getIpv6AccessConfigsOrBuilderList();
+
   /**
    *
    *
@@ -255,6 +270,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
+
   /**
    *
    *
@@ -268,6 +284,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The ipv6AccessType.
    */
   java.lang.String getIpv6AccessType();
+
   /**
    *
    *
@@ -294,6 +311,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the ipv6Address field is set.
    */
   boolean hasIpv6Address();
+
   /**
    *
    *
@@ -306,6 +324,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The ipv6Address.
    */
   java.lang.String getIpv6Address();
+
   /**
    *
    *
@@ -331,6 +350,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -343,6 +363,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -368,6 +389,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -380,6 +402,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -405,6 +428,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -417,6 +441,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -442,6 +467,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the networkAttachment field is set.
    */
   boolean hasNetworkAttachment();
+
   /**
    *
    *
@@ -454,6 +480,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The networkAttachment.
    */
   java.lang.String getNetworkAttachment();
+
   /**
    *
    *
@@ -479,6 +506,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the networkIP field is set.
    */
   boolean hasNetworkIP();
+
   /**
    *
    *
@@ -491,6 +519,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The networkIP.
    */
   java.lang.String getNetworkIP();
+
   /**
    *
    *
@@ -517,6 +546,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the nicType field is set.
    */
   boolean hasNicType();
+
   /**
    *
    *
@@ -530,6 +560,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The nicType.
    */
   java.lang.String getNicType();
+
   /**
    *
    *
@@ -556,6 +587,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the queueCount field is set.
    */
   boolean hasQueueCount();
+
   /**
    *
    *
@@ -582,6 +614,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
+
   /**
    *
    *
@@ -595,6 +628,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The stackType.
    */
   java.lang.String getStackType();
+
   /**
    *
    *
@@ -621,6 +655,7 @@ public interface NetworkInterfaceOrBuilder
    * @return Whether the subnetwork field is set.
    */
   boolean hasSubnetwork();
+
   /**
    *
    *
@@ -633,6 +668,7 @@ public interface NetworkInterfaceOrBuilder
    * @return The subnetwork.
    */
   java.lang.String getSubnetwork();
+
   /**
    *
    *

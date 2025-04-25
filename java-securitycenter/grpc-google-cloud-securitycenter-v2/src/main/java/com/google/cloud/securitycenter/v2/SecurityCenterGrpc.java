@@ -1946,6 +1946,19 @@ public final class SecurityCenterGrpc {
     return SecurityCenterStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SecurityCenterBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SecurityCenterBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SecurityCenterBlockingV2Stub>() {
+          @java.lang.Override
+          public SecurityCenterBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SecurityCenterBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SecurityCenterBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3353,6 +3366,587 @@ public final class SecurityCenterGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SecurityCenter.
+   *
+   * <pre>
+   * V2 APIs for Security Center service.
+   * </pre>
+   */
+  public static final class SecurityCenterBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SecurityCenterBlockingV2Stub> {
+    private SecurityCenterBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SecurityCenterBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SecurityCenterBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a ResourceValueConfig for an organization. Maps user's tags to
+     * difference resource values for use by the attack path simulation.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.BatchCreateResourceValueConfigsResponse
+        batchCreateResourceValueConfigs(
+            com.google.cloud.securitycenter.v2.BatchCreateResourceValueConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateResourceValueConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Kicks off an LRO to bulk mute findings for a parent based on a filter. If
+     * no location is specified, findings are muted in global. The parent
+     * can be either an organization, folder, or project. The findings matched by
+     * the filter will be muted after the LRO is done.
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkMuteFindings(
+        com.google.cloud.securitycenter.v2.BulkMuteFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkMuteFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a BigQuery export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.BigQueryExport createBigQueryExport(
+        com.google.cloud.securitycenter.v2.CreateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a finding in a location. The corresponding source must exist for
+     * finding creation to succeed.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Finding createFinding(
+        com.google.cloud.securitycenter.v2.CreateFindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a mute config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.MuteConfig createMuteConfig(
+        com.google.cloud.securitycenter.v2.CreateMuteConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMuteConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a notification config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.NotificationConfig createNotificationConfig(
+        com.google.cloud.securitycenter.v2.CreateNotificationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNotificationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a source.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Source createSource(
+        com.google.cloud.securitycenter.v2.CreateSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BigQuery export.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBigQueryExport(
+        com.google.cloud.securitycenter.v2.DeleteBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing mute config. If no location is specified, default is
+     * global.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMuteConfig(
+        com.google.cloud.securitycenter.v2.DeleteMuteConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMuteConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a notification config.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteNotificationConfig(
+        com.google.cloud.securitycenter.v2.DeleteNotificationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNotificationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ResourceValueConfig.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteResourceValueConfig(
+        com.google.cloud.securitycenter.v2.DeleteResourceValueConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteResourceValueConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a BigQuery export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.BigQueryExport getBigQueryExport(
+        com.google.cloud.securitycenter.v2.GetBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the simulation by name or the latest simulation for the given
+     * organization.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Simulation getSimulation(
+        com.google.cloud.securitycenter.v2.GetSimulationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSimulationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get the valued resource by name
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ValuedResource getValuedResource(
+        com.google.cloud.securitycenter.v2.GetValuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetValuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy on the specified Source.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a mute config. If no location is specified, default is
+     * global.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.MuteConfig getMuteConfig(
+        com.google.cloud.securitycenter.v2.GetMuteConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMuteConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a notification config.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.NotificationConfig getNotificationConfig(
+        com.google.cloud.securitycenter.v2.GetNotificationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNotificationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ResourceValueConfig.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ResourceValueConfig getResourceValueConfig(
+        com.google.cloud.securitycenter.v2.GetResourceValueConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetResourceValueConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a source.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Source getSource(
+        com.google.cloud.securitycenter.v2.GetSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Filters an organization or source's findings and groups them by their
+     * specified properties in a location. If no location is specified, findings
+     * are assumed to be in global
+     * To group across all sources provide a `-` as the source id.
+     * The following list shows some examples:
+     * + `/v2/organizations/{organization_id}/sources/-/findings`
+     * +
+     * `/v2/organizations/{organization_id}/sources/-/locations/{location_id}/findings`
+     * + `/v2/folders/{folder_id}/sources/-/findings`
+     * + `/v2/folders/{folder_id}/sources/-/locations/{location_id}/findings`
+     * + `/v2/projects/{project_id}/sources/-/findings`
+     * + `/v2/projects/{project_id}/sources/-/locations/{location_id}/findings`
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.GroupFindingsResponse groupFindings(
+        com.google.cloud.securitycenter.v2.GroupFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGroupFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the attack paths for a set of simulation results or valued resources
+     * and filter.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListAttackPathsResponse listAttackPaths(
+        com.google.cloud.securitycenter.v2.ListAttackPathsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAttackPathsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BigQuery exports. Note that when requesting BigQuery exports at a
+     * given level all exports under that level are also returned e.g. if
+     * requesting BigQuery exports under a folder, then all BigQuery exports
+     * immediately under the folder plus the ones created under the projects
+     * within the folder are returned.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListBigQueryExportsResponse listBigQueryExports(
+        com.google.cloud.securitycenter.v2.ListBigQueryExportsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBigQueryExportsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists an organization or source's findings.
+     * To list across all sources for a given location provide a `-` as the source
+     * id. If no location is specified, finding are assumed to be in global.
+     * The following list shows some examples:
+     * + `/v2/organizations/{organization_id}/sources/-/findings`
+     * +
+     * `/v2/organizations/{organization_id}/sources/-/locations/{location_id}/findings`
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListFindingsResponse listFindings(
+        com.google.cloud.securitycenter.v2.ListFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists mute configs. If no location is specified, default is
+     * global.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListMuteConfigsResponse listMuteConfigs(
+        com.google.cloud.securitycenter.v2.ListMuteConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMuteConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists notification configs.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListNotificationConfigsResponse
+        listNotificationConfigs(
+            com.google.cloud.securitycenter.v2.ListNotificationConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNotificationConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ResourceValueConfigs.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListResourceValueConfigsResponse
+        listResourceValueConfigs(
+            com.google.cloud.securitycenter.v2.ListResourceValueConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListResourceValueConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all sources belonging to an organization.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListSourcesResponse listSources(
+        com.google.cloud.securitycenter.v2.ListSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the valued resources for a set of simulation results and filter.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ListValuedResourcesResponse listValuedResources(
+        com.google.cloud.securitycenter.v2.ListValuedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListValuedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the state of a finding. If no location is specified, finding is
+     * assumed to be in global
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Finding setFindingState(
+        com.google.cloud.securitycenter.v2.SetFindingStateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetFindingStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified Source.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the mute state of a finding. If no location is specified, finding
+     * is assumed to be in global
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Finding setMute(
+        com.google.cloud.securitycenter.v2.SetMuteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetMuteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified source.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a BigQuery export.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.BigQueryExport updateBigQueryExport(
+        com.google.cloud.securitycenter.v2.UpdateBigQueryExportRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBigQueryExportMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates external system. This is for a given finding. If no location is
+     * specified, finding is assumed to be in global
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ExternalSystem updateExternalSystem(
+        com.google.cloud.securitycenter.v2.UpdateExternalSystemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExternalSystemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates or updates a finding. If no location is specified, finding is
+     * assumed to be in global. The corresponding source must exist for a finding
+     * creation to succeed.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Finding updateFinding(
+        com.google.cloud.securitycenter.v2.UpdateFindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a mute config. If no location is specified, default is
+     * global.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.MuteConfig updateMuteConfig(
+        com.google.cloud.securitycenter.v2.UpdateMuteConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMuteConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a notification config. The following update
+     * fields are allowed: description, pubsub_topic, streaming_config.filter
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.NotificationConfig updateNotificationConfig(
+        com.google.cloud.securitycenter.v2.UpdateNotificationConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNotificationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing ResourceValueConfigs with new rules.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.ResourceValueConfig updateResourceValueConfig(
+        com.google.cloud.securitycenter.v2.UpdateResourceValueConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateResourceValueConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates security marks. For Finding Security marks, if no location is
+     * specified, finding is assumed to be in global. Assets Security Marks can
+     * only be accessed through global endpoint.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.SecurityMarks updateSecurityMarks(
+        com.google.cloud.securitycenter.v2.UpdateSecurityMarksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSecurityMarksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a source.
+     * </pre>
+     */
+    public com.google.cloud.securitycenter.v2.Source updateSource(
+        com.google.cloud.securitycenter.v2.UpdateSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SecurityCenter.
    *
    * <pre>
    * V2 APIs for Security Center service.

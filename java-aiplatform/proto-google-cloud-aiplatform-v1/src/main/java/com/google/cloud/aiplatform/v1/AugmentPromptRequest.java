@@ -33,6 +33,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AugmentPromptRequest)
     AugmentPromptRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AugmentPromptRequest.newBuilder() to construct.
   private AugmentPromptRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
      * @return The model.
      */
     java.lang.String getModel();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
      * @return The modelVersion.
      */
     java.lang.String getModelVersion();
+
     /**
      *
      *
@@ -121,6 +124,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getModelVersionBytes();
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.AugmentPromptRequest.Model)
       ModelOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Model.newBuilder() to construct.
     private Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -170,6 +175,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object model_ = "";
+
     /**
      *
      *
@@ -194,6 +200,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -223,6 +230,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object modelVersion_ = "";
+
     /**
      *
      *
@@ -246,6 +254,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -440,6 +449,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -642,6 +652,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object model_ = "";
+
       /**
        *
        *
@@ -665,6 +676,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -688,6 +700,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -710,6 +723,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -728,6 +742,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -753,6 +768,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object modelVersion_ = "";
+
       /**
        *
        *
@@ -775,6 +791,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -797,6 +814,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -818,6 +836,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +854,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -939,6 +959,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     private DataSourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -970,6 +991,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   }
 
   public static final int VERTEX_RAG_STORE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -987,6 +1009,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   public boolean hasVertexRagStore() {
     return dataSourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -1007,6 +1030,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     }
     return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1030,6 +1054,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -1058,6 +1083,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -1091,6 +1117,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.Content> contents_;
+
   /**
    *
    *
@@ -1106,6 +1133,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   public java.util.List<com.google.cloud.aiplatform.v1.Content> getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -1122,6 +1150,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       getContentsOrBuilderList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -1137,6 +1166,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -1152,6 +1182,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   public com.google.cloud.aiplatform.v1.Content getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -1170,6 +1201,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
 
   public static final int MODEL_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1.AugmentPromptRequest.Model model_;
+
   /**
    *
    *
@@ -1187,6 +1219,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
   public boolean hasModel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1206,6 +1239,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.AugmentPromptRequest.Model.getDefaultInstance()
         : model_;
   }
+
   /**
    *
    *
@@ -1432,6 +1466,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1756,6 +1791,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.VertexRagStore.Builder,
             com.google.cloud.aiplatform.v1.VertexRagStoreOrBuilder>
         vertexRagStoreBuilder_;
+
     /**
      *
      *
@@ -1773,6 +1809,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     public boolean hasVertexRagStore() {
       return dataSourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1800,6 +1837,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1824,6 +1862,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       dataSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1846,6 +1885,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       dataSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1920,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       dataSourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1907,6 +1948,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1921,6 +1963,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.VertexRagStore.Builder getVertexRagStoreBuilder() {
       return getVertexRagStoreFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1943,6 +1986,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return com.google.cloud.aiplatform.v1.VertexRagStore.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1979,6 +2023,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -2006,6 +2051,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2033,6 +2079,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2059,6 +2106,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2081,6 +2129,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2192,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2161,6 +2211,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2179,6 +2230,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2203,6 +2255,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2278,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2303,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2273,6 +2328,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2294,6 +2350,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2316,6 +2373,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2338,6 +2396,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2418,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2380,6 +2440,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2394,6 +2455,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     public com.google.cloud.aiplatform.v1.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2412,6 +2474,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2431,6 +2494,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
+
     /**
      *
      *
@@ -2446,6 +2510,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2461,6 +2526,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2499,6 +2565,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.AugmentPromptRequest.Model.Builder,
             com.google.cloud.aiplatform.v1.AugmentPromptRequest.ModelOrBuilder>
         modelBuilder_;
+
     /**
      *
      *
@@ -2515,6 +2582,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
     public boolean hasModel() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2537,6 +2605,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
         return modelBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2561,6 +2630,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2583,6 +2653,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2684,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -2634,6 +2706,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2723,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getModelFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2670,6 +2744,7 @@ public final class AugmentPromptRequest extends com.google.protobuf.GeneratedMes
             : model_;
       }
     }
+
     /**
      *
      *

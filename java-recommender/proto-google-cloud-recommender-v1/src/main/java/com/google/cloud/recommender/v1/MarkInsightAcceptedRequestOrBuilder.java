@@ -38,6 +38,7 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * </code>
    */
   int getStateMetadataCount();
+
   /**
    *
    *
@@ -77,9 +79,11 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * </code>
    */
   boolean containsStateMetadata(java.lang.String key);
+
   /** Use {@link #getStateMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getStateMetadata();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getStateMetadataMap();
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface MarkInsightAcceptedRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface MarkInsightAcceptedRequestOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

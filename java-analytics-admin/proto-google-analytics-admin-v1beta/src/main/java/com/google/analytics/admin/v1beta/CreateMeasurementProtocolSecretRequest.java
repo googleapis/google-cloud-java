@@ -34,6 +34,7 @@ public final class CreateMeasurementProtocolSecretRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1beta.CreateMeasurementProtocolSecretRequest)
     CreateMeasurementProtocolSecretRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateMeasurementProtocolSecretRequest.newBuilder() to construct.
   private CreateMeasurementProtocolSecretRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateMeasurementProtocolSecretRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class CreateMeasurementProtocolSecretRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateMeasurementProtocolSecretRequest
 
   public static final int MEASUREMENT_PROTOCOL_SECRET_FIELD_NUMBER = 2;
   private com.google.analytics.admin.v1beta.MeasurementProtocolSecret measurementProtocolSecret_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class CreateMeasurementProtocolSecretRequest
   public boolean hasMeasurementProtocolSecret() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreateMeasurementProtocolSecretRequest
         ? com.google.analytics.admin.v1beta.MeasurementProtocolSecret.getDefaultInstance()
         : measurementProtocolSecret_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class CreateMeasurementProtocolSecretRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,6 +594,7 @@ public final class CreateMeasurementProtocolSecretRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -612,6 +620,7 @@ public final class CreateMeasurementProtocolSecretRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +646,7 @@ public final class CreateMeasurementProtocolSecretRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class CreateMeasurementProtocolSecretRequest
             com.google.analytics.admin.v1beta.MeasurementProtocolSecret.Builder,
             com.google.analytics.admin.v1beta.MeasurementProtocolSecretOrBuilder>
         measurementProtocolSecretBuilder_;
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class CreateMeasurementProtocolSecretRequest
     public boolean hasMeasurementProtocolSecret() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class CreateMeasurementProtocolSecretRequest
         return measurementProtocolSecretBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +848,7 @@ public final class CreateMeasurementProtocolSecretRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +888,7 @@ public final class CreateMeasurementProtocolSecretRequest
       onChanged();
       return getMeasurementProtocolSecretFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class CreateMeasurementProtocolSecretRequest
             : measurementProtocolSecret_;
       }
     }
+
     /**
      *
      *

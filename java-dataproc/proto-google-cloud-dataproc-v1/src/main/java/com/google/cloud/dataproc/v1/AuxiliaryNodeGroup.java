@@ -33,6 +33,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.AuxiliaryNodeGroup)
     AuxiliaryNodeGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuxiliaryNodeGroup.newBuilder() to construct.
   private AuxiliaryNodeGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int NODE_GROUP_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.NodeGroup nodeGroup_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
   public boolean hasNodeGroup() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.dataproc.v1.NodeGroup.getDefaultInstance()
         : nodeGroup_;
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nodeGroupId_ = "";
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +577,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
             com.google.cloud.dataproc.v1.NodeGroup.Builder,
             com.google.cloud.dataproc.v1.NodeGroupOrBuilder>
         nodeGroupBuilder_;
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     public boolean hasNodeGroup() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
         return nodeGroupBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -719,6 +733,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getNodeGroupFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -739,6 +754,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
             : nodeGroup_;
       }
     }
+
     /**
      *
      *
@@ -768,6 +784,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object nodeGroupId_ = "";
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +838,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class AuxiliaryNodeGroup extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

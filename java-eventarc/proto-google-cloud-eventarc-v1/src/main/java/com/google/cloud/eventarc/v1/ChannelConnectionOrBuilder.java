@@ -36,6 +36,7 @@ public interface ChannelConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ChannelConnectionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface ChannelConnectionOrBuilder
    * @return The channel.
    */
   java.lang.String getChannel();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface ChannelConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface ChannelConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface ChannelConnectionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface ChannelConnectionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface ChannelConnectionOrBuilder
    * @return The activationToken.
    */
   java.lang.String getActivationToken();
+
   /**
    *
    *

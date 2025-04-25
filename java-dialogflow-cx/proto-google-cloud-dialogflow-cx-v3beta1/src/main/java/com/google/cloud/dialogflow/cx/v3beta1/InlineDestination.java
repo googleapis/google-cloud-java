@@ -35,6 +35,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.InlineDestination)
     InlineDestinationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InlineDestination.newBuilder() to construct.
   private InlineDestination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
 
   public static final int CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -244,6 +246,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -428,6 +431,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -444,6 +448,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
     public com.google.protobuf.ByteString getContent() {
       return content_;
     }
+
     /**
      *
      *
@@ -466,6 +471,7 @@ public final class InlineDestination extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

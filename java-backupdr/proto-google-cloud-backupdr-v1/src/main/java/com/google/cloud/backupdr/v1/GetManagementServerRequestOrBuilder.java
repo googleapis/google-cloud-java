@@ -39,6 +39,7 @@ public interface GetManagementServerRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

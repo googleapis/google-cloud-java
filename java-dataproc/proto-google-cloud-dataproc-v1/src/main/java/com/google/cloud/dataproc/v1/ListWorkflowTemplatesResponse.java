@@ -33,6 +33,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ListWorkflowTemplatesResponse)
     ListWorkflowTemplatesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListWorkflowTemplatesResponse.newBuilder() to construct.
   private ListWorkflowTemplatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dataproc.v1.WorkflowTemplate> templates_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.dataproc.v1.WorkflowTemplate> getTemplatesList() {
     return templates_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       getTemplatesOrBuilderList() {
     return templates_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public int getTemplatesCount() {
     return templates_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public com.google.cloud.dataproc.v1.WorkflowTemplate getTemplates(int index) {
     return templates_.get(index);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -255,6 +266,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -460,6 +472,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -761,6 +774,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return templatesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return templatesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return templatesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +860,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +910,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1023,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     public com.google.cloud.dataproc.v1.WorkflowTemplate.Builder getTemplatesBuilder(int index) {
       return getTemplatesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return templatesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(templates_);
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1093,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       return getTemplatesFieldBuilder()
           .addBuilder(com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1080,6 +1109,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       return getTemplatesFieldBuilder()
           .addBuilder(index, com.google.cloud.dataproc.v1.WorkflowTemplate.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1114,6 +1144,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1138,6 +1169,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1162,6 +1194,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1218,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1238,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1238,6 +1273,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1255,6 +1291,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1271,6 +1308,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1288,6 +1326,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1305,6 +1344,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1330,6 +1370,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1395,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1417,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1395,6 +1438,7 @@ public final class ListWorkflowTemplatesResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

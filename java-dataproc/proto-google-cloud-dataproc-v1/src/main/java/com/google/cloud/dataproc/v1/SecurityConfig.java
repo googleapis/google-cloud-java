@@ -33,6 +33,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SecurityConfig)
     SecurityConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityConfig.newBuilder() to construct.
   private SecurityConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int KERBEROS_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.KerberosConfig kerberosConfig_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasKerberosConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.KerberosConfig.getDefaultInstance()
         : kerberosConfig_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IDENTITY_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1.IdentityConfig identityConfig_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIdentityConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.dataproc.v1.IdentityConfig.getDefaultInstance()
         : identityConfig_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +586,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.KerberosConfig.Builder,
             com.google.cloud.dataproc.v1.KerberosConfigOrBuilder>
         kerberosConfigBuilder_;
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKerberosConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         return kerberosConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +744,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getKerberosConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
             : kerberosConfig_;
       }
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataproc.v1.IdentityConfig.Builder,
             com.google.cloud.dataproc.v1.IdentityConfigOrBuilder>
         identityConfigBuilder_;
+
     /**
      *
      *
@@ -800,6 +818,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIdentityConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
         return identityConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +892,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +924,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +947,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +965,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getIdentityConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -962,6 +987,7 @@ public final class SecurityConfig extends com.google.protobuf.GeneratedMessageV3
             : identityConfig_;
       }
     }
+
     /**
      *
      *

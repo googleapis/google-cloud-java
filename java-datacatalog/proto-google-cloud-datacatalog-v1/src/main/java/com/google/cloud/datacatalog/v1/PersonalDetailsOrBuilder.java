@@ -49,6 +49,7 @@ public interface PersonalDetailsOrBuilder
    * @return Whether the starTime field is set.
    */
   boolean hasStarTime();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PersonalDetailsOrBuilder
    * @return The starTime.
    */
   com.google.protobuf.Timestamp getStarTime();
+
   /**
    *
    *

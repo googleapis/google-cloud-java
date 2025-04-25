@@ -36,6 +36,7 @@ public interface IosKeyRestrictionsOrBuilder
    * @return A list containing the allowedBundleIds.
    */
   java.util.List<java.lang.String> getAllowedBundleIdsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface IosKeyRestrictionsOrBuilder
    * @return The count of allowedBundleIds.
    */
   int getAllowedBundleIdsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface IosKeyRestrictionsOrBuilder
    * @return The allowedBundleIds at the given index.
    */
   java.lang.String getAllowedBundleIds(int index);
+
   /**
    *
    *

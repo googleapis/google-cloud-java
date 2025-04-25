@@ -35,6 +35,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfigPolicy)
     BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceLocalityLoadBalancingPolicyConfigPolicy.newBuilder() to construct.
   private BackendServiceLocalityLoadBalancingPolicyConfigPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -183,8 +184,10 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>UNDEFINED_NAME = 0;</code>
      */
     public static final int UNDEFINED_NAME_VALUE = 0;
+
     /** <code>INVALID_LB_POLICY = 323318707;</code> */
     public static final int INVALID_LB_POLICY_VALUE = 323318707;
+
     /**
      *
      *
@@ -195,6 +198,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>LEAST_REQUEST = 46604921;</code>
      */
     public static final int LEAST_REQUEST_VALUE = 46604921;
+
     /**
      *
      *
@@ -205,6 +209,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>MAGLEV = 119180266;</code>
      */
     public static final int MAGLEV_VALUE = 119180266;
+
     /**
      *
      *
@@ -215,6 +220,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>ORIGINAL_DESTINATION = 166297216;</code>
      */
     public static final int ORIGINAL_DESTINATION_VALUE = 166297216;
+
     /**
      *
      *
@@ -225,6 +231,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>RANDOM = 262527171;</code>
      */
     public static final int RANDOM_VALUE = 262527171;
+
     /**
      *
      *
@@ -235,6 +242,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>RING_HASH = 432795069;</code>
      */
     public static final int RING_HASH_VALUE = 432795069;
+
     /**
      *
      *
@@ -245,6 +253,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>ROUND_ROBIN = 153895801;</code>
      */
     public static final int ROUND_ROBIN_VALUE = 153895801;
+
     /**
      *
      *
@@ -255,6 +264,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
      * <code>WEIGHTED_MAGLEV = 254930962;</code>
      */
     public static final int WEIGHTED_MAGLEV_VALUE = 254930962;
+
     /**
      *
      *
@@ -371,6 +381,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -387,6 +398,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
   public boolean hasName() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -411,6 +423,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -609,6 +622,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -813,6 +827,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -828,6 +843,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -851,6 +867,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -874,6 +891,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -896,6 +914,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +933,7 @@ public final class BackendServiceLocalityLoadBalancingPolicyConfigPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

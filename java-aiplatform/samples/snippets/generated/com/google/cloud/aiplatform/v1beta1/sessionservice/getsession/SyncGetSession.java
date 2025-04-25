@@ -38,7 +38,7 @@ public class SyncGetSession {
       GetSessionRequest request =
           GetSessionRequest.newBuilder()
               .setName(
-                  SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .build();
       Session response = sessionServiceClient.getSession(request);

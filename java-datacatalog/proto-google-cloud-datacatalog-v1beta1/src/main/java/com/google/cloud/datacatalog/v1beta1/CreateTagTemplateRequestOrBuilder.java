@@ -43,6 +43,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * @return The tagTemplateId.
    */
   java.lang.String getTagTemplateId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * @return Whether the tagTemplate field is set.
    */
   boolean hasTagTemplate();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateTagTemplateRequestOrBuilder
    * @return The tagTemplate.
    */
   com.google.cloud.datacatalog.v1beta1.TagTemplate getTagTemplate();
+
   /**
    *
    *

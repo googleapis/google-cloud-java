@@ -34,6 +34,7 @@ public interface ErrorOrBuilder
    * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Errors> getErrorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ErrorOrBuilder
    * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
    */
   com.google.cloud.compute.v1.Errors getErrors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ErrorOrBuilder
    * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
    */
   int getErrorsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ErrorOrBuilder
    * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ErrorsOrBuilder> getErrorsOrBuilderList();
+
   /**
    *
    *

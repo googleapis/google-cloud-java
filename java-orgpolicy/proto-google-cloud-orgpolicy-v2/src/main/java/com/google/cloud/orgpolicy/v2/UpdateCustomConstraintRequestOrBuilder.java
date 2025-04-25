@@ -38,6 +38,7 @@ public interface UpdateCustomConstraintRequestOrBuilder
    * @return Whether the customConstraint field is set.
    */
   boolean hasCustomConstraint();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateCustomConstraintRequestOrBuilder
    * @return The customConstraint.
    */
   com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraint();
+
   /**
    *
    *

@@ -62,6 +62,7 @@ public interface AutoscalingEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *
@@ -89,6 +90,7 @@ public interface AutoscalingEventOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface AutoscalingEventOrBuilder
    * @return The description.
    */
   com.google.dataflow.v1beta3.StructuredMessage getDescription();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface AutoscalingEventOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface AutoscalingEventOrBuilder
    * @return The time.
    */
   com.google.protobuf.Timestamp getTime();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface AutoscalingEventOrBuilder
    * @return The workerPool.
    */
   java.lang.String getWorkerPool();
+
   /**
    *
    *

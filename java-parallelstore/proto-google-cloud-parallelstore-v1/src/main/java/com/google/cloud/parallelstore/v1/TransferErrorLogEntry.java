@@ -33,6 +33,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.parallelstore.v1.TransferErrorLogEntry)
     TransferErrorLogEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransferErrorLogEntry.newBuilder() to construct.
   private TransferErrorLogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uri_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList errorDetails_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getErrorDetailsList() {
     return errorDetails_;
   }
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
   public int getErrorDetailsCount() {
     return errorDetails_.size();
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
   public java.lang.String getErrorDetails(int index) {
     return errorDetails_.get(index);
   }
+
   /**
    *
    *
@@ -357,6 +364,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +571,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object uri_ = "";
+
     /**
      *
      *
@@ -586,6 +595,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -649,6 +661,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       errorDetails_.makeImmutable();
       return errorDetails_;
     }
+
     /**
      *
      *
@@ -711,6 +726,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     public int getErrorDetailsCount() {
       return errorDetails_.size();
     }
+
     /**
      *
      *
@@ -726,6 +742,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     public java.lang.String getErrorDetails(int index) {
       return errorDetails_.get(index);
     }
+
     /**
      *
      *
@@ -741,6 +758,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getErrorDetailsBytes(int index) {
       return errorDetails_.getByteString(index);
     }
+
     /**
      *
      *
@@ -764,6 +782,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +825,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +844,7 @@ public final class TransferErrorLogEntry extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

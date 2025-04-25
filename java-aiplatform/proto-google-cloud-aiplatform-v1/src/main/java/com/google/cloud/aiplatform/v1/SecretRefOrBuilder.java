@@ -37,6 +37,7 @@ public interface SecretRefOrBuilder
    * @return The secret.
    */
   java.lang.String getSecret();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface SecretRefOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

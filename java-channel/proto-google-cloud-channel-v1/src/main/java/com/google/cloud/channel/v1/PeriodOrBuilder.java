@@ -49,6 +49,7 @@ public interface PeriodOrBuilder
    * @return The enum numeric value on the wire for periodType.
    */
   int getPeriodTypeValue();
+
   /**
    *
    *

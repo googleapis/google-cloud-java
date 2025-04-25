@@ -33,6 +33,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.CreateTargetProjectRequest)
     CreateTargetProjectRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTargetProjectRequest.newBuilder() to construct.
   private CreateTargetProjectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetProjectId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
 
   public static final int TARGET_PROJECT_FIELD_NUMBER = 3;
   private com.google.cloud.vmmigration.v1.TargetProject targetProject_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
   public boolean hasTargetProject() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         ? com.google.cloud.vmmigration.v1.TargetProject.getDefaultInstance()
         : targetProject_;
   }
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -267,6 +276,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -495,6 +505,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -739,6 +750,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -763,6 +775,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -787,6 +800,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +871,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object targetProjectId_ = "";
+
     /**
      *
      *
@@ -877,6 +894,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -920,6 +939,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +987,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
             com.google.cloud.vmmigration.v1.TargetProject.Builder,
             com.google.cloud.vmmigration.v1.TargetProjectOrBuilder>
         targetProjectBuilder_;
+
     /**
      *
      *
@@ -982,6 +1004,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     public boolean hasTargetProject() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return targetProjectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1052,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1145,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return getTargetProjectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
             : targetProject_;
       }
     }
+
     /**
      *
      *
@@ -1166,6 +1196,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1200,6 +1231,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1266,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1267,6 +1300,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1296,6 +1330,7 @@ public final class CreateTargetProjectRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

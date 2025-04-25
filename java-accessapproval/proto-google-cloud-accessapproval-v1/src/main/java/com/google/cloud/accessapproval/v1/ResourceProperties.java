@@ -33,6 +33,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.accessapproval.v1.ResourceProperties)
     ResourcePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResourceProperties.newBuilder() to construct.
   private ResourceProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
 
   public static final int EXCLUDES_DESCENDANTS_FIELD_NUMBER = 1;
   private boolean excludesDescendants_ = false;
+
   /**
    *
    *
@@ -240,6 +242,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -422,6 +425,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private boolean excludesDescendants_;
+
     /**
      *
      *
@@ -438,6 +442,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
     public boolean getExcludesDescendants() {
       return excludesDescendants_;
     }
+
     /**
      *
      *
@@ -458,6 +463,7 @@ public final class ResourceProperties extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

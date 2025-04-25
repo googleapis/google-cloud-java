@@ -33,6 +33,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest)
     StreamQueryReasoningEngineRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamQueryReasoningEngineRequest.newBuilder() to construct.
   private StreamQueryReasoningEngineRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
 
   public static final int INPUT_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct input_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
   public boolean hasInput() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
   public com.google.protobuf.Struct getInput() {
     return input_ == null ? com.google.protobuf.Struct.getDefaultInstance() : input_;
   }
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object classMethod_ = "";
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -411,6 +419,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -672,6 +682,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -698,6 +709,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +791,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         inputBuilder_;
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
     public boolean hasInput() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return inputBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +901,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +922,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return getInputFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return input_ == null ? com.google.protobuf.Struct.getDefaultInstance() : input_;
       }
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
     }
 
     private java.lang.Object classMethod_ = "";
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1055,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1074,7 @@ public final class StreamQueryReasoningEngineRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

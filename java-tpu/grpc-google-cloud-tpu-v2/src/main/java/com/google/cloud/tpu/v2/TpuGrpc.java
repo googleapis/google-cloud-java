@@ -823,6 +823,19 @@ public final class TpuGrpc {
     return TpuStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TpuBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TpuBlockingV2Stub>() {
+          @java.lang.Override
+          public TpuBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TpuBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TpuBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1426,6 +1439,259 @@ public final class TpuGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Tpu.
+   *
+   * <pre>
+   * Manages TPU nodes and other resources
+   * TPU API v2
+   * </pre>
+   */
+  public static final class TpuBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TpuBlockingV2Stub> {
+    private TpuBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TpuBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TpuBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists nodes.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListNodesResponse listNodes(
+        com.google.cloud.tpu.v2.ListNodesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNodesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a node.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.Node getNode(com.google.cloud.tpu.v2.GetNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createNode(
+        com.google.cloud.tpu.v2.CreateNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteNode(
+        com.google.cloud.tpu.v2.DeleteNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a node. This operation is only available with single TPU nodes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopNode(
+        com.google.cloud.tpu.v2.StopNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startNode(
+        com.google.cloud.tpu.v2.StartNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the configurations of a node.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateNode(
+        com.google.cloud.tpu.v2.UpdateNodeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateNodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists queued resources.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListQueuedResourcesResponse listQueuedResources(
+        com.google.cloud.tpu.v2.ListQueuedResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQueuedResourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a queued resource.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.QueuedResource getQueuedResource(
+        com.google.cloud.tpu.v2.GetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createQueuedResource(
+        com.google.cloud.tpu.v2.CreateQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a QueuedResource TPU instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteQueuedResource(
+        com.google.cloud.tpu.v2.DeleteQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets a QueuedResource TPU instance
+     * </pre>
+     */
+    public com.google.longrunning.Operation resetQueuedResource(
+        com.google.cloud.tpu.v2.ResetQueuedResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetQueuedResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates the Cloud TPU service identity for the project.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.GenerateServiceIdentityResponse generateServiceIdentity(
+        com.google.cloud.tpu.v2.GenerateServiceIdentityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateServiceIdentityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists accelerator types supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListAcceleratorTypesResponse listAcceleratorTypes(
+        com.google.cloud.tpu.v2.ListAcceleratorTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAcceleratorTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets AcceleratorType.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.AcceleratorType getAcceleratorType(
+        com.google.cloud.tpu.v2.GetAcceleratorTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAcceleratorTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists runtime versions supported by this API.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.ListRuntimeVersionsResponse listRuntimeVersions(
+        com.google.cloud.tpu.v2.ListRuntimeVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRuntimeVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a runtime version.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.RuntimeVersion getRuntimeVersion(
+        com.google.cloud.tpu.v2.GetRuntimeVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRuntimeVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the guest attributes for the node.
+     * </pre>
+     */
+    public com.google.cloud.tpu.v2.GetGuestAttributesResponse getGuestAttributes(
+        com.google.cloud.tpu.v2.GetGuestAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGuestAttributesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Tpu.
    *
    * <pre>
    * Manages TPU nodes and other resources

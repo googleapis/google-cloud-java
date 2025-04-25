@@ -38,6 +38,7 @@ public interface ListDisplayVideo360AdvertiserLinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface ListDisplayVideo360AdvertiserLinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

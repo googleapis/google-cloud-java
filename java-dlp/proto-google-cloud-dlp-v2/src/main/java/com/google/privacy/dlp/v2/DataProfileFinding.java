@@ -34,6 +34,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DataProfileFinding)
     DataProfileFindingOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataProfileFinding.newBuilder() to construct.
   private DataProfileFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object quote_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   public static final int INFOTYPE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InfoType infotype_;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public boolean hasInfotype() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public com.google.privacy.dlp.v2.InfoType getInfotype() {
     return infotype_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infotype_;
   }
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   public static final int QUOTE_INFO_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.QuoteInfo quoteInfo_;
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public boolean hasQuoteInfo() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.QuoteInfo.getDefaultInstance()
         : quoteInfo_;
   }
+
   /**
    *
    *
@@ -232,6 +241,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataProfileResourceName_ = "";
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +294,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object findingId_ = "";
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   public static final int TIMESTAMP_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp timestamp_;
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public boolean hasTimestamp() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getTimestamp() {
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
+
   /**
    *
    *
@@ -378,6 +394,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   public static final int LOCATION_FIELD_NUMBER = 7;
   private com.google.privacy.dlp.v2.DataProfileFindingLocation location_;
+
   /**
    *
    *
@@ -393,6 +410,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public boolean hasLocation() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -410,6 +428,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         ? com.google.privacy.dlp.v2.DataProfileFindingLocation.getDefaultInstance()
         : location_;
   }
+
   /**
    *
    *
@@ -428,6 +447,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
 
   public static final int RESOURCE_VISIBILITY_FIELD_NUMBER = 8;
   private int resourceVisibility_ = 0;
+
   /**
    *
    *
@@ -443,6 +463,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
   public int getResourceVisibilityValue() {
     return resourceVisibility_;
   }
+
   /**
    *
    *
@@ -707,6 +728,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1020,6 +1042,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object quote_ = "";
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1136,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1168,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infotypeBuilder_;
+
     /**
      *
      *
@@ -1157,6 +1185,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     public boolean hasInfotype() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1179,6 +1208,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return infotypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1233,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1255,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1285,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1307,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1290,6 +1324,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getInfotypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1310,6 +1345,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             : infotype_;
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.QuoteInfo.Builder,
             com.google.privacy.dlp.v2.QuoteInfoOrBuilder>
         quoteInfoBuilder_;
+
     /**
      *
      *
@@ -1359,6 +1396,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     public boolean hasQuoteInfo() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1380,6 +1418,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return quoteInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1442,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1463,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1451,6 +1492,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1471,6 +1513,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1529,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getQuoteInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1505,6 +1549,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             : quoteInfo_;
       }
     }
+
     /**
      *
      *
@@ -1533,6 +1578,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object dataProfileResourceName_ = "";
+
     /**
      *
      *
@@ -1555,6 +1601,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1577,6 +1624,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1646,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1664,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1639,6 +1689,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object findingId_ = "";
+
     /**
      *
      *
@@ -1661,6 +1712,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1683,6 +1735,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1704,6 +1757,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1775,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1805,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampBuilder_;
+
     /**
      *
      *
@@ -1764,6 +1820,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     public boolean hasTimestamp() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1782,6 +1839,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return timestampBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1804,6 +1862,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1882,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1850,6 +1910,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1930,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1945,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1899,6 +1962,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
+
     /**
      *
      *
@@ -1931,6 +1995,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             com.google.privacy.dlp.v2.DataProfileFindingLocation.Builder,
             com.google.privacy.dlp.v2.DataProfileFindingLocationOrBuilder>
         locationBuilder_;
+
     /**
      *
      *
@@ -1945,6 +2010,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     public boolean hasLocation() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1965,6 +2031,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
         return locationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1987,6 +2054,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2007,6 +2075,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2035,6 +2104,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2124,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2139,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getLocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2086,6 +2158,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
             : location_;
       }
     }
+
     /**
      *
      *
@@ -2113,6 +2186,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     }
 
     private int resourceVisibility_ = 0;
+
     /**
      *
      *
@@ -2128,6 +2202,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
     public int getResourceVisibilityValue() {
       return resourceVisibility_;
     }
+
     /**
      *
      *
@@ -2146,6 +2221,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2239,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
           com.google.privacy.dlp.v2.ResourceVisibility.forNumber(resourceVisibility_);
       return result == null ? com.google.privacy.dlp.v2.ResourceVisibility.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2184,6 +2261,7 @@ public final class DataProfileFinding extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

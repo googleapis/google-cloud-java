@@ -190,6 +190,19 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
         .exportPublisherModelOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to checkPublisherModelEulaAcceptance. */
+  public UnaryCallSettings<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings())
+        .checkPublisherModelEulaAcceptanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acceptPublisherModelEula. */
+  public UnaryCallSettings<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).acceptPublisherModelEulaSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -377,6 +390,19 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
             ExportPublisherModelOperationMetadata>
         exportPublisherModelOperationSettings() {
       return getStubSettingsBuilder().exportPublisherModelOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to checkPublisherModelEulaAcceptance. */
+    public UnaryCallSettings.Builder<
+            CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+        checkPublisherModelEulaAcceptanceSettings() {
+      return getStubSettingsBuilder().checkPublisherModelEulaAcceptanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptPublisherModelEula. */
+    public UnaryCallSettings.Builder<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+        acceptPublisherModelEulaSettings() {
+      return getStubSettingsBuilder().acceptPublisherModelEulaSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

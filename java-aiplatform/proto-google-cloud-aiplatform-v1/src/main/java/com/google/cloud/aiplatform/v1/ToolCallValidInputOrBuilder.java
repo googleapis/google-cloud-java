@@ -38,6 +38,7 @@ public interface ToolCallValidInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ToolCallValidInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.ToolCallValidSpec getMetricSpec();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ToolCallValidInputOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.ToolCallValidInstance> getInstancesList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ToolCallValidInputOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ToolCallValidInstance getInstances(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ToolCallValidInputOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -114,6 +119,7 @@ public interface ToolCallValidInputOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ToolCallValidInstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *

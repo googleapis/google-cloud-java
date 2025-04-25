@@ -39,6 +39,7 @@ public interface BatchMigrateResourcesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BatchMigrateResourcesRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.MigrateResourceRequest>
       getMigrateResourceRequestsList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface BatchMigrateResourcesRequestOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.MigrateResourceRequest getMigrateResourceRequests(int index);
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface BatchMigrateResourcesRequestOrBuilder
    * </code>
    */
   int getMigrateResourceRequestsCount();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface BatchMigrateResourcesRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.MigrateResourceRequestOrBuilder>
       getMigrateResourceRequestsOrBuilderList();
+
   /**
    *
    *

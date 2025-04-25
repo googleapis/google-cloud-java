@@ -33,6 +33,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.EduData)
     EduDataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EduData.newBuilder() to construct.
   private EduData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTITUTE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTITUTE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>K12 = 1;</code>
      */
     public static final int K12_VALUE = 1;
+
     /**
      *
      *
@@ -325,6 +328,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>INSTITUTE_SIZE_UNSPECIFIED = 0;</code>
      */
     public static final int INSTITUTE_SIZE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -335,6 +339,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_1_100 = 1;</code>
      */
     public static final int SIZE_1_100_VALUE = 1;
+
     /**
      *
      *
@@ -345,6 +350,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_101_500 = 2;</code>
      */
     public static final int SIZE_101_500_VALUE = 2;
+
     /**
      *
      *
@@ -355,6 +361,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_501_1000 = 3;</code>
      */
     public static final int SIZE_501_1000_VALUE = 3;
+
     /**
      *
      *
@@ -365,6 +372,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_1001_2000 = 4;</code>
      */
     public static final int SIZE_1001_2000_VALUE = 4;
+
     /**
      *
      *
@@ -375,6 +383,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_2001_5000 = 5;</code>
      */
     public static final int SIZE_2001_5000_VALUE = 5;
+
     /**
      *
      *
@@ -385,6 +394,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
      * <code>SIZE_5001_10000 = 6;</code>
      */
     public static final int SIZE_5001_10000_VALUE = 6;
+
     /**
      *
      *
@@ -491,6 +501,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTITUTE_TYPE_FIELD_NUMBER = 1;
   private int instituteType_ = 0;
+
   /**
    *
    *
@@ -506,6 +517,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
   public int getInstituteTypeValue() {
     return instituteType_;
   }
+
   /**
    *
    *
@@ -526,6 +538,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INSTITUTE_SIZE_FIELD_NUMBER = 2;
   private int instituteSize_ = 0;
+
   /**
    *
    *
@@ -541,6 +554,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
   public int getInstituteSizeValue() {
     return instituteSize_;
   }
+
   /**
    *
    *
@@ -563,6 +577,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object website_ = "";
+
   /**
    *
    *
@@ -586,6 +601,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -793,6 +809,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1001,6 +1018,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int instituteType_ = 0;
+
     /**
      *
      *
@@ -1016,6 +1034,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     public int getInstituteTypeValue() {
       return instituteType_;
     }
+
     /**
      *
      *
@@ -1034,6 +1053,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1073,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.channel.v1.EduData.InstituteType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1074,6 +1095,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1115,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int instituteSize_ = 0;
+
     /**
      *
      *
@@ -1108,6 +1131,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     public int getInstituteSizeValue() {
       return instituteSize_;
     }
+
     /**
      *
      *
@@ -1126,6 +1150,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.channel.v1.EduData.InstituteSize.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1166,6 +1192,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1212,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object website_ = "";
+
     /**
      *
      *
@@ -1207,6 +1235,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1229,6 +1258,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1280,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1298,7 @@ public final class EduData extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

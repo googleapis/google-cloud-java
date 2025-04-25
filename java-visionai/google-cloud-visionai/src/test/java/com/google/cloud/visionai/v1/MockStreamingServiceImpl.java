@@ -112,7 +112,8 @@ public class MockStreamingServiceImpl extends StreamingServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method ReceivePackets, expected %s or %s",
+                          "Unrecognized response type %s for method ReceivePackets, expected %s or"
+                              + " %s",
                           response == null ? "null" : response.getClass().getName(),
                           ReceivePacketsResponse.class.getName(),
                           Exception.class.getName())));
@@ -149,7 +150,8 @@ public class MockStreamingServiceImpl extends StreamingServiceImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method ReceiveEvents, expected %s or %s",
+                          "Unrecognized response type %s for method ReceiveEvents, expected %s or"
+                              + " %s",
                           response == null ? "null" : response.getClass().getName(),
                           ReceiveEventsResponse.class.getName(),
                           Exception.class.getName())));

@@ -35,6 +35,7 @@ public final class MutateDeployedIndexOperationMetadata
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata)
     MutateDeployedIndexOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MutateDeployedIndexOperationMetadata.newBuilder() to construct.
   private MutateDeployedIndexOperationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class MutateDeployedIndexOperationMetadata
   private int bitField0_;
   public static final int GENERIC_METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.GenericOperationMetadata genericMetadata_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class MutateDeployedIndexOperationMetadata
   public boolean hasGenericMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class MutateDeployedIndexOperationMetadata
         ? com.google.cloud.aiplatform.v1.GenericOperationMetadata.getDefaultInstance()
         : genericMetadata_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class MutateDeployedIndexOperationMetadata
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deployedIndexId_ = "";
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class MutateDeployedIndexOperationMetadata
       return s;
     }
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class MutateDeployedIndexOperationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class MutateDeployedIndexOperationMetadata
             com.google.cloud.aiplatform.v1.GenericOperationMetadata.Builder,
             com.google.cloud.aiplatform.v1.GenericOperationMetadataOrBuilder>
         genericMetadataBuilder_;
+
     /**
      *
      *
@@ -585,6 +593,7 @@ public final class MutateDeployedIndexOperationMetadata
     public boolean hasGenericMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -605,6 +614,7 @@ public final class MutateDeployedIndexOperationMetadata
         return genericMetadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +689,7 @@ public final class MutateDeployedIndexOperationMetadata
       }
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return getGenericMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -730,6 +745,7 @@ public final class MutateDeployedIndexOperationMetadata
             : genericMetadata_;
       }
     }
+
     /**
      *
      *
@@ -757,6 +773,7 @@ public final class MutateDeployedIndexOperationMetadata
     }
 
     private java.lang.Object deployedIndexId_ = "";
+
     /**
      *
      *
@@ -779,6 +796,7 @@ public final class MutateDeployedIndexOperationMetadata
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class MutateDeployedIndexOperationMetadata
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -822,6 +841,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +859,7 @@ public final class MutateDeployedIndexOperationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

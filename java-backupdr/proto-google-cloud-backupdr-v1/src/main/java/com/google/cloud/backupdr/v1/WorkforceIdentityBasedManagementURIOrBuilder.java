@@ -37,6 +37,7 @@ public interface WorkforceIdentityBasedManagementURIOrBuilder
    * @return The firstPartyManagementUri.
    */
   java.lang.String getFirstPartyManagementUri();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface WorkforceIdentityBasedManagementURIOrBuilder
    * @return The thirdPartyManagementUri.
    */
   java.lang.String getThirdPartyManagementUri();
+
   /**
    *
    *

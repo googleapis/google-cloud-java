@@ -36,6 +36,7 @@ public interface RolloutStateOrBuilder
    * @return The step.
    */
   java.lang.String getStep();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RolloutStateOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RolloutStateOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *

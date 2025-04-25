@@ -37,6 +37,7 @@ public interface ImportIssueModelRequestOrBuilder
    * @return Whether the gcsSource field is set.
    */
   boolean hasGcsSource();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ImportIssueModelRequestOrBuilder
    * @return The gcsSource.
    */
   com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest.GcsSource getGcsSource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface ImportIssueModelRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *

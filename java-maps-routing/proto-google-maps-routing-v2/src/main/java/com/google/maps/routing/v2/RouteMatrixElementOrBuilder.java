@@ -36,6 +36,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the originIndex field is set.
    */
   boolean hasOriginIndex();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the destinationIndex field is set.
    */
   boolean hasDestinationIndex();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The enum numeric value on the wire for condition.
    */
   int getConditionValue();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the duration field is set.
    */
   boolean hasDuration();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The duration.
    */
   com.google.protobuf.Duration getDuration();
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the staticDuration field is set.
    */
   boolean hasStaticDuration();
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The staticDuration.
    */
   com.google.protobuf.Duration getStaticDuration();
+
   /**
    *
    *
@@ -248,6 +257,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the travelAdvisory field is set.
    */
   boolean hasTravelAdvisory();
+
   /**
    *
    *
@@ -261,6 +271,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The travelAdvisory.
    */
   com.google.maps.routing.v2.RouteTravelAdvisory getTravelAdvisory();
+
   /**
    *
    *
@@ -289,6 +300,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the fallbackInfo field is set.
    */
   boolean hasFallbackInfo();
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The fallbackInfo.
    */
   com.google.maps.routing.v2.FallbackInfo getFallbackInfo();
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface RouteMatrixElementOrBuilder
    * @return Whether the localizedValues field is set.
    */
   boolean hasLocalizedValues();
+
   /**
    *
    *
@@ -344,6 +358,7 @@ public interface RouteMatrixElementOrBuilder
    * @return The localizedValues.
    */
   com.google.maps.routing.v2.RouteMatrixElement.LocalizedValues getLocalizedValues();
+
   /**
    *
    *

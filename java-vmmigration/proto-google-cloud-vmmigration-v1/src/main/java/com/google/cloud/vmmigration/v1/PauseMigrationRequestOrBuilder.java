@@ -38,6 +38,7 @@ public interface PauseMigrationRequestOrBuilder
    * @return The migratingVm.
    */
   java.lang.String getMigratingVm();
+
   /**
    *
    *

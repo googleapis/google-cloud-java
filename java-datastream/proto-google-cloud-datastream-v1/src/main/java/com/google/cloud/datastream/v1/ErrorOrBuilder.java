@@ -36,6 +36,7 @@ public interface ErrorOrBuilder
    * @return The reason.
    */
   java.lang.String getReason();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ErrorOrBuilder
    * @return The errorUuid.
    */
   java.lang.String getErrorUuid();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ErrorOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ErrorOrBuilder
    * @return Whether the errorTime field is set.
    */
   boolean hasErrorTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ErrorOrBuilder
    * @return The errorTime.
    */
   com.google.protobuf.Timestamp getErrorTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface ErrorOrBuilder
    * <code>map&lt;string, string&gt; details = 5;</code>
    */
   int getDetailsCount();
+
   /**
    *
    *
@@ -156,9 +162,11 @@ public interface ErrorOrBuilder
    * <code>map&lt;string, string&gt; details = 5;</code>
    */
   boolean containsDetails(java.lang.String key);
+
   /** Use {@link #getDetailsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDetails();
+
   /**
    *
    *
@@ -169,6 +177,7 @@ public interface ErrorOrBuilder
    * <code>map&lt;string, string&gt; details = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDetailsMap();
+
   /**
    *
    *
@@ -183,6 +192,7 @@ public interface ErrorOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

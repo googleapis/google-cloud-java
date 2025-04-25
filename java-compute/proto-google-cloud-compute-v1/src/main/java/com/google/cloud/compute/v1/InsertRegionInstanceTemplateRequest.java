@@ -34,6 +34,7 @@ public final class InsertRegionInstanceTemplateRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionInstanceTemplateRequest)
     InsertRegionInstanceTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionInstanceTemplateRequest.newBuilder() to construct.
   private InsertRegionInstanceTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InsertRegionInstanceTemplateRequest
   private int bitField0_;
   public static final int INSTANCE_TEMPLATE_RESOURCE_FIELD_NUMBER = 10679561;
   private com.google.cloud.compute.v1.InstanceTemplate instanceTemplateResource_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InsertRegionInstanceTemplateRequest
   public boolean hasInstanceTemplateResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class InsertRegionInstanceTemplateRequest
         ? com.google.cloud.compute.v1.InstanceTemplate.getDefaultInstance()
         : instanceTemplateResource_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class InsertRegionInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class InsertRegionInstanceTemplateRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class InsertRegionInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class InsertRegionInstanceTemplateRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class InsertRegionInstanceTemplateRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class InsertRegionInstanceTemplateRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class InsertRegionInstanceTemplateRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -500,6 +511,7 @@ public final class InsertRegionInstanceTemplateRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -757,6 +769,7 @@ public final class InsertRegionInstanceTemplateRequest
             com.google.cloud.compute.v1.InstanceTemplate.Builder,
             com.google.cloud.compute.v1.InstanceTemplateOrBuilder>
         instanceTemplateResourceBuilder_;
+
     /**
      *
      *
@@ -773,6 +786,7 @@ public final class InsertRegionInstanceTemplateRequest
     public boolean hasInstanceTemplateResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class InsertRegionInstanceTemplateRequest
         return instanceTemplateResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -819,6 +834,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class InsertRegionInstanceTemplateRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -893,6 +911,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return getInstanceTemplateResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class InsertRegionInstanceTemplateRequest
             : instanceTemplateResource_;
       }
     }
+
     /**
      *
      *
@@ -960,6 +981,7 @@ public final class InsertRegionInstanceTemplateRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -984,6 +1006,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1055,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1075,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1102,7 @@ public final class InsertRegionInstanceTemplateRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1152,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1176,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1196,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1223,7 @@ public final class InsertRegionInstanceTemplateRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1206,6 +1238,7 @@ public final class InsertRegionInstanceTemplateRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1250,6 +1284,7 @@ public final class InsertRegionInstanceTemplateRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1306,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1324,7 @@ public final class InsertRegionInstanceTemplateRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

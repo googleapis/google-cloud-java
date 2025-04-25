@@ -41,6 +41,7 @@ public interface AudienceExportOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface AudienceExportOrBuilder
    * @return The audience.
    */
   java.lang.String getAudience();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface AudienceExportOrBuilder
    * @return The audienceDisplayName.
    */
   java.lang.String getAudienceDisplayName();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface AudienceExportOrBuilder
    * </code>
    */
   java.util.List<com.google.analytics.data.v1beta.AudienceDimension> getDimensionsList();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface AudienceExportOrBuilder
    * </code>
    */
   com.google.analytics.data.v1beta.AudienceDimension getDimensions(int index);
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public interface AudienceExportOrBuilder
    * </code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface AudienceExportOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.AudienceDimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface AudienceExportOrBuilder
    * @return Whether the state field is set.
    */
   boolean hasState();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface AudienceExportOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface AudienceExportOrBuilder
    * @return Whether the beginCreatingTime field is set.
    */
   boolean hasBeginCreatingTime();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface AudienceExportOrBuilder
    * @return The beginCreatingTime.
    */
   com.google.protobuf.Timestamp getBeginCreatingTime();
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface AudienceExportOrBuilder
    * @return Whether the rowCount field is set.
    */
   boolean hasRowCount();
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public interface AudienceExportOrBuilder
    * @return Whether the errorMessage field is set.
    */
   boolean hasErrorMessage();
+
   /**
    *
    *
@@ -336,6 +349,7 @@ public interface AudienceExportOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *
@@ -364,6 +378,7 @@ public interface AudienceExportOrBuilder
    * @return Whether the percentageCompleted field is set.
    */
   boolean hasPercentageCompleted();
+
   /**
    *
    *

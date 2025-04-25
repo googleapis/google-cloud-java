@@ -37,6 +37,7 @@ public interface EventOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EventOrBuilder
    * @return The siteKey.
    */
   java.lang.String getSiteKey();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface EventOrBuilder
    * @return The userAgent.
    */
   java.lang.String getUserAgent();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface EventOrBuilder
    * @return The userIpAddress.
    */
   java.lang.String getUserIpAddress();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface EventOrBuilder
    * @return The expectedAction.
    */
   java.lang.String getExpectedAction();
+
   /**
    *
    *
@@ -210,6 +215,7 @@ public interface EventOrBuilder
    * @return The requestedUri.
    */
   java.lang.String getRequestedUri();
+
   /**
    *
    *
@@ -251,6 +257,7 @@ public interface EventOrBuilder
    * @return The ja3.
    */
   java.lang.String getJa3();
+
   /**
    *
    *
@@ -278,6 +285,7 @@ public interface EventOrBuilder
    * @return The ja4.
    */
   java.lang.String getJa4();
+
   /**
    *
    *
@@ -304,6 +312,7 @@ public interface EventOrBuilder
    * @return A list containing the headers.
    */
   java.util.List<java.lang.String> getHeadersList();
+
   /**
    *
    *
@@ -316,6 +325,7 @@ public interface EventOrBuilder
    * @return The count of headers.
    */
   int getHeadersCount();
+
   /**
    *
    *
@@ -329,6 +339,7 @@ public interface EventOrBuilder
    * @return The headers at the given index.
    */
   java.lang.String getHeaders(int index);
+
   /**
    *
    *
@@ -374,6 +385,7 @@ public interface EventOrBuilder
    * @return Whether the transactionData field is set.
    */
   boolean hasTransactionData();
+
   /**
    *
    *
@@ -390,6 +402,7 @@ public interface EventOrBuilder
    * @return The transactionData.
    */
   com.google.recaptchaenterprise.v1.TransactionData getTransactionData();
+
   /**
    *
    *
@@ -422,6 +435,7 @@ public interface EventOrBuilder
    * @return Whether the userInfo field is set.
    */
   boolean hasUserInfo();
+
   /**
    *
    *
@@ -439,6 +453,7 @@ public interface EventOrBuilder
    * @return The userInfo.
    */
   com.google.recaptchaenterprise.v1.UserInfo getUserInfo();
+
   /**
    *
    *
@@ -469,6 +484,7 @@ public interface EventOrBuilder
    * @return The enum numeric value on the wire for fraudPrevention.
    */
   int getFraudPreventionValue();
+
   /**
    *
    *

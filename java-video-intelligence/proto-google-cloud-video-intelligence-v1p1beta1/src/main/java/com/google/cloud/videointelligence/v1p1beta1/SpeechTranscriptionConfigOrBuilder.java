@@ -40,6 +40,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    */
   java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
       getSpeechContextsList();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </code>
    */
   com.google.cloud.videointelligence.v1p1beta1.SpeechContext getSpeechContexts(int index);
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    * </code>
    */
   int getSpeechContextsCount();
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    * @return A list containing the audioTracks.
    */
   java.util.List<java.lang.Integer> getAudioTracksList();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface SpeechTranscriptionConfigOrBuilder
    * @return The count of audioTracks.
    */
   int getAudioTracksCount();
+
   /**
    *
    *

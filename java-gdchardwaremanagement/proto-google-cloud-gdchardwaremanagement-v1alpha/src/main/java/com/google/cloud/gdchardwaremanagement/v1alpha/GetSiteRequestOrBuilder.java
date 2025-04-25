@@ -39,6 +39,7 @@ public interface GetSiteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

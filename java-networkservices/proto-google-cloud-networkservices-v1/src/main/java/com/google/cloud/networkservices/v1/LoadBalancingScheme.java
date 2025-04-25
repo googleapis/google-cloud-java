@@ -76,6 +76,7 @@ public enum LoadBalancingScheme implements com.google.protobuf.ProtocolMessageEn
    * <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 0;</code>
    */
   public static final int LOAD_BALANCING_SCHEME_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum LoadBalancingScheme implements com.google.protobuf.ProtocolMessageEn
    * <code>INTERNAL_MANAGED = 1;</code>
    */
   public static final int INTERNAL_MANAGED_VALUE = 1;
+
   /**
    *
    *

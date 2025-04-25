@@ -33,6 +33,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SdpDeidentifyResult)
     SdpDeidentifyResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SdpDeidentifyResult.newBuilder() to construct.
   private SdpDeidentifyResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int EXECUTION_STATE_FIELD_NUMBER = 1;
   private int executionState_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public int getExecutionStateValue() {
     return executionState_;
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.modelarmor.v1.MessageItem> messageItems_;
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList() {
     return messageItems_;
   }
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       getMessageItemsOrBuilderList() {
     return messageItems_;
   }
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public int getMessageItemsCount() {
     return messageItems_.size();
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index) {
     return messageItems_.get(index);
   }
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
 
   public static final int MATCH_STATE_FIELD_NUMBER = 3;
   private int matchState_ = 0;
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public int getMatchStateValue() {
     return matchState_;
   }
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
 
   public static final int DATA_FIELD_NUMBER = 4;
   private com.google.cloud.modelarmor.v1.DataItem data_;
+
   /**
    *
    *
@@ -254,6 +265,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public boolean hasData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public com.google.cloud.modelarmor.v1.DataItem getData() {
     return data_ == null ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance() : data_;
   }
+
   /**
    *
    *
@@ -285,6 +298,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
 
   public static final int TRANSFORMED_BYTES_FIELD_NUMBER = 5;
   private long transformedBytes_ = 0L;
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList infoTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -320,6 +335,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getInfoTypesList() {
     return infoTypes_;
   }
+
   /**
    *
    *
@@ -334,6 +350,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public int getInfoTypesCount() {
     return infoTypes_.size();
   }
+
   /**
    *
    *
@@ -349,6 +366,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
   public java.lang.String getInfoTypes(int index) {
     return infoTypes_.get(index);
   }
+
   /**
    *
    *
@@ -591,6 +609,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -912,6 +931,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int executionState_ = 0;
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public int getExecutionStateValue() {
       return executionState_;
     }
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +995,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
           ? com.google.cloud.modelarmor.v1.FilterExecutionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return messageItemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1098,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return messageItemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1118,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return messageItemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1144,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1168,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1220,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1244,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1268,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1259,6 +1292,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1315,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1318,6 +1354,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public com.google.cloud.modelarmor.v1.MessageItem.Builder getMessageItemsBuilder(int index) {
       return getMessageItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return messageItemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1395,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(messageItems_);
       }
     }
+
     /**
      *
      *
@@ -1373,6 +1412,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       return getMessageItemsFieldBuilder()
           .addBuilder(com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1389,6 +1429,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       return getMessageItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.modelarmor.v1.MessageItem.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1424,6 +1465,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     }
 
     private int matchState_ = 0;
+
     /**
      *
      *
@@ -1442,6 +1484,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public int getMatchStateValue() {
       return matchState_;
     }
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1527,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
           com.google.cloud.modelarmor.v1.FilterMatchState.forNumber(matchState_);
       return result == null ? com.google.cloud.modelarmor.v1.FilterMatchState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1507,6 +1552,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1534,6 +1580,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
             com.google.cloud.modelarmor.v1.DataItem.Builder,
             com.google.cloud.modelarmor.v1.DataItemOrBuilder>
         dataBuilder_;
+
     /**
      *
      *
@@ -1548,6 +1595,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public boolean hasData() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1566,6 +1614,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return dataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1588,6 +1637,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1607,6 +1657,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1685,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1705,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1667,6 +1720,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return getDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1683,6 +1737,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
         return data_ == null ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance() : data_;
       }
     }
+
     /**
      *
      *
@@ -1710,6 +1765,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     }
 
     private long transformedBytes_;
+
     /**
      *
      *
@@ -1725,6 +1781,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public long getTransformedBytes() {
       return transformedBytes_;
     }
+
     /**
      *
      *
@@ -1744,6 +1801,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1829,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1786,6 +1845,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       infoTypes_.makeImmutable();
       return infoTypes_;
     }
+
     /**
      *
      *
@@ -1800,6 +1860,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public int getInfoTypesCount() {
       return infoTypes_.size();
     }
+
     /**
      *
      *
@@ -1815,6 +1876,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public java.lang.String getInfoTypes(int index) {
       return infoTypes_.get(index);
     }
+
     /**
      *
      *
@@ -1830,6 +1892,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getInfoTypesBytes(int index) {
       return infoTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1853,6 +1916,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1939,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1959,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1912,6 +1978,7 @@ public final class SdpDeidentifyResult extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

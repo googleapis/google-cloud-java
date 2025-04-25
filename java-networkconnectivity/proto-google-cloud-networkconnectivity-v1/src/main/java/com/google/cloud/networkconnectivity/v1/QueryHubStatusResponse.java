@@ -34,6 +34,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.QueryHubStatusResponse)
     QueryHubStatusResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QueryHubStatusResponse.newBuilder() to construct.
   private QueryHubStatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.networkconnectivity.v1.HubStatusEntry> hubStatusEntries_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       getHubStatusEntriesList() {
     return hubStatusEntries_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       getHubStatusEntriesOrBuilderList() {
     return hubStatusEntries_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
   public int getHubStatusEntriesCount() {
     return hubStatusEntries_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.networkconnectivity.v1.HubStatusEntry getHubStatusEntries(int index) {
     return hubStatusEntries_.get(index);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +377,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +663,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return hubStatusEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -671,6 +681,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return hubStatusEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return hubStatusEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -712,6 +724,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +746,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +771,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +884,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         getHubStatusEntriesBuilder(int index) {
       return getHubStatusEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -917,6 +939,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return hubStatusEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(hubStatusEntries_);
       }
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       return getHubStatusEntriesFieldBuilder()
           .addBuilder(com.google.cloud.networkconnectivity.v1.HubStatusEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.cloud.networkconnectivity.v1.HubStatusEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1002,6 +1028,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1026,6 +1053,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1050,6 +1078,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1122,7 @@ public final class QueryHubStatusResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

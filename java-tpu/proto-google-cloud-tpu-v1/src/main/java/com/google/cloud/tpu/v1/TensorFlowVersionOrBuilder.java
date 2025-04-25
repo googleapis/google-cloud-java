@@ -36,6 +36,7 @@ public interface TensorFlowVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TensorFlowVersionOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *

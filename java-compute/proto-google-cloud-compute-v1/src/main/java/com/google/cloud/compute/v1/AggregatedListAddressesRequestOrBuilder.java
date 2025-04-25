@@ -36,6 +36,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the includeAllScopes field is set.
    */
   boolean hasIncludeAllScopes();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the maxResults field is set.
    */
   boolean hasMaxResults();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the orderBy field is set.
    */
   boolean hasOrderBy();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the pageToken field is set.
    */
   boolean hasPageToken();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the returnPartialSuccess field is set.
    */
   boolean hasReturnPartialSuccess();
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public interface AggregatedListAddressesRequestOrBuilder
    * @return Whether the serviceProjectNumber field is set.
    */
   boolean hasServiceProjectNumber();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface UpdateSpaceNotificationSettingRequestOrBuilder
    * @return Whether the spaceNotificationSetting field is set.
    */
   boolean hasSpaceNotificationSetting();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateSpaceNotificationSettingRequestOrBuilder
    * @return The spaceNotificationSetting.
    */
   com.google.chat.v1.SpaceNotificationSetting getSpaceNotificationSetting();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface UpdateSpaceNotificationSettingRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface UpdateSpaceNotificationSettingRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

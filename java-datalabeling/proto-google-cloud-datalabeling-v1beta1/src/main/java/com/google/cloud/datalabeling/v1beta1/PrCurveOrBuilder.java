@@ -38,6 +38,7 @@ public interface PrCurveOrBuilder
    * @return Whether the annotationSpec field is set.
    */
   boolean hasAnnotationSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PrCurveOrBuilder
    * @return The annotationSpec.
    */
   com.google.cloud.datalabeling.v1beta1.AnnotationSpec getAnnotationSpec();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface PrCurveOrBuilder
    */
   java.util.List<com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry>
       getConfidenceMetricsEntriesList();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface PrCurveOrBuilder
    */
   com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntry getConfidenceMetricsEntries(
       int index);
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface PrCurveOrBuilder
    * </code>
    */
   int getConfidenceMetricsEntriesCount();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface PrCurveOrBuilder
   java.util.List<
           ? extends com.google.cloud.datalabeling.v1beta1.PrCurve.ConfidenceMetricsEntryOrBuilder>
       getConfidenceMetricsEntriesOrBuilderList();
+
   /**
    *
    *

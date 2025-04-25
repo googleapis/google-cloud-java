@@ -36,6 +36,7 @@ public interface StreamInfoOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *

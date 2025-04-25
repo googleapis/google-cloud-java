@@ -36,6 +36,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the canReschedule field is set.
    */
   boolean hasCanReschedule();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the windowStartTime field is set.
    */
   boolean hasWindowStartTime();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return The windowStartTime.
    */
   java.lang.String getWindowStartTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the windowEndTime field is set.
    */
   boolean hasWindowEndTime();
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return The windowEndTime.
    */
   java.lang.String getWindowEndTime();
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the latestWindowStartTime field is set.
    */
   boolean hasLatestWindowStartTime();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return The latestWindowStartTime.
    */
   java.lang.String getLatestWindowStartTime();
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return Whether the maintenanceStatus field is set.
    */
   boolean hasMaintenanceStatus();
+
   /**
    *
    *
@@ -234,6 +244,7 @@ public interface UpcomingMaintenanceOrBuilder
    * @return The enum numeric value on the wire for maintenanceStatus.
    */
   int getMaintenanceStatusValue();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface PostureDeploymentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PostureDeploymentOrBuilder
    * @return The targetResource.
    */
   java.lang.String getTargetResource();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface PostureDeploymentOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface PostureDeploymentOrBuilder
    * @return The postureId.
    */
   java.lang.String getPostureId();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface PostureDeploymentOrBuilder
    * @return The postureRevisionId.
    */
   java.lang.String getPostureRevisionId();
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public interface PostureDeploymentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public interface PostureDeploymentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface PostureDeploymentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public interface PostureDeploymentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface PostureDeploymentOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -290,6 +300,7 @@ public interface PostureDeploymentOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public interface PostureDeploymentOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -339,9 +351,11 @@ public interface PostureDeploymentOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -355,6 +369,7 @@ public interface PostureDeploymentOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -372,6 +387,7 @@ public interface PostureDeploymentOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -414,6 +430,7 @@ public interface PostureDeploymentOrBuilder
    * @return The desiredPostureId.
    */
   java.lang.String getDesiredPostureId();
+
   /**
    *
    *
@@ -443,6 +460,7 @@ public interface PostureDeploymentOrBuilder
    * @return The desiredPostureRevisionId.
    */
   java.lang.String getDesiredPostureRevisionId();
+
   /**
    *
    *
@@ -472,6 +490,7 @@ public interface PostureDeploymentOrBuilder
    * @return The failureMessage.
    */
   java.lang.String getFailureMessage();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmwareengine.v1.NetworkPeering)
     NetworkPeeringOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkPeering.newBuilder() to construct.
   private NetworkPeering(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -143,6 +144,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -153,6 +155,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>INACTIVE = 1;</code>
      */
     public static final int INACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -163,6 +166,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -173,6 +177,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 3;</code>
      */
     public static final int CREATING_VALUE = 3;
+
     /**
      *
      *
@@ -379,6 +384,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>PEER_NETWORK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int PEER_NETWORK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -391,6 +397,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>STANDARD = 1;</code>
      */
     public static final int STANDARD_VALUE = 1;
+
     /**
      *
      *
@@ -401,6 +408,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>VMWARE_ENGINE_NETWORK = 2;</code>
      */
     public static final int VMWARE_ENGINE_NETWORK_VALUE = 2;
+
     /**
      *
      *
@@ -412,6 +420,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_SERVICES_ACCESS = 3;</code>
      */
     public static final int PRIVATE_SERVICES_ACCESS_VALUE = 3;
+
     /**
      *
      *
@@ -422,6 +431,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>NETAPP_CLOUD_VOLUMES = 4;</code>
      */
     public static final int NETAPP_CLOUD_VOLUMES_VALUE = 4;
+
     /**
      *
      *
@@ -434,6 +444,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>THIRD_PARTY_SERVICE = 5;</code>
      */
     public static final int THIRD_PARTY_SERVICE_VALUE = 5;
+
     /**
      *
      *
@@ -444,6 +455,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>DELL_POWERSCALE = 6;</code>
      */
     public static final int DELL_POWERSCALE_VALUE = 6;
+
     /**
      *
      *
@@ -555,6 +567,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -583,6 +596,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -614,6 +628,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -630,6 +645,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -646,6 +662,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -663,6 +680,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -679,6 +697,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -695,6 +714,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -714,6 +734,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object peerNetwork_ = "";
+
   /**
    *
    *
@@ -744,6 +765,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -777,6 +799,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_CUSTOM_ROUTES_FIELD_NUMBER = 8;
   private boolean exportCustomRoutes_ = false;
+
   /**
    *
    *
@@ -793,6 +816,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportCustomRoutes() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -812,6 +836,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_CUSTOM_ROUTES_FIELD_NUMBER = 9;
   private boolean importCustomRoutes_ = false;
+
   /**
    *
    *
@@ -828,6 +853,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImportCustomRoutes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -847,6 +873,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXCHANGE_SUBNET_ROUTES_FIELD_NUMBER = 10;
   private boolean exchangeSubnetRoutes_ = false;
+
   /**
    *
    *
@@ -867,6 +894,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExchangeSubnetRoutes() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -890,6 +918,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPORT_CUSTOM_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER = 11;
   private boolean exportCustomRoutesWithPublicIp_ = false;
+
   /**
    *
    *
@@ -910,6 +939,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExportCustomRoutesWithPublicIp() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -933,6 +963,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int IMPORT_CUSTOM_ROUTES_WITH_PUBLIC_IP_FIELD_NUMBER = 12;
   private boolean importCustomRoutesWithPublicIp_ = false;
+
   /**
    *
    *
@@ -953,6 +984,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public boolean hasImportCustomRoutesWithPublicIp() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -976,6 +1008,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 13;
   private int state_ = 0;
+
   /**
    *
    *
@@ -995,6 +1028,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -1023,6 +1057,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateDetails_ = "";
+
   /**
    *
    *
@@ -1047,6 +1082,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1074,6 +1110,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PEER_MTU_FIELD_NUMBER = 14;
   private int peerMtu_ = 0;
+
   /**
    *
    *
@@ -1094,6 +1131,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PEER_NETWORK_TYPE_FIELD_NUMBER = 16;
   private int peerNetworkType_ = 0;
+
   /**
    *
    *
@@ -1111,6 +1149,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
   public int getPeerNetworkTypeValue() {
     return peerNetworkType_;
   }
+
   /**
    *
    *
@@ -1137,6 +1176,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -1160,6 +1200,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1188,6 +1229,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vmwareEngineNetwork_ = "";
+
   /**
    *
    *
@@ -1216,6 +1258,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1249,6 +1292,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1272,6 +1316,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -1645,6 +1690,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2061,6 +2107,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2088,6 +2135,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2115,6 +2163,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2141,6 +2190,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2213,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2248,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -2213,6 +2265,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2235,6 +2288,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2259,6 +2313,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2280,6 +2335,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2309,6 +2365,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2330,6 +2387,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2346,6 +2404,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2366,6 +2425,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -2400,6 +2460,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2416,6 +2477,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2438,6 +2500,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2462,6 +2525,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2483,6 +2547,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2577,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2533,6 +2599,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2549,6 +2616,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2569,6 +2637,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -2598,6 +2667,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object peerNetwork_ = "";
+
     /**
      *
      *
@@ -2627,6 +2697,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2656,6 +2727,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2684,6 +2756,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2708,6 +2781,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2739,6 +2813,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean exportCustomRoutes_;
+
     /**
      *
      *
@@ -2756,6 +2831,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportCustomRoutes() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2773,6 +2849,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean getExportCustomRoutes() {
       return exportCustomRoutes_;
     }
+
     /**
      *
      *
@@ -2794,6 +2871,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2815,6 +2893,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean importCustomRoutes_;
+
     /**
      *
      *
@@ -2832,6 +2911,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImportCustomRoutes() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2849,6 +2929,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean getImportCustomRoutes() {
       return importCustomRoutes_;
     }
+
     /**
      *
      *
@@ -2870,6 +2951,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2891,6 +2973,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean exchangeSubnetRoutes_;
+
     /**
      *
      *
@@ -2911,6 +2994,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExchangeSubnetRoutes() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2931,6 +3015,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean getExchangeSubnetRoutes() {
       return exchangeSubnetRoutes_;
     }
+
     /**
      *
      *
@@ -2955,6 +3040,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2979,6 +3065,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean exportCustomRoutesWithPublicIp_;
+
     /**
      *
      *
@@ -2999,6 +3086,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExportCustomRoutesWithPublicIp() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -3019,6 +3107,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean getExportCustomRoutesWithPublicIp() {
       return exportCustomRoutesWithPublicIp_;
     }
+
     /**
      *
      *
@@ -3043,6 +3132,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3067,6 +3157,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean importCustomRoutesWithPublicIp_;
+
     /**
      *
      *
@@ -3087,6 +3178,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean hasImportCustomRoutesWithPublicIp() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -3107,6 +3199,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public boolean getImportCustomRoutesWithPublicIp() {
       return importCustomRoutesWithPublicIp_;
     }
+
     /**
      *
      *
@@ -3131,6 +3224,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3155,6 +3249,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3174,6 +3269,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -3196,6 +3292,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3219,6 +3316,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.NetworkPeering.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3244,6 +3342,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3267,6 +3366,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object stateDetails_ = "";
+
     /**
      *
      *
@@ -3290,6 +3390,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3313,6 +3414,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3335,6 +3437,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3353,6 +3456,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3378,6 +3482,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int peerMtu_;
+
     /**
      *
      *
@@ -3395,6 +3500,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public int getPeerMtu() {
       return peerMtu_;
     }
+
     /**
      *
      *
@@ -3416,6 +3522,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3437,6 +3544,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int peerNetworkType_ = 0;
+
     /**
      *
      *
@@ -3454,6 +3562,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     public int getPeerNetworkTypeValue() {
       return peerNetworkType_;
     }
+
     /**
      *
      *
@@ -3474,6 +3583,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3496,6 +3606,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vmwareengine.v1.NetworkPeering.PeerNetworkType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3520,6 +3631,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3541,6 +3653,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -3563,6 +3676,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3585,6 +3699,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3606,6 +3721,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3623,6 +3739,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3647,6 +3764,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object vmwareEngineNetwork_ = "";
+
     /**
      *
      *
@@ -3674,6 +3792,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3701,6 +3820,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3727,6 +3847,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3749,6 +3870,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3778,6 +3900,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3800,6 +3923,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3822,6 +3946,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3843,6 +3968,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3860,6 +3986,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

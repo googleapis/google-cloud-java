@@ -36,6 +36,7 @@ public interface ListSupportedDatabaseFlagsResponseOrBuilder
    */
   java.util.List<com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag>
       getSupportedDatabaseFlagsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListSupportedDatabaseFlagsResponseOrBuilder
    * </code>
    */
   com.google.cloud.alloydb.v1beta.SupportedDatabaseFlag getSupportedDatabaseFlags(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListSupportedDatabaseFlagsResponseOrBuilder
    * </code>
    */
   int getSupportedDatabaseFlagsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListSupportedDatabaseFlagsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.alloydb.v1beta.SupportedDatabaseFlagOrBuilder>
       getSupportedDatabaseFlagsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListSupportedDatabaseFlagsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the certificateMap field is set.
    */
   boolean hasCertificateMap();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetSslProxyOrBuilder
    * @return The certificateMap.
    */
   java.lang.String getCertificateMap();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TargetSslProxyOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface TargetSslProxyOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface TargetSslProxyOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public interface TargetSslProxyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
+
   /**
    *
    *
@@ -260,6 +272,7 @@ public interface TargetSslProxyOrBuilder
    * @return The proxyHeader.
    */
   java.lang.String getProxyHeader();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -298,6 +312,7 @@ public interface TargetSslProxyOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -323,6 +338,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the service field is set.
    */
   boolean hasService();
+
   /**
    *
    *
@@ -335,6 +351,7 @@ public interface TargetSslProxyOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -360,6 +377,7 @@ public interface TargetSslProxyOrBuilder
    * @return A list containing the sslCertificates.
    */
   java.util.List<java.lang.String> getSslCertificatesList();
+
   /**
    *
    *
@@ -372,6 +390,7 @@ public interface TargetSslProxyOrBuilder
    * @return The count of sslCertificates.
    */
   int getSslCertificatesCount();
+
   /**
    *
    *
@@ -385,6 +404,7 @@ public interface TargetSslProxyOrBuilder
    * @return The sslCertificates at the given index.
    */
   java.lang.String getSslCertificates(int index);
+
   /**
    *
    *
@@ -411,6 +431,7 @@ public interface TargetSslProxyOrBuilder
    * @return Whether the sslPolicy field is set.
    */
   boolean hasSslPolicy();
+
   /**
    *
    *
@@ -423,6 +444,7 @@ public interface TargetSslProxyOrBuilder
    * @return The sslPolicy.
    */
   java.lang.String getSslPolicy();
+
   /**
    *
    *

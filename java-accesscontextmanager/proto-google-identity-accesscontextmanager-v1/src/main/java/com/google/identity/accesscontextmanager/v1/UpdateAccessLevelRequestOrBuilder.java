@@ -42,6 +42,7 @@ public interface UpdateAccessLevelRequestOrBuilder
    * @return Whether the accessLevel field is set.
    */
   boolean hasAccessLevel();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateAccessLevelRequestOrBuilder
    * @return The accessLevel.
    */
   com.google.identity.accesscontextmanager.v1.AccessLevel getAccessLevel();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateAccessLevelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateAccessLevelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

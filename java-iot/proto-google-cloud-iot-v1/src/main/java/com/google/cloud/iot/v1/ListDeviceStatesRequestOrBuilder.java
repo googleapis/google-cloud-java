@@ -40,6 +40,7 @@ public interface ListDeviceStatesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

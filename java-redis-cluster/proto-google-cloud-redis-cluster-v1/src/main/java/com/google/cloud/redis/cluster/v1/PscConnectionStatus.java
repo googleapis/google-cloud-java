@@ -72,6 +72,7 @@ public enum PscConnectionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>PSC_CONNECTION_STATUS_UNSPECIFIED = 0;</code>
    */
   public static final int PSC_CONNECTION_STATUS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum PscConnectionStatus implements com.google.protobuf.ProtocolMessageEn
    * <code>PSC_CONNECTION_STATUS_ACTIVE = 1;</code>
    */
   public static final int PSC_CONNECTION_STATUS_ACTIVE_VALUE = 1;
+
   /**
    *
    *

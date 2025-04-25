@@ -34,6 +34,7 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.Service services = 1;</code>
    */
   java.util.List<com.google.cloud.apphub.v1.Service> getServicesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.Service services = 1;</code>
    */
   com.google.cloud.apphub.v1.Service getServices(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.Service services = 1;</code>
    */
   int getServicesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListServicesResponseOrBuilder
    * <code>repeated .google.cloud.apphub.v1.Service services = 1;</code>
    */
   java.util.List<? extends com.google.cloud.apphub.v1.ServiceOrBuilder> getServicesOrBuilderList();
+
   /**
    *
    *
@@ -87,6 +91,7 @@ public interface ListServicesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface ListServicesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface ListServicesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface ListServicesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

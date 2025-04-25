@@ -33,6 +33,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertNodeGroupRequest)
     InsertNodeGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertNodeGroupRequest.newBuilder() to construct.
   private InsertNodeGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int INITIAL_NODE_COUNT_FIELD_NUMBER = 71951469;
   private int initialNodeCount_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
   public static final int NODE_GROUP_RESOURCE_FIELD_NUMBER = 505321899;
   private com.google.cloud.compute.v1.NodeGroup nodeGroupResource_;
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
   public boolean hasNodeGroupResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.NodeGroup.getDefaultInstance()
         : nodeGroupResource_;
   }
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -523,6 +535,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -784,6 +797,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int initialNodeCount_;
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     public int getInitialNodeCount() {
       return initialNodeCount_;
     }
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.NodeGroup.Builder,
             com.google.cloud.compute.v1.NodeGroupOrBuilder>
         nodeGroupResourceBuilder_;
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     public boolean hasNodeGroupResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -880,6 +898,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return nodeGroupResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -904,6 +923,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +946,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +998,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1015,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getNodeGroupResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1036,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
             : nodeGroupResource_;
       }
     }
+
     /**
      *
      *
@@ -1041,6 +1066,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1065,6 +1091,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1089,6 +1116,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1160,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1187,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1171,6 +1202,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1193,6 +1225,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1248,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1270,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1288,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1313,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1301,6 +1338,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1325,6 +1363,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1387,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1407,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

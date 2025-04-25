@@ -38,6 +38,7 @@ public interface UpdateAccountRequestOrBuilder
    * @return Whether the account field is set.
    */
   boolean hasAccount();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAccountRequestOrBuilder
    * @return The account.
    */
   com.google.shopping.merchant.accounts.v1beta.Account getAccount();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateAccountRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateAccountRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

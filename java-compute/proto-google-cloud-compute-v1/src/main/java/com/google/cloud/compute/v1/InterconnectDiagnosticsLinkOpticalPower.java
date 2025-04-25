@@ -33,6 +33,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower)
     InterconnectDiagnosticsLinkOpticalPowerOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InterconnectDiagnosticsLinkOpticalPower.newBuilder() to construct.
   private InterconnectDiagnosticsLinkOpticalPower(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -147,6 +148,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
+
     /**
      *
      *
@@ -157,6 +159,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>HIGH_ALARM = 305363284;</code>
      */
     public static final int HIGH_ALARM_VALUE = 305363284;
+
     /**
      *
      *
@@ -167,6 +170,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>HIGH_WARNING = 220984799;</code>
      */
     public static final int HIGH_WARNING_VALUE = 220984799;
+
     /**
      *
      *
@@ -177,6 +181,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>LOW_ALARM = 316659046;</code>
      */
     public static final int LOW_ALARM_VALUE = 316659046;
+
     /**
      *
      *
@@ -187,6 +192,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>LOW_WARNING = 338793841;</code>
      */
     public static final int LOW_WARNING_VALUE = 338793841;
+
     /**
      *
      *
@@ -294,6 +300,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object state_ = "";
+
   /**
    *
    *
@@ -310,6 +317,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
   public boolean hasState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +342,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       return s;
     }
   }
+
   /**
    *
    *
@@ -361,6 +370,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
 
   public static final int VALUE_FIELD_NUMBER = 111972721;
   private float value_ = 0F;
+
   /**
    *
    *
@@ -376,6 +386,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
   public boolean hasValue() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -573,6 +584,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -780,6 +792,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     private int bitField0_;
 
     private java.lang.Object state_ = "";
+
     /**
      *
      *
@@ -795,6 +808,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public boolean hasState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -818,6 +832,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -841,6 +856,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +898,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +924,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     }
 
     private float value_;
+
     /**
      *
      *
@@ -921,6 +940,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -936,6 +956,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
     public float getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -955,6 +976,7 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       onChanged();
       return this;
     }
+
     /**
      *
      *

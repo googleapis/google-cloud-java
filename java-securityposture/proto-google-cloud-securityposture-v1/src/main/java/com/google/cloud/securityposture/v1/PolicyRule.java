@@ -33,6 +33,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.PolicyRule)
     PolicyRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PolicyRule.newBuilder() to construct.
   private PolicyRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the allowedValues.
      */
     java.util.List<java.lang.String> getAllowedValuesList();
+
     /**
      *
      *
@@ -90,6 +92,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of allowedValues.
      */
     int getAllowedValuesCount();
+
     /**
      *
      *
@@ -103,6 +106,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return The allowedValues at the given index.
      */
     java.lang.String getAllowedValues(int index);
+
     /**
      *
      *
@@ -129,6 +133,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the deniedValues.
      */
     java.util.List<java.lang.String> getDeniedValuesList();
+
     /**
      *
      *
@@ -141,6 +146,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return The count of deniedValues.
      */
     int getDeniedValuesCount();
+
     /**
      *
      *
@@ -154,6 +160,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      * @return The deniedValues at the given index.
      */
     java.lang.String getDeniedValues(int index);
+
     /**
      *
      *
@@ -168,6 +175,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDeniedValuesBytes(int index);
   }
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.PolicyRule.StringValues)
       StringValuesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StringValues.newBuilder() to construct.
     private StringValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -234,6 +243,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList allowedValues_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -248,6 +258,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getAllowedValuesList() {
       return allowedValues_;
     }
+
     /**
      *
      *
@@ -262,6 +273,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public int getAllowedValuesCount() {
       return allowedValues_.size();
     }
+
     /**
      *
      *
@@ -277,6 +289,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getAllowedValues(int index) {
       return allowedValues_.get(index);
     }
+
     /**
      *
      *
@@ -298,6 +311,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList deniedValues_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -312,6 +326,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getDeniedValuesList() {
       return deniedValues_;
     }
+
     /**
      *
      *
@@ -326,6 +341,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public int getDeniedValuesCount() {
       return deniedValues_.size();
     }
+
     /**
      *
      *
@@ -341,6 +357,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDeniedValues(int index) {
       return deniedValues_.get(index);
     }
+
     /**
      *
      *
@@ -541,6 +558,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -784,6 +802,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -799,6 +818,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         allowedValues_.makeImmutable();
         return allowedValues_;
       }
+
       /**
        *
        *
@@ -813,6 +833,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public int getAllowedValuesCount() {
         return allowedValues_.size();
       }
+
       /**
        *
        *
@@ -828,6 +849,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getAllowedValues(int index) {
         return allowedValues_.get(index);
       }
+
       /**
        *
        *
@@ -843,6 +865,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getAllowedValuesBytes(int index) {
         return allowedValues_.getByteString(index);
       }
+
       /**
        *
        *
@@ -866,6 +889,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -888,6 +912,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -907,6 +932,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -925,6 +951,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -958,6 +985,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -973,6 +1001,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         deniedValues_.makeImmutable();
         return deniedValues_;
       }
+
       /**
        *
        *
@@ -987,6 +1016,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public int getDeniedValuesCount() {
         return deniedValues_.size();
       }
+
       /**
        *
        *
@@ -1002,6 +1032,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getDeniedValues(int index) {
         return deniedValues_.get(index);
       }
+
       /**
        *
        *
@@ -1017,6 +1048,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getDeniedValuesBytes(int index) {
         return deniedValues_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1040,6 +1072,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1062,6 +1095,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1081,6 +1115,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1099,6 +1134,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1208,6 +1244,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1245,6 +1282,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VALUES_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -1261,6 +1299,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValues() {
     return kindCase_ == 1;
   }
+
   /**
    *
    *
@@ -1280,6 +1319,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.securityposture.v1.PolicyRule.StringValues.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1299,6 +1339,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ALLOW_ALL_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1315,6 +1356,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAllowAll() {
     return kindCase_ == 2;
   }
+
   /**
    *
    *
@@ -1336,6 +1378,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DENY_ALL_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -1352,6 +1395,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDenyAll() {
     return kindCase_ == 3;
   }
+
   /**
    *
    *
@@ -1373,6 +1417,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ENFORCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1390,6 +1435,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnforce() {
     return kindCase_ == 4;
   }
+
   /**
    *
    *
@@ -1413,6 +1459,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONDITION_FIELD_NUMBER = 5;
   private com.google.type.Expr condition_;
+
   /**
    *
    *
@@ -1439,6 +1486,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCondition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1465,6 +1513,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
   public com.google.type.Expr getCondition() {
     return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
   }
+
   /**
    *
    *
@@ -1723,6 +1772,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2002,6 +2052,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.securityposture.v1.PolicyRule.StringValues.Builder,
             com.google.cloud.securityposture.v1.PolicyRule.StringValuesOrBuilder>
         valuesBuilder_;
+
     /**
      *
      *
@@ -2018,6 +2069,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValues() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -2044,6 +2096,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.PolicyRule.StringValues.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2067,6 +2120,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2088,6 +2142,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2178,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2205,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2162,6 +2219,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securityposture.v1.PolicyRule.StringValues.Builder getValuesBuilder() {
       return getValuesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2184,6 +2242,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.securityposture.v1.PolicyRule.StringValues.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2233,6 +2292,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAllowAll() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -2251,6 +2311,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -2271,6 +2332,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2307,6 +2369,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDenyAll() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -2325,6 +2388,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -2345,6 +2409,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2382,6 +2447,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnforce() {
       return kindCase_ == 4;
     }
+
     /**
      *
      *
@@ -2401,6 +2467,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -2422,6 +2489,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2448,6 +2516,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Expr, com.google.type.Expr.Builder, com.google.type.ExprOrBuilder>
         conditionBuilder_;
+
     /**
      *
      *
@@ -2473,6 +2542,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCondition() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2502,6 +2572,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return conditionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2606,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2565,6 +2637,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2603,6 +2676,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2633,6 +2707,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2658,6 +2733,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getConditionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2685,6 +2761,7 @@ public final class PolicyRule extends com.google.protobuf.GeneratedMessageV3
         return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
       }
     }
+
     /**
      *
      *

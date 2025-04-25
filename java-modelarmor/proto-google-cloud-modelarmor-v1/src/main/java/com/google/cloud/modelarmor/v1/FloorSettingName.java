@@ -288,7 +288,8 @@ public class FloorSettingName implements ResourceName {
     private Builder(FloorSettingName floorSettingName) {
       Preconditions.checkArgument(
           Objects.equals(floorSettingName.pathTemplate, PROJECT_LOCATION),
-          "toBuilder is only supported when FloorSettingName has the pattern of projects/{project}/locations/{location}/floorSetting");
+          "toBuilder is only supported when FloorSettingName has the pattern of"
+              + " projects/{project}/locations/{location}/floorSetting");
       this.project = floorSettingName.project;
       this.location = floorSettingName.location;
     }

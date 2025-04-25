@@ -40,6 +40,7 @@ public interface DeleteNoteRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

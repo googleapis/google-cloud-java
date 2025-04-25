@@ -36,6 +36,7 @@ public interface SdpFilterResultOrBuilder
    * @return Whether the inspectResult field is set.
    */
   boolean hasInspectResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SdpFilterResultOrBuilder
    * @return The inspectResult.
    */
   com.google.cloud.modelarmor.v1.SdpInspectResult getInspectResult();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface SdpFilterResultOrBuilder
    * @return Whether the deidentifyResult field is set.
    */
   boolean hasDeidentifyResult();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SdpFilterResultOrBuilder
    * @return The deidentifyResult.
    */
   com.google.cloud.modelarmor.v1.SdpDeidentifyResult getDeidentifyResult();
+
   /**
    *
    *

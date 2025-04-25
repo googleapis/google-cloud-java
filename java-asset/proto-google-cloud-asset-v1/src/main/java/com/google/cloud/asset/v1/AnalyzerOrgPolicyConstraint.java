@@ -33,6 +33,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint)
     AnalyzerOrgPolicyConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzerOrgPolicyConstraint.newBuilder() to construct.
   private AnalyzerOrgPolicyConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -163,6 +167,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for constraintDefault.
      */
     int getConstraintDefaultValue();
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return Whether the listConstraint field is set.
      */
     boolean hasListConstraint();
+
     /**
      *
      *
@@ -208,6 +214,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ListConstraint
         getListConstraint();
+
     /**
      *
      *
@@ -236,6 +243,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return Whether the booleanConstraint field is set.
      */
     boolean hasBooleanConstraint();
+
     /**
      *
      *
@@ -251,6 +259,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.BooleanConstraint
         getBooleanConstraint();
+
     /**
      *
      *
@@ -268,6 +277,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ConstraintTypeCase
         getConstraintTypeCase();
   }
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint)
       ConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Constraint.newBuilder() to construct.
     private Constraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -374,6 +385,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>CONSTRAINT_DEFAULT_UNSPECIFIED = 0;</code>
        */
       public static final int CONSTRAINT_DEFAULT_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -385,6 +397,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>ALLOW = 1;</code>
        */
       public static final int ALLOW_VALUE = 1;
+
       /**
        *
        *
@@ -521,6 +534,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        */
       boolean getSupportsUnder();
     }
+
     /**
      *
      *
@@ -537,6 +551,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ListConstraint)
         ListConstraintOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ListConstraint.newBuilder() to construct.
       private ListConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -569,6 +584,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
       public static final int SUPPORTS_IN_FIELD_NUMBER = 1;
       private boolean supportsIn_ = false;
+
       /**
        *
        *
@@ -589,6 +605,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
       public static final int SUPPORTS_UNDER_FIELD_NUMBER = 2;
       private boolean supportsUnder_ = false;
+
       /**
        *
        *
@@ -789,6 +806,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1006,6 +1024,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         private int bitField0_;
 
         private boolean supportsIn_;
+
         /**
          *
          *
@@ -1023,6 +1042,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         public boolean getSupportsIn() {
           return supportsIn_;
         }
+
         /**
          *
          *
@@ -1044,6 +1064,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1065,6 +1086,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
 
         private boolean supportsUnder_;
+
         /**
          *
          *
@@ -1083,6 +1105,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         public boolean getSupportsUnder() {
           return supportsUnder_;
         }
+
         /**
          *
          *
@@ -1105,6 +1128,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1199,6 +1223,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.BooleanConstraint)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -1218,6 +1243,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.BooleanConstraint)
         BooleanConstraintOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use BooleanConstraint.newBuilder() to construct.
       private BooleanConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1424,6 +1450,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1696,6 +1723,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       private ConstraintTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1732,6 +1760,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1758,6 +1787,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1789,6 +1819,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1812,6 +1843,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1840,6 +1872,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1864,6 +1897,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -1891,6 +1925,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     public static final int CONSTRAINT_DEFAULT_FIELD_NUMBER = 4;
     private int constraintDefault_ = 0;
+
     /**
      *
      *
@@ -1908,6 +1943,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public int getConstraintDefaultValue() {
       return constraintDefault_;
     }
+
     /**
      *
      *
@@ -1934,6 +1970,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     }
 
     public static final int LIST_CONSTRAINT_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -1951,6 +1988,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public boolean hasListConstraint() {
       return constraintTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -1974,6 +2012,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       return com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.ListConstraint
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1997,6 +2036,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     }
 
     public static final int BOOLEAN_CONSTRAINT_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -2014,6 +2054,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public boolean hasBooleanConstraint() {
       return constraintTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -2037,6 +2078,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       return com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.BooleanConstraint
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2304,6 +2346,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2606,6 +2649,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -2631,6 +2675,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2656,6 +2701,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2680,6 +2726,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2700,6 +2747,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2727,6 +2775,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -2749,6 +2798,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2771,6 +2821,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2792,6 +2843,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2809,6 +2861,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2833,6 +2886,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -2856,6 +2910,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2879,6 +2934,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2901,6 +2957,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2919,6 +2976,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2944,6 +3002,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private int constraintDefault_ = 0;
+
       /**
        *
        *
@@ -2961,6 +3020,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public int getConstraintDefaultValue() {
         return constraintDefault_;
       }
+
       /**
        *
        *
@@ -2981,6 +3041,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3005,6 +3066,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3030,6 +3092,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3057,6 +3120,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint
                   .ListConstraintOrBuilder>
           listConstraintBuilder_;
+
       /**
        *
        *
@@ -3074,6 +3138,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public boolean hasListConstraint() {
         return constraintTypeCase_ == 5;
       }
+
       /**
        *
        *
@@ -3105,6 +3170,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3130,6 +3196,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3153,6 +3220,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3193,6 +3261,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -3220,6 +3289,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -3235,6 +3305,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           getListConstraintBuilder() {
         return getListConstraintFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3261,6 +3332,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3310,6 +3382,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint
                   .BooleanConstraintOrBuilder>
           booleanConstraintBuilder_;
+
       /**
        *
        *
@@ -3327,6 +3400,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public boolean hasBooleanConstraint() {
         return constraintTypeCase_ == 6;
       }
+
       /**
        *
        *
@@ -3359,6 +3433,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3385,6 +3460,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3408,6 +3484,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3449,6 +3526,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         constraintTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3476,6 +3554,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -3492,6 +3571,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           getBooleanConstraintBuilder() {
         return getBooleanConstraintFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3519,6 +3599,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3652,6 +3733,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      *
      *
@@ -3684,6 +3766,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return A list containing the resourceTypes.
      */
     java.util.List<java.lang.String> getResourceTypesList();
+
     /**
      *
      *
@@ -3698,6 +3781,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The count of resourceTypes.
      */
     int getResourceTypesCount();
+
     /**
      *
      *
@@ -3713,6 +3797,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The resourceTypes at the given index.
      */
     java.lang.String getResourceTypes(int index);
+
     /**
      *
      *
@@ -3745,6 +3830,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     java.util.List<
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint.MethodType>
         getMethodTypesList();
+
     /**
      *
      *
@@ -3759,6 +3845,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The count of methodTypes.
      */
     int getMethodTypesCount();
+
     /**
      *
      *
@@ -3775,6 +3862,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      */
     com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint.MethodType
         getMethodTypes(int index);
+
     /**
      *
      *
@@ -3789,6 +3877,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return A list containing the enum numeric values on the wire for methodTypes.
      */
     java.util.List<java.lang.Integer> getMethodTypesValueList();
+
     /**
      *
      *
@@ -3819,6 +3908,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The condition.
      */
     java.lang.String getCondition();
+
     /**
      *
      *
@@ -3848,6 +3938,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for actionType.
      */
     int getActionTypeValue();
+
     /**
      *
      *
@@ -3876,6 +3967,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The displayName.
      */
     java.lang.String getDisplayName();
+
     /**
      *
      *
@@ -3901,6 +3993,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      * @return The description.
      */
     java.lang.String getDescription();
+
     /**
      *
      *
@@ -3914,6 +4007,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getDescriptionBytes();
   }
+
   /**
    *
    *
@@ -3928,6 +4022,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint)
       CustomConstraintOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CustomConstraint.newBuilder() to construct.
     private CustomConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4018,6 +4113,26 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>DELETE = 3;</code>
        */
       DELETE(3),
+      /**
+       *
+       *
+       * <pre>
+       * Constraint applied when removing an IAM grant.
+       * </pre>
+       *
+       * <code>REMOVE_GRANT = 4;</code>
+       */
+      REMOVE_GRANT(4),
+      /**
+       *
+       *
+       * <pre>
+       * Constraint applied when enforcing forced tagging.
+       * </pre>
+       *
+       * <code>GOVERN_TAGS = 5;</code>
+       */
+      GOVERN_TAGS(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -4031,6 +4146,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>METHOD_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int METHOD_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4041,6 +4157,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>CREATE = 1;</code>
        */
       public static final int CREATE_VALUE = 1;
+
       /**
        *
        *
@@ -4051,6 +4168,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>UPDATE = 2;</code>
        */
       public static final int UPDATE_VALUE = 2;
+
       /**
        *
        *
@@ -4061,6 +4179,28 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>DELETE = 3;</code>
        */
       public static final int DELETE_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Constraint applied when removing an IAM grant.
+       * </pre>
+       *
+       * <code>REMOVE_GRANT = 4;</code>
+       */
+      public static final int REMOVE_GRANT_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Constraint applied when enforcing forced tagging.
+       * </pre>
+       *
+       * <code>GOVERN_TAGS = 5;</code>
+       */
+      public static final int GOVERN_TAGS_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -4094,6 +4234,10 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             return UPDATE;
           case 3:
             return DELETE;
+          case 4:
+            return REMOVE_GRANT;
+          case 5:
+            return GOVERN_TAGS;
           default:
             return null;
         }
@@ -4204,6 +4348,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int ACTION_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4214,6 +4359,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
        * <code>ALLOW = 1;</code>
        */
       public static final int ALLOW_VALUE = 1;
+
       /**
        *
        *
@@ -4315,6 +4461,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4343,6 +4490,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -4377,6 +4525,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList resourceTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -4393,6 +4542,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public com.google.protobuf.ProtocolStringList getResourceTypesList() {
       return resourceTypes_;
     }
+
     /**
      *
      *
@@ -4409,6 +4559,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public int getResourceTypesCount() {
       return resourceTypes_.size();
     }
+
     /**
      *
      *
@@ -4426,6 +4577,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public java.lang.String getResourceTypes(int index) {
       return resourceTypes_.get(index);
     }
+
     /**
      *
      *
@@ -4470,6 +4622,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
                     : result;
               }
             };
+
     /**
      *
      *
@@ -4492,6 +4645,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint.MethodType>(
           methodTypes_, methodTypes_converter_);
     }
+
     /**
      *
      *
@@ -4509,6 +4663,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public int getMethodTypesCount() {
       return methodTypes_.size();
     }
+
     /**
      *
      *
@@ -4528,6 +4683,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         getMethodTypes(int index) {
       return methodTypes_converter_.convert(methodTypes_.get(index));
     }
+
     /**
      *
      *
@@ -4545,6 +4701,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public java.util.List<java.lang.Integer> getMethodTypesValueList() {
       return methodTypes_;
     }
+
     /**
      *
      *
@@ -4570,6 +4727,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object condition_ = "";
+
     /**
      *
      *
@@ -4595,6 +4753,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -4623,6 +4782,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     public static final int ACTION_TYPE_FIELD_NUMBER = 5;
     private int actionType_ = 0;
+
     /**
      *
      *
@@ -4640,6 +4800,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public int getActionTypeValue() {
       return actionType_;
     }
+
     /**
      *
      *
@@ -4669,6 +4830,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -4692,6 +4854,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -4720,6 +4883,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4743,6 +4907,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -5014,6 +5179,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5332,6 +5498,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        *
        *
@@ -5359,6 +5526,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5386,6 +5554,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5412,6 +5581,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5434,6 +5604,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5471,6 +5642,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -5488,6 +5660,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         resourceTypes_.makeImmutable();
         return resourceTypes_;
       }
+
       /**
        *
        *
@@ -5504,6 +5677,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public int getResourceTypesCount() {
         return resourceTypes_.size();
       }
+
       /**
        *
        *
@@ -5521,6 +5695,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public java.lang.String getResourceTypes(int index) {
         return resourceTypes_.get(index);
       }
+
       /**
        *
        *
@@ -5538,6 +5713,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
         return resourceTypes_.getByteString(index);
       }
+
       /**
        *
        *
@@ -5563,6 +5739,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5587,6 +5764,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5608,6 +5786,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5628,6 +5807,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5662,6 +5842,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           bitField0_ |= 0x00000004;
         }
       }
+
       /**
        *
        *
@@ -5683,6 +5864,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint.MethodType>(
             methodTypes_, methodTypes_converter_);
       }
+
       /**
        *
        *
@@ -5699,6 +5881,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public int getMethodTypesCount() {
         return methodTypes_.size();
       }
+
       /**
        *
        *
@@ -5717,6 +5900,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           getMethodTypes(int index) {
         return methodTypes_converter_.convert(methodTypes_.get(index));
       }
+
       /**
        *
        *
@@ -5743,6 +5927,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5767,6 +5952,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5795,6 +5981,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5814,6 +6001,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5830,6 +6018,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public java.util.List<java.lang.Integer> getMethodTypesValueList() {
         return java.util.Collections.unmodifiableList(methodTypes_);
       }
+
       /**
        *
        *
@@ -5847,6 +6036,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public int getMethodTypesValue(int index) {
         return methodTypes_.get(index);
       }
+
       /**
        *
        *
@@ -5868,6 +6058,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5888,6 +6079,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5912,6 +6104,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private java.lang.Object condition_ = "";
+
       /**
        *
        *
@@ -5936,6 +6129,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5960,6 +6154,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5983,6 +6178,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6002,6 +6198,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6028,6 +6225,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private int actionType_ = 0;
+
       /**
        *
        *
@@ -6045,6 +6243,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       public int getActionTypeValue() {
         return actionType_;
       }
+
       /**
        *
        *
@@ -6065,6 +6264,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6089,6 +6289,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6113,6 +6314,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6134,6 +6336,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private java.lang.Object displayName_ = "";
+
       /**
        *
        *
@@ -6156,6 +6359,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6178,6 +6382,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6199,6 +6404,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6216,6 +6422,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6240,6 +6447,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
 
       private java.lang.Object description_ = "";
+
       /**
        *
        *
@@ -6262,6 +6470,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6284,6 +6493,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6305,6 +6515,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6322,6 +6533,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6430,6 +6642,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     private ConstraintDefinitionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -6463,6 +6676,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
   }
 
   public static final int GOOGLE_DEFINED_CONSTRAINT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -6480,6 +6694,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
   public boolean hasGoogleDefinedConstraint() {
     return constraintDefinitionCase_ == 1;
   }
+
   /**
    *
    *
@@ -6502,6 +6717,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     }
     return com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6524,6 +6740,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
   }
 
   public static final int CUSTOM_CONSTRAINT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -6541,6 +6758,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
   public boolean hasCustomConstraint() {
     return constraintDefinitionCase_ == 2;
   }
+
   /**
    *
    *
@@ -6564,6 +6782,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     return com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -6785,6 +7004,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7022,6 +7242,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.Constraint.Builder,
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.ConstraintOrBuilder>
         googleDefinedConstraintBuilder_;
+
     /**
      *
      *
@@ -7039,6 +7260,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public boolean hasGoogleDefinedConstraint() {
       return constraintDefinitionCase_ == 1;
     }
+
     /**
      *
      *
@@ -7070,6 +7292,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7095,6 +7318,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7117,6 +7341,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7155,6 +7380,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -7182,6 +7408,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -7197,6 +7424,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         getGoogleDefinedConstraintBuilder() {
       return getGoogleDefinedConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7222,6 +7450,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7264,6 +7493,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraint.Builder,
             com.google.cloud.asset.v1.AnalyzerOrgPolicyConstraint.CustomConstraintOrBuilder>
         customConstraintBuilder_;
+
     /**
      *
      *
@@ -7281,6 +7511,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
     public boolean hasCustomConstraint() {
       return constraintDefinitionCase_ == 2;
     }
+
     /**
      *
      *
@@ -7312,6 +7543,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -7337,6 +7569,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7360,6 +7593,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7398,6 +7632,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       constraintDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -7425,6 +7660,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -7440,6 +7676,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
         getCustomConstraintBuilder() {
       return getCustomConstraintFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7465,6 +7702,7 @@ public final class AnalyzerOrgPolicyConstraint extends com.google.protobuf.Gener
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

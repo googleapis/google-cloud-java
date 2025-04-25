@@ -41,6 +41,7 @@ public interface EvaluateProcessorVersionRequestOrBuilder
    * @return The processorVersion.
    */
   java.lang.String getProcessorVersion();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface EvaluateProcessorVersionRequestOrBuilder
    * @return Whether the evaluationDocuments field is set.
    */
   boolean hasEvaluationDocuments();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface EvaluateProcessorVersionRequestOrBuilder
    * @return The evaluationDocuments.
    */
   com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getEvaluationDocuments();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface OperationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getZone();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface OperationOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface OperationOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface OperationOrBuilder
    * @return The detail.
    */
   java.lang.String getDetail();
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getStatusMessage();
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public interface OperationOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -257,6 +264,7 @@ public interface OperationOrBuilder
    * @return The targetLink.
    */
   java.lang.String getTargetLink();
+
   /**
    *
    *
@@ -300,6 +308,7 @@ public interface OperationOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -330,6 +339,7 @@ public interface OperationOrBuilder
    * @return The startTime.
    */
   java.lang.String getStartTime();
+
   /**
    *
    *
@@ -357,6 +367,7 @@ public interface OperationOrBuilder
    * @return The endTime.
    */
   java.lang.String getEndTime();
+
   /**
    *
    *
@@ -385,6 +396,7 @@ public interface OperationOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public interface OperationOrBuilder
    * @return The progress.
    */
   com.google.container.v1.OperationProgress getProgress();
+
   /**
    *
    *
@@ -426,6 +439,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.container.v1.StatusCondition> getClusterConditionsList();
+
   /**
    *
    *
@@ -440,6 +454,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1.StatusCondition getClusterConditions(int index);
+
   /**
    *
    *
@@ -454,6 +469,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   int getClusterConditionsCount();
+
   /**
    *
    *
@@ -469,6 +485,7 @@ public interface OperationOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getClusterConditionsOrBuilderList();
+
   /**
    *
    *
@@ -498,6 +515,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.container.v1.StatusCondition> getNodepoolConditionsList();
+
   /**
    *
    *
@@ -512,6 +530,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   com.google.container.v1.StatusCondition getNodepoolConditions(int index);
+
   /**
    *
    *
@@ -526,6 +545,7 @@ public interface OperationOrBuilder
    */
   @java.lang.Deprecated
   int getNodepoolConditionsCount();
+
   /**
    *
    *
@@ -541,6 +561,7 @@ public interface OperationOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
       getNodepoolConditionsOrBuilderList();
+
   /**
    *
    *
@@ -568,6 +589,7 @@ public interface OperationOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -580,6 +602,7 @@ public interface OperationOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

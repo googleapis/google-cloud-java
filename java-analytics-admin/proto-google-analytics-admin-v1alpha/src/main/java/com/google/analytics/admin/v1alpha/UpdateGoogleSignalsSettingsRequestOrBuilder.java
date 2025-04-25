@@ -39,6 +39,7 @@ public interface UpdateGoogleSignalsSettingsRequestOrBuilder
    * @return Whether the googleSignalsSettings field is set.
    */
   boolean hasGoogleSignalsSettings();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateGoogleSignalsSettingsRequestOrBuilder
    * @return The googleSignalsSettings.
    */
   com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateGoogleSignalsSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateGoogleSignalsSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

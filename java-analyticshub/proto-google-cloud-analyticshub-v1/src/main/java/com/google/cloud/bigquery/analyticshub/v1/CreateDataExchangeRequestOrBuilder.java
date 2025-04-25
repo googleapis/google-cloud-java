@@ -39,6 +39,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The dataExchangeId.
    */
   java.lang.String getDataExchangeId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return Whether the dataExchange field is set.
    */
   boolean hasDataExchange();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateDataExchangeRequestOrBuilder
    * @return The dataExchange.
    */
   com.google.cloud.bigquery.analyticshub.v1.DataExchange getDataExchange();
+
   /**
    *
    *

@@ -446,7 +446,8 @@ public class HttpJsonDirectAccessServiceStub extends DirectAccessServiceStub {
   @Override
   public BidiStreamingCallable<AdbMessage, DeviceMessage> adbConnectCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: adbConnectCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: adbConnectCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override

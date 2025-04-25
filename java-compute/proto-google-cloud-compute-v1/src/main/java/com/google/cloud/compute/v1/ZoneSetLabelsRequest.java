@@ -32,6 +32,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ZoneSetLabelsRequest)
     ZoneSetLabelsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ZoneSetLabelsRequest.newBuilder() to construct.
   private ZoneSetLabelsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object labelFingerprint_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
   public boolean hasLabelFingerprint() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -183,12 +188,14 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -425,6 +434,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +662,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object labelFingerprint_ = "";
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     public boolean hasLabelFingerprint() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +745,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +812,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -812,12 +829,14 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -851,6 +871,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -893,12 +915,14 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -919,6 +943,7 @@ public final class ZoneSetLabelsRequest extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

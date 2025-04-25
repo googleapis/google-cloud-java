@@ -38,6 +38,7 @@ public interface DistillationDataStatsOrBuilder
    * @return Whether the trainingDatasetStats field is set.
    */
   boolean hasTrainingDatasetStats();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DistillationDataStatsOrBuilder
    * @return The trainingDatasetStats.
    */
   com.google.cloud.aiplatform.v1beta1.DatasetStats getTrainingDatasetStats();
+
   /**
    *
    *

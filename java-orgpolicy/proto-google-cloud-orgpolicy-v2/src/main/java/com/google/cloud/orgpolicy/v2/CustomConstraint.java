@@ -38,6 +38,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.orgpolicy.v2.CustomConstraint)
     CustomConstraintOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomConstraint.newBuilder() to construct.
   private CustomConstraint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,9 +80,9 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The operation for which this constraint will be applied. To apply this
-   * constraint only when creating new VMs, the `method_types` should be
+   * constraint only when creating new resources, the `method_types` should be
    * `CREATE` only. To apply this constraint when creating or deleting
-   * VMs, the `method_types` should be `CREATE` and `DELETE`.
+   * resources, the `method_types` should be `CREATE` and `DELETE`.
    *
    * `UPDATE` only custom constraints are not supported. Use `CREATE` or
    * `CREATE, UPDATE`.
@@ -94,7 +95,8 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Results in an error.
+     * This is only used for distinguishing unset values and should never be
+     * used. Results in an error.
      * </pre>
      *
      * <code>METHOD_TYPE_UNSPECIFIED = 0;</code>
@@ -125,7 +127,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Constraint applied when deleting the resource.
-     * Not supported yet.
+     * Not currently supported.
      * </pre>
      *
      * <code>DELETE = 3;</code>
@@ -158,12 +160,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Results in an error.
+     * This is only used for distinguishing unset values and should never be
+     * used. Results in an error.
      * </pre>
      *
      * <code>METHOD_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int METHOD_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -174,6 +178,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>CREATE = 1;</code>
      */
     public static final int CREATE_VALUE = 1;
+
     /**
      *
      *
@@ -184,17 +189,19 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>UPDATE = 2;</code>
      */
     public static final int UPDATE_VALUE = 2;
+
     /**
      *
      *
      * <pre>
      * Constraint applied when deleting the resource.
-     * Not supported yet.
+     * Not currently supported.
      * </pre>
      *
      * <code>DELETE = 3;</code>
      */
     public static final int DELETE_VALUE = 3;
+
     /**
      *
      *
@@ -205,6 +212,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>REMOVE_GRANT = 4;</code>
      */
     public static final int REMOVE_GRANT_VALUE = 4;
+
     /**
      *
      *
@@ -319,7 +327,8 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Results in an error.
+     * This is only used for distinguishing unset values and should never be
+     * used. Results in an error.
      * </pre>
      *
      * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
@@ -352,12 +361,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Results in an error.
+     * This is only used for distinguishing unset values and should never be
+     * used. Results in an error.
      * </pre>
      *
      * <code>ACTION_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int ACTION_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -368,6 +379,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
      * <code>ALLOW = 1;</code>
      */
     public static final int ALLOW_VALUE = 1;
+
     /**
      *
      *
@@ -467,6 +479,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -498,6 +511,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -535,12 +549,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -552,12 +567,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getResourceTypesList() {
     return resourceTypes_;
   }
+
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -569,12 +585,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public int getResourceTypesCount() {
     return resourceTypes_.size();
   }
+
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -587,12 +604,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public java.lang.String getResourceTypes(int index) {
     return resourceTypes_.get(index);
   }
+
   /**
    *
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -625,6 +643,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
                   : result;
             }
           };
+
   /**
    *
    *
@@ -643,6 +662,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         java.lang.Integer, com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType>(
         methodTypes_, methodTypes_converter_);
   }
+
   /**
    *
    *
@@ -658,6 +678,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public int getMethodTypesCount() {
     return methodTypes_.size();
   }
+
   /**
    *
    *
@@ -674,6 +695,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType getMethodTypes(int index) {
     return methodTypes_converter_.convert(methodTypes_.get(index));
   }
+
   /**
    *
    *
@@ -689,6 +711,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public java.util.List<java.lang.Integer> getMethodTypesValueList() {
     return methodTypes_;
   }
+
   /**
    *
    *
@@ -712,11 +735,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object condition_ = "";
+
   /**
    *
    *
    * <pre>
-   * Org policy condition/expression. For example:
+   * A Common Expression Language (CEL) condition which is used in the
+   * evaluation of the constraint. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -739,11 +764,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * Org policy condition/expression. For example:
+   * A Common Expression Language (CEL) condition which is used in the
+   * evaluation of the constraint. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -769,6 +796,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   public static final int ACTION_TYPE_FIELD_NUMBER = 5;
   private int actionType_ = 0;
+
   /**
    *
    *
@@ -784,6 +812,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public int getActionTypeValue() {
     return actionType_;
   }
+
   /**
    *
    *
@@ -808,6 +837,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -832,6 +862,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -861,6 +892,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -885,6 +917,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -912,13 +945,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -930,13 +964,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -948,13 +983,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1219,6 +1255,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1556,6 +1593,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1586,6 +1624,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1616,6 +1655,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1645,6 +1685,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1670,6 +1711,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1710,12 +1752,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1728,12 +1771,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       resourceTypes_.makeImmutable();
       return resourceTypes_;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1745,12 +1789,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public int getResourceTypesCount() {
       return resourceTypes_.size();
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1763,12 +1808,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public java.lang.String getResourceTypes(int index) {
       return resourceTypes_.get(index);
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1781,12 +1827,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getResourceTypesBytes(int index) {
       return resourceTypes_.getByteString(index);
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1807,12 +1854,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1832,12 +1880,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1854,12 +1903,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1875,12 +1925,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Immutable. The resource instance type on which this policy applies. Format
-     * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+     * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
      *
      *  * `compute.googleapis.com/Instance`.
      * </pre>
@@ -1910,6 +1961,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1928,6 +1980,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
           java.lang.Integer, com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType>(
           methodTypes_, methodTypes_converter_);
     }
+
     /**
      *
      *
@@ -1943,6 +1996,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public int getMethodTypesCount() {
       return methodTypes_.size();
     }
+
     /**
      *
      *
@@ -1959,6 +2013,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.orgpolicy.v2.CustomConstraint.MethodType getMethodTypes(int index) {
       return methodTypes_converter_.convert(methodTypes_.get(index));
     }
+
     /**
      *
      *
@@ -1983,6 +2038,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2061,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2028,6 +2085,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2046,6 +2104,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2061,6 +2120,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public java.util.List<java.lang.Integer> getMethodTypesValueList() {
       return java.util.Collections.unmodifiableList(methodTypes_);
     }
+
     /**
      *
      *
@@ -2077,6 +2137,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public int getMethodTypesValue(int index) {
       return methodTypes_.get(index);
     }
+
     /**
      *
      *
@@ -2097,6 +2158,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2116,6 +2178,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2139,11 +2202,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object condition_ = "";
+
     /**
      *
      *
      * <pre>
-     * Org policy condition/expression. For example:
+     * A Common Expression Language (CEL) condition which is used in the
+     * evaluation of the constraint. For example:
      * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
      * `resource.management.auto_upgrade == true`
      *
@@ -2165,11 +2230,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Org policy condition/expression. For example:
+     * A Common Expression Language (CEL) condition which is used in the
+     * evaluation of the constraint. For example:
      * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
      * `resource.management.auto_upgrade == true`
      *
@@ -2191,11 +2258,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Org policy condition/expression. For example:
+     * A Common Expression Language (CEL) condition which is used in the
+     * evaluation of the constraint. For example:
      * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
      * `resource.management.auto_upgrade == true`
      *
@@ -2216,11 +2285,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Org policy condition/expression. For example:
+     * A Common Expression Language (CEL) condition which is used in the
+     * evaluation of the constraint. For example:
      * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
      * `resource.management.auto_upgrade == true`
      *
@@ -2237,11 +2308,13 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Org policy condition/expression. For example:
+     * A Common Expression Language (CEL) condition which is used in the
+     * evaluation of the constraint. For example:
      * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
      * `resource.management.auto_upgrade == true`
      *
@@ -2265,6 +2338,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     }
 
     private int actionType_ = 0;
+
     /**
      *
      *
@@ -2280,6 +2354,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public int getActionTypeValue() {
       return actionType_;
     }
+
     /**
      *
      *
@@ -2298,6 +2373,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2393,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
           ? com.google.cloud.orgpolicy.v2.CustomConstraint.ActionType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2338,6 +2415,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2357,6 +2435,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -2380,6 +2459,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2403,6 +2483,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2425,6 +2506,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2443,6 +2525,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2468,6 +2551,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2491,6 +2575,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2514,6 +2599,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2536,6 +2622,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2554,6 +2641,7 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2584,13 +2672,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2602,13 +2691,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2626,13 +2716,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2652,13 +2743,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2675,13 +2767,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2706,13 +2799,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2729,13 +2823,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2747,13 +2842,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>
@@ -2769,13 +2865,14 @@ public final class CustomConstraint extends com.google.protobuf.GeneratedMessage
             : updateTime_;
       }
     }
+
     /**
      *
      *
      * <pre>
      * Output only. The last time this custom constraint was updated. This
      * represents the last time that the `CreateCustomConstraint` or
-     * `UpdateCustomConstraint` RPC was called
+     * `UpdateCustomConstraint` methods were called.
      * </pre>
      *
      * <code>

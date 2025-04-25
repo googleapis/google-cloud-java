@@ -77,6 +77,7 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PRESET_TOPOLOGY_UNSPECIFIED = 0;</code>
    */
   public static final int PRESET_TOPOLOGY_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public enum PresetTopology implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MESH = 2;</code>
    */
   public static final int MESH_VALUE = 2;
+
   /**
    *
    *

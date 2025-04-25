@@ -33,6 +33,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.InferenceParameter)
     InferenceParameterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InferenceParameter.newBuilder() to construct.
   private InferenceParameter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int MAX_OUTPUT_TOKENS_FIELD_NUMBER = 1;
   private int maxOutputTokens_ = 0;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
   public boolean hasMaxOutputTokens() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
 
   public static final int TEMPERATURE_FIELD_NUMBER = 2;
   private double temperature_ = 0D;
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
   public boolean hasTemperature() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
 
   public static final int TOP_K_FIELD_NUMBER = 3;
   private int topK_ = 0;
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
   public boolean hasTopK() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
 
   public static final int TOP_P_FIELD_NUMBER = 4;
   private double topP_ = 0D;
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
   public boolean hasTopP() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -441,6 +450,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -668,6 +678,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int maxOutputTokens_;
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public boolean hasMaxOutputTokens() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public int getMaxOutputTokens() {
       return maxOutputTokens_;
     }
+
     /**
      *
      *
@@ -717,6 +730,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     }
 
     private double temperature_;
+
     /**
      *
      *
@@ -753,6 +768,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public boolean hasTemperature() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -770,6 +786,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public double getTemperature() {
       return temperature_;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +830,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     }
 
     private int topK_;
+
     /**
      *
      *
@@ -835,6 +854,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public boolean hasTopK() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public int getTopK() {
       return topK_;
     }
+
     /**
      *
      *
@@ -885,6 +906,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     }
 
     private double topP_;
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public boolean hasTopP() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -956,6 +980,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
     public double getTopP() {
       return topP_;
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class InferenceParameter extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

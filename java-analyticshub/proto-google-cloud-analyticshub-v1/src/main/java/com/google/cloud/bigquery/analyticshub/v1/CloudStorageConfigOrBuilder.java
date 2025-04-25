@@ -39,6 +39,7 @@ public interface CloudStorageConfigOrBuilder
    * @return Whether the textConfig field is set.
    */
   boolean hasTextConfig();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The textConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.TextConfig getTextConfig();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface CloudStorageConfigOrBuilder
    * @return Whether the avroConfig field is set.
    */
   boolean hasAvroConfig();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The avroConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.CloudStorageConfig.AvroConfig getAvroConfig();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The bucket.
    */
   java.lang.String getBucket();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The filenamePrefix.
    */
   java.lang.String getFilenamePrefix();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The filenameSuffix.
    */
   java.lang.String getFilenameSuffix();
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The filenameDatetimeFormat.
    */
   java.lang.String getFilenameDatetimeFormat();
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public interface CloudStorageConfigOrBuilder
    * @return Whether the maxDuration field is set.
    */
   boolean hasMaxDuration();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The maxDuration.
    */
   com.google.protobuf.Duration getMaxDuration();
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public interface CloudStorageConfigOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *

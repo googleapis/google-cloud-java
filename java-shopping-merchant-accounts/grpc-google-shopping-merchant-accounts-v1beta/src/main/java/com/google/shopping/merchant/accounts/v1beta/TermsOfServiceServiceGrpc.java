@@ -203,6 +203,19 @@ public final class TermsOfServiceServiceGrpc {
     return TermsOfServiceServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static TermsOfServiceServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<TermsOfServiceServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<TermsOfServiceServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public TermsOfServiceServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new TermsOfServiceServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return TermsOfServiceServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -375,6 +388,67 @@ public final class TermsOfServiceServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service TermsOfServiceService.
+   *
+   * <pre>
+   * Service to support `TermsOfService` API.
+   * </pre>
+   */
+  public static final class TermsOfServiceServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<TermsOfServiceServiceBlockingV2Stub> {
+    private TermsOfServiceServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected TermsOfServiceServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new TermsOfServiceServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the `TermsOfService` associated with the provided version.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.TermsOfService getTermsOfService(
+        com.google.shopping.merchant.accounts.v1beta.GetTermsOfServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTermsOfServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the latest version of the `TermsOfService` for a given `kind` and
+     * `region_code`.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.TermsOfService retrieveLatestTermsOfService(
+        com.google.shopping.merchant.accounts.v1beta.RetrieveLatestTermsOfServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveLatestTermsOfServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accepts a `TermsOfService`. Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.protobuf.Empty acceptTermsOfService(
+        com.google.shopping.merchant.accounts.v1beta.AcceptTermsOfServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcceptTermsOfServiceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service TermsOfServiceService.
    *
    * <pre>
    * Service to support `TermsOfService` API.

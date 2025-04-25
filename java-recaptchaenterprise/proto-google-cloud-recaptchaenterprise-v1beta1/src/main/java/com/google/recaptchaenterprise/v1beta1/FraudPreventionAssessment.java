@@ -33,6 +33,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment)
     FraudPreventionAssessmentOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FraudPreventionAssessment.newBuilder() to construct.
   private FraudPreventionAssessment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,16 +71,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction being executed with a stolen
-     * instrument.
+     * Output only. Probability (0-1) of this transaction being executed with a
+     * stolen instrument.
      * </pre>
      *
-     * <code>float risk = 1;</code>
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The risk.
      */
     float getRisk();
   }
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict)
       StolenInstrumentVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use StolenInstrumentVerdict.newBuilder() to construct.
     private StolenInstrumentVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -128,15 +131,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int RISK_FIELD_NUMBER = 1;
     private float risk_ = 0F;
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction being executed with a stolen
-     * instrument.
+     * Output only. Probability (0-1) of this transaction being executed with a
+     * stolen instrument.
      * </pre>
      *
-     * <code>float risk = 1;</code>
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The risk.
      */
@@ -332,6 +336,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -544,15 +549,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float risk_;
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction being executed with a stolen
-       * instrument.
+       * Output only. Probability (0-1) of this transaction being executed with a
+       * stolen instrument.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The risk.
        */
@@ -560,15 +566,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getRisk() {
         return risk_;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction being executed with a stolen
-       * instrument.
+       * Output only. Probability (0-1) of this transaction being executed with a
+       * stolen instrument.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The risk to set.
        * @return This builder for chaining.
@@ -580,15 +587,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction being executed with a stolen
-       * instrument.
+       * Output only. Probability (0-1) of this transaction being executed with a
+       * stolen instrument.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -679,16 +687,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction attempt being part of a card
-     * testing attack.
+     * Output only. Probability (0-1) of this transaction attempt being part of
+     * a card testing attack.
      * </pre>
      *
-     * <code>float risk = 1;</code>
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The risk.
      */
     float getRisk();
   }
+
   /**
    *
    *
@@ -705,6 +714,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict)
       CardTestingVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CardTestingVerdict.newBuilder() to construct.
     private CardTestingVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -737,15 +747,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int RISK_FIELD_NUMBER = 1;
     private float risk_ = 0F;
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction attempt being part of a card
-     * testing attack.
+     * Output only. Probability (0-1) of this transaction attempt being part of
+     * a card testing attack.
      * </pre>
      *
-     * <code>float risk = 1;</code>
+     * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The risk.
      */
@@ -937,6 +948,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1143,15 +1155,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float risk_;
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being part of a card
-       * testing attack.
+       * Output only. Probability (0-1) of this transaction attempt being part of
+       * a card testing attack.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The risk.
        */
@@ -1159,15 +1172,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getRisk() {
         return risk_;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being part of a card
-       * testing attack.
+       * Output only. Probability (0-1) of this transaction attempt being part of
+       * a card testing attack.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The risk to set.
        * @return This builder for chaining.
@@ -1179,15 +1193,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being part of a card
-       * testing attack.
+       * Output only. Probability (0-1) of this transaction attempt being part of
+       * a card testing attack.
        * </pre>
        *
-       * <code>float risk = 1;</code>
+       * <code>float risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1277,16 +1292,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction attempt being executed in a
-     * behaviorally trustworthy way.
+     * Output only. Probability (0-1) of this transaction attempt being executed
+     * in a behaviorally trustworthy way.
      * </pre>
      *
-     * <code>float trust = 1;</code>
+     * <code>float trust = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The trust.
      */
     float getTrust();
   }
+
   /**
    *
    *
@@ -1302,6 +1318,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict)
       BehavioralTrustVerdictOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BehavioralTrustVerdict.newBuilder() to construct.
     private BehavioralTrustVerdict(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1334,15 +1351,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     public static final int TRUST_FIELD_NUMBER = 1;
     private float trust_ = 0F;
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction attempt being executed in a
-     * behaviorally trustworthy way.
+     * Output only. Probability (0-1) of this transaction attempt being executed
+     * in a behaviorally trustworthy way.
      * </pre>
      *
-     * <code>float trust = 1;</code>
+     * <code>float trust = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The trust.
      */
@@ -1538,6 +1556,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1746,15 +1765,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       private int bitField0_;
 
       private float trust_;
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being executed in a
-       * behaviorally trustworthy way.
+       * Output only. Probability (0-1) of this transaction attempt being executed
+       * in a behaviorally trustworthy way.
        * </pre>
        *
-       * <code>float trust = 1;</code>
+       * <code>float trust = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The trust.
        */
@@ -1762,15 +1782,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       public float getTrust() {
         return trust_;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being executed in a
-       * behaviorally trustworthy way.
+       * Output only. Probability (0-1) of this transaction attempt being executed
+       * in a behaviorally trustworthy way.
        * </pre>
        *
-       * <code>float trust = 1;</code>
+       * <code>float trust = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The trust to set.
        * @return This builder for chaining.
@@ -1782,15 +1803,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
        * <pre>
-       * Probability (0-1) of this transaction attempt being executed in a
-       * behaviorally trustworthy way.
+       * Output only. Probability (0-1) of this transaction attempt being executed
+       * in a behaviorally trustworthy way.
        * </pre>
        *
-       * <code>float trust = 1;</code>
+       * <code>float trust = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1875,15 +1897,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int TRANSACTION_RISK_FIELD_NUMBER = 1;
   private float transactionRisk_ = 0F;
+
   /**
    *
    *
    * <pre>
-   * Probability (0-1) of this transaction being fraudulent. Summarizes the
-   * combined risk of attack vectors below.
+   * Output only. Probability (0-1) of this transaction being fraudulent.
+   * Summarizes the combined risk of attack vectors below.
    * </pre>
    *
-   * <code>float transaction_risk = 1;</code>
+   * <code>float transaction_risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The transactionRisk.
    */
@@ -1895,15 +1918,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int STOLEN_INSTRUMENT_VERDICT_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict
       stolenInstrumentVerdict_;
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the stolenInstrumentVerdict field is set.
@@ -1912,15 +1937,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasStolenInstrumentVerdict() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The stolenInstrumentVerdict.
@@ -1933,15 +1960,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : stolenInstrumentVerdict_;
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of a stolen instrument.
+   * Output only. Assessment of this transaction for risk of a stolen
+   * instrument.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1957,16 +1986,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int CARD_TESTING_VERDICT_FIELD_NUMBER = 3;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict
       cardTestingVerdict_;
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the cardTestingVerdict field is set.
@@ -1975,16 +2005,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasCardTestingVerdict() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The cardTestingVerdict.
@@ -1997,16 +2028,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : cardTestingVerdict_;
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for risk of being part of a card testing
-   * attack.
+   * Output only. Assessment of this transaction for risk of being part of a
+   * card testing attack.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2022,15 +2054,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public static final int BEHAVIORAL_TRUST_VERDICT_FIELD_NUMBER = 4;
   private com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
       behavioralTrustVerdict_;
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the behavioralTrustVerdict field is set.
@@ -2039,15 +2072,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
   public boolean hasBehavioralTrustVerdict() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The behavioralTrustVerdict.
@@ -2060,15 +2094,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             .getDefaultInstance()
         : behavioralTrustVerdict_;
   }
+
   /**
    *
    *
    * <pre>
-   * Assessment of this transaction for behavioral trust.
+   * Output only. Assessment of this transaction for behavioral trust.
    * </pre>
    *
    * <code>
-   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -2286,6 +2321,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2551,15 +2587,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     private int bitField0_;
 
     private float transactionRisk_;
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction being fraudulent. Summarizes the
-     * combined risk of attack vectors below.
+     * Output only. Probability (0-1) of this transaction being fraudulent.
+     * Summarizes the combined risk of attack vectors below.
      * </pre>
      *
-     * <code>float transaction_risk = 1;</code>
+     * <code>float transaction_risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The transactionRisk.
      */
@@ -2567,15 +2604,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public float getTransactionRisk() {
       return transactionRisk_;
     }
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction being fraudulent. Summarizes the
-     * combined risk of attack vectors below.
+     * Output only. Probability (0-1) of this transaction being fraudulent.
+     * Summarizes the combined risk of attack vectors below.
      * </pre>
      *
-     * <code>float transaction_risk = 1;</code>
+     * <code>float transaction_risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The transactionRisk to set.
      * @return This builder for chaining.
@@ -2587,15 +2625,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Probability (0-1) of this transaction being fraudulent. Summarizes the
-     * combined risk of attack vectors below.
+     * Output only. Probability (0-1) of this transaction being fraudulent.
+     * Summarizes the combined risk of attack vectors below.
      * </pre>
      *
-     * <code>float transaction_risk = 1;</code>
+     * <code>float transaction_risk = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2616,15 +2655,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .StolenInstrumentVerdictOrBuilder>
         stolenInstrumentVerdictBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the stolenInstrumentVerdict field is set.
@@ -2632,15 +2673,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasStolenInstrumentVerdict() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The stolenInstrumentVerdict.
@@ -2656,15 +2699,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return stolenInstrumentVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setStolenInstrumentVerdict(
@@ -2682,15 +2727,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setStolenInstrumentVerdict(
@@ -2706,15 +2753,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeStolenInstrumentVerdict(
@@ -2739,15 +2788,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearStolenInstrumentVerdict() {
@@ -2760,15 +2811,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict
@@ -2778,15 +2831,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getStolenInstrumentVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
@@ -2801,15 +2856,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : stolenInstrumentVerdict_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of a stolen instrument.
+     * Output only. Assessment of this transaction for risk of a stolen
+     * instrument.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.StolenInstrumentVerdict stolen_instrument_verdict = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2844,16 +2901,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .CardTestingVerdictOrBuilder>
         cardTestingVerdictBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the cardTestingVerdict field is set.
@@ -2861,16 +2919,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasCardTestingVerdict() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The cardTestingVerdict.
@@ -2886,16 +2945,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return cardTestingVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCardTestingVerdict(
@@ -2912,16 +2972,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCardTestingVerdict(
@@ -2936,16 +2997,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeCardTestingVerdict(
@@ -2969,16 +3031,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearCardTestingVerdict() {
@@ -2991,16 +3054,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict
@@ -3010,16 +3074,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getCardTestingVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
@@ -3034,16 +3099,17 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : cardTestingVerdict_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for risk of being part of a card testing
-     * attack.
+     * Output only. Assessment of this transaction for risk of being part of a
+     * card testing attack.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.CardTestingVerdict card_testing_verdict = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3076,15 +3142,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
                 .BehavioralTrustVerdictOrBuilder>
         behavioralTrustVerdictBuilder_;
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the behavioralTrustVerdict field is set.
@@ -3092,15 +3159,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public boolean hasBehavioralTrustVerdict() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The behavioralTrustVerdict.
@@ -3116,15 +3184,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         return behavioralTrustVerdictBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBehavioralTrustVerdict(
@@ -3142,15 +3211,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setBehavioralTrustVerdict(
@@ -3166,15 +3236,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeBehavioralTrustVerdict(
@@ -3199,15 +3270,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearBehavioralTrustVerdict() {
@@ -3220,15 +3292,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict
@@ -3238,15 +3311,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       onChanged();
       return getBehavioralTrustVerdictFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.recaptchaenterprise.v1beta1.FraudPreventionAssessment
@@ -3261,15 +3335,16 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
             : behavioralTrustVerdict_;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * Assessment of this transaction for behavioral trust.
+     * Output only. Assessment of this transaction for behavioral trust.
      * </pre>
      *
      * <code>
-     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+     * .google.cloud.recaptchaenterprise.v1beta1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

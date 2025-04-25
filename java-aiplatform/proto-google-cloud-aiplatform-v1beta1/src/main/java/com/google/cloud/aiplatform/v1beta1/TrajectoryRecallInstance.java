@@ -33,6 +33,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryRecallInstance)
     TrajectoryRecallInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryRecallInstance.newBuilder() to construct.
   private TrajectoryRecallInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int PREDICTED_TRAJECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Trajectory predictedTrajectory_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
   public boolean hasPredictedTrajectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : predictedTrajectory_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
 
   public static final int REFERENCE_TRAJECTORY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Trajectory referenceTrajectory_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
   public boolean hasReferenceTrajectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : referenceTrajectory_;
   }
+
   /**
    *
    *
@@ -353,6 +360,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -586,6 +594,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         predictedTrajectoryBuilder_;
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
     public boolean hasPredictedTrajectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
         return predictedTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -648,6 +659,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return getPredictedTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -758,6 +774,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
             : predictedTrajectory_;
       }
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         referenceTrajectoryBuilder_;
+
     /**
      *
      *
@@ -808,6 +826,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
     public boolean hasReferenceTrajectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
         return referenceTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +928,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +967,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
       onChanged();
       return getReferenceTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +989,7 @@ public final class TrajectoryRecallInstance extends com.google.protobuf.Generate
             : referenceTrajectory_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicy)
     InstanceGroupManagerInstanceFlexibilityPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerInstanceFlexibilityPolicy.newBuilder() to construct.
   private InstanceGroupManagerInstanceFlexibilityPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -120,6 +121,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
   public int getInstanceSelectionsCount() {
     return internalGetInstanceSelections().getMap().size();
   }
+
   /**
    *
    *
@@ -138,6 +140,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
     }
     return internalGetInstanceSelections().getMap().containsKey(key);
   }
+
   /** Use {@link #getInstanceSelectionsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -148,6 +151,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       getInstanceSelections() {
     return getInstanceSelectionsMap();
   }
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       getInstanceSelectionsMap() {
     return internalGetInstanceSelections().getMap();
   }
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
         map = internalGetInstanceSelections().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -406,6 +412,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -666,7 +673,8 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
           defaultEntry() {
         return InstanceSelectionsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final InstanceSelectionsConverter instanceSelectionsConverter =
         new InstanceSelectionsConverter();
@@ -717,6 +725,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
     public int getInstanceSelectionsCount() {
       return internalGetInstanceSelections().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -735,6 +744,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       }
       return internalGetInstanceSelections().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getInstanceSelectionsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -745,6 +755,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
         getInstanceSelections() {
       return getInstanceSelectionsMap();
     }
+
     /**
      *
      *
@@ -764,6 +775,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
         getInstanceSelectionsMap() {
       return internalGetInstanceSelections().getImmutableMap();
     }
+
     /**
      *
      *
@@ -794,6 +806,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
           map = internalGetMutableInstanceSelections().ensureBuilderMap();
       return map.containsKey(key) ? instanceSelectionsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -828,6 +841,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       internalGetMutableInstanceSelections().clear();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +860,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       internalGetMutableInstanceSelections().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -856,6 +871,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       bitField0_ |= 0x00000001;
       return internalGetMutableInstanceSelections().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicy
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

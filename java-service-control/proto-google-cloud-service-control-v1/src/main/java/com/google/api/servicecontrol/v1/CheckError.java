@@ -34,6 +34,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.servicecontrol.v1.CheckError)
     CheckErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckError.newBuilder() to construct.
   private CheckError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -306,6 +307,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int ERROR_CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -317,6 +319,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_FOUND = 5;</code>
      */
     public static final int NOT_FOUND_VALUE = 5;
+
     /**
      *
      *
@@ -328,6 +331,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED = 7;</code>
      */
     public static final int PERMISSION_DENIED_VALUE = 7;
+
     /**
      *
      *
@@ -338,6 +342,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_EXHAUSTED = 8;</code>
      */
     public static final int RESOURCE_EXHAUSTED_VALUE = 8;
+
     /**
      *
      *
@@ -348,6 +353,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_NOT_ACTIVATED = 104;</code>
      */
     public static final int SERVICE_NOT_ACTIVATED_VALUE = 104;
+
     /**
      *
      *
@@ -358,6 +364,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>BILLING_DISABLED = 107;</code>
      */
     public static final int BILLING_DISABLED_VALUE = 107;
+
     /**
      *
      *
@@ -368,6 +375,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>PROJECT_DELETED = 108;</code>
      */
     public static final int PROJECT_DELETED_VALUE = 108;
+
     /**
      *
      *
@@ -378,6 +386,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>PROJECT_INVALID = 114;</code>
      */
     public static final int PROJECT_INVALID_VALUE = 114;
+
     /**
      *
      *
@@ -389,6 +398,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>CONSUMER_INVALID = 125;</code>
      */
     public static final int CONSUMER_INVALID_VALUE = 125;
+
     /**
      *
      *
@@ -400,6 +410,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>IP_ADDRESS_BLOCKED = 109;</code>
      */
     public static final int IP_ADDRESS_BLOCKED_VALUE = 109;
+
     /**
      *
      *
@@ -411,6 +422,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>REFERER_BLOCKED = 110;</code>
      */
     public static final int REFERER_BLOCKED_VALUE = 110;
+
     /**
      *
      *
@@ -422,6 +434,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>CLIENT_APP_BLOCKED = 111;</code>
      */
     public static final int CLIENT_APP_BLOCKED_VALUE = 111;
+
     /**
      *
      *
@@ -433,6 +446,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>API_TARGET_BLOCKED = 122;</code>
      */
     public static final int API_TARGET_BLOCKED_VALUE = 122;
+
     /**
      *
      *
@@ -443,6 +457,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>API_KEY_INVALID = 105;</code>
      */
     public static final int API_KEY_INVALID_VALUE = 105;
+
     /**
      *
      *
@@ -453,6 +468,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>API_KEY_EXPIRED = 112;</code>
      */
     public static final int API_KEY_EXPIRED_VALUE = 112;
+
     /**
      *
      *
@@ -463,6 +479,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>API_KEY_NOT_FOUND = 113;</code>
      */
     public static final int API_KEY_NOT_FOUND_VALUE = 113;
+
     /**
      *
      *
@@ -473,6 +490,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID_CREDENTIAL = 123;</code>
      */
     public static final int INVALID_CREDENTIAL_VALUE = 123;
+
     /**
      *
      *
@@ -483,6 +501,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>NAMESPACE_LOOKUP_UNAVAILABLE = 300;</code>
      */
     public static final int NAMESPACE_LOOKUP_UNAVAILABLE_VALUE = 300;
+
     /**
      *
      *
@@ -493,6 +512,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_STATUS_UNAVAILABLE = 301;</code>
      */
     public static final int SERVICE_STATUS_UNAVAILABLE_VALUE = 301;
+
     /**
      *
      *
@@ -503,6 +523,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
      * <code>BILLING_STATUS_UNAVAILABLE = 302;</code>
      */
     public static final int BILLING_STATUS_UNAVAILABLE_VALUE = 302;
+
     /**
      *
      *
@@ -636,6 +657,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -651,6 +673,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -673,6 +696,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subject_ = "";
+
   /**
    *
    *
@@ -701,6 +725,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -734,6 +759,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object detail_ = "";
+
   /**
    *
    *
@@ -757,6 +783,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -783,6 +810,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATUS_FIELD_NUMBER = 3;
   private com.google.rpc.Status status_;
+
   /**
    *
    *
@@ -800,6 +828,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -817,6 +846,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getStatus() {
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
+
   /**
    *
    *
@@ -1026,6 +1056,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1267,6 +1298,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -1282,6 +1314,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -1300,6 +1333,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1319,6 +1353,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
           ? com.google.api.servicecontrol.v1.CheckError.Code.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1340,6 +1375,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1395,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object subject_ = "";
+
     /**
      *
      *
@@ -1386,6 +1423,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1451,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1478,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1501,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1531,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object detail_ = "";
+
     /**
      *
      *
@@ -1512,6 +1554,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1599,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1572,6 +1617,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1645,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         statusBuilder_;
+
     /**
      *
      *
@@ -1615,6 +1662,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1635,6 +1683,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return statusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1659,6 +1708,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1680,6 +1730,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1709,6 +1760,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1782,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1746,6 +1799,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1764,6 +1818,7 @@ public final class CheckError extends com.google.protobuf.GeneratedMessageV3
         return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
+
     /**
      *
      *

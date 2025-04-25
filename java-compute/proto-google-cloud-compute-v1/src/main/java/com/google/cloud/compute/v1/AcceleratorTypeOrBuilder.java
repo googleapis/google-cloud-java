@@ -36,6 +36,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the deprecated field is set.
    */
   boolean hasDeprecated();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The deprecated.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecated();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the maximumCardsPerInstance field is set.
    */
   boolean hasMaximumCardsPerInstance();
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -244,6 +255,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -269,6 +281,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -306,6 +320,7 @@ public interface AcceleratorTypeOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public interface AcceleratorTypeOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

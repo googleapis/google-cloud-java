@@ -34,6 +34,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.RestoreClusterRequest)
     RestoreClusterRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RestoreClusterRequest.newBuilder() to construct.
   private RestoreClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int BACKUP_SOURCE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   public boolean hasBackupSource() {
     return sourceCase_ == 4;
   }
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.alloydb.v1alpha.BackupSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONTINUOUS_BACKUP_SOURCE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   public boolean hasContinuousBackupSource() {
     return sourceCase_ == 8;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.alloydb.v1alpha.ContinuousBackupSource.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterId_ = "";
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -332,6 +344,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.alloydb.v1alpha.Cluster cluster_;
+
   /**
    *
    *
@@ -349,6 +362,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCluster() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +382,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.alloydb.v1alpha.Cluster.getDefaultInstance()
         : cluster_;
   }
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -425,6 +441,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -463,6 +480,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 6;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -721,6 +739,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1045,6 +1064,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.BackupSource.Builder,
             com.google.cloud.alloydb.v1alpha.BackupSourceOrBuilder>
         backupSourceBuilder_;
+
     /**
      *
      *
@@ -1060,6 +1080,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public boolean hasBackupSource() {
       return sourceCase_ == 4;
     }
+
     /**
      *
      *
@@ -1085,6 +1106,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1alpha.BackupSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1107,6 +1129,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1127,6 +1150,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1183,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1209,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1222,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public com.google.cloud.alloydb.v1alpha.BackupSource.Builder getBackupSourceBuilder() {
       return getBackupSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1216,6 +1243,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1alpha.BackupSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1254,6 +1282,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.ContinuousBackupSource.Builder,
             com.google.cloud.alloydb.v1alpha.ContinuousBackupSourceOrBuilder>
         continuousBackupSourceBuilder_;
+
     /**
      *
      *
@@ -1271,6 +1300,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public boolean hasContinuousBackupSource() {
       return sourceCase_ == 8;
     }
+
     /**
      *
      *
@@ -1298,6 +1328,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1alpha.ContinuousBackupSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1354,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1345,6 +1377,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1381,6 +1414,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       sourceCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1442,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1458,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         getContinuousBackupSourceBuilder() {
       return getContinuousBackupSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1446,6 +1482,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return com.google.cloud.alloydb.v1alpha.ContinuousBackupSource.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1519,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1507,6 +1545,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1571,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1596,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1617,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1645,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -1625,6 +1668,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1647,6 +1691,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1668,6 +1713,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1685,6 +1731,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1761,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.alloydb.v1alpha.Cluster.Builder,
             com.google.cloud.alloydb.v1alpha.ClusterOrBuilder>
         clusterBuilder_;
+
     /**
      *
      *
@@ -1730,6 +1778,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCluster() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1752,6 +1801,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return clusterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1776,6 +1826,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1797,6 +1848,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1878,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1900,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1863,6 +1917,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1883,6 +1938,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
             : cluster_;
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1968,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1946,6 +2003,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1980,6 +2038,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2013,6 +2072,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2102,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2078,6 +2139,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -2095,6 +2157,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -2116,6 +2179,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

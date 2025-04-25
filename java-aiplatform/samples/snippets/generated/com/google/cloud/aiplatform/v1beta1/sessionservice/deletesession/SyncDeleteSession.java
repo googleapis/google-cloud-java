@@ -38,7 +38,7 @@ public class SyncDeleteSession {
       DeleteSessionRequest request =
           DeleteSessionRequest.newBuilder()
               .setName(
-                  SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .build();
       sessionServiceClient.deleteSessionAsync(request).get();

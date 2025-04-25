@@ -33,6 +33,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gdchardwaremanagement.v1alpha.HardwareInstallationInfo)
     HardwareInstallationInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HardwareInstallationInfo.newBuilder() to construct.
   private HardwareInstallationInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      * <code>RACK_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int RACK_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -128,6 +130,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
      * <code>TWO_POST = 1;</code>
      */
     public static final int TWO_POST_VALUE = 1;
+
     /**
      *
      *
@@ -229,6 +232,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object rackLocation_ = "";
+
   /**
    *
    *
@@ -253,6 +257,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -280,6 +285,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   public static final int POWER_DISTANCE_METERS_FIELD_NUMBER = 2;
   private int powerDistanceMeters_ = 0;
+
   /**
    *
    *
@@ -298,6 +304,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   public static final int SWITCH_DISTANCE_METERS_FIELD_NUMBER = 3;
   private int switchDistanceMeters_ = 0;
+
   /**
    *
    *
@@ -316,6 +323,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   public static final int RACK_UNIT_DIMENSIONS_FIELD_NUMBER = 4;
   private com.google.cloud.gdchardwaremanagement.v1alpha.Dimensions rackUnitDimensions_;
+
   /**
    *
    *
@@ -333,6 +341,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
   public boolean hasRackUnitDimensions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -352,6 +361,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         ? com.google.cloud.gdchardwaremanagement.v1alpha.Dimensions.getDefaultInstance()
         : rackUnitDimensions_;
   }
+
   /**
    *
    *
@@ -373,6 +383,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   public static final int RACK_SPACE_FIELD_NUMBER = 5;
   private com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace rackSpace_;
+
   /**
    *
    *
@@ -390,6 +401,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
   public boolean hasRackSpace() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -409,6 +421,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         ? com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace.getDefaultInstance()
         : rackSpace_;
   }
+
   /**
    *
    *
@@ -429,6 +442,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
 
   public static final int RACK_TYPE_FIELD_NUMBER = 6;
   private int rackType_ = 0;
+
   /**
    *
    *
@@ -446,6 +460,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
   public int getRackTypeValue() {
     return rackType_;
   }
+
   /**
    *
    *
@@ -693,6 +708,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -978,6 +994,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object rackLocation_ = "";
+
     /**
      *
      *
@@ -1001,6 +1018,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1042,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1046,6 +1065,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1084,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1110,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     }
 
     private int powerDistanceMeters_;
+
     /**
      *
      *
@@ -1104,6 +1126,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     public int getPowerDistanceMeters() {
       return powerDistanceMeters_;
     }
+
     /**
      *
      *
@@ -1123,6 +1146,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1166,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     }
 
     private int switchDistanceMeters_;
+
     /**
      *
      *
@@ -1157,6 +1182,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     public int getSwitchDistanceMeters() {
       return switchDistanceMeters_;
     }
+
     /**
      *
      *
@@ -1176,6 +1202,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1200,6 +1227,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
             com.google.cloud.gdchardwaremanagement.v1alpha.Dimensions.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.DimensionsOrBuilder>
         rackUnitDimensionsBuilder_;
+
     /**
      *
      *
@@ -1216,6 +1244,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     public boolean hasRackUnitDimensions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1238,6 +1267,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         return rackUnitDimensionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1293,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1316,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1348,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1370,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1354,6 +1388,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return getRackUnitDimensionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1375,6 +1410,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
             : rackUnitDimensions_;
       }
     }
+
     /**
      *
      *
@@ -1409,6 +1445,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
             com.google.cloud.gdchardwaremanagement.v1alpha.RackSpace.Builder,
             com.google.cloud.gdchardwaremanagement.v1alpha.RackSpaceOrBuilder>
         rackSpaceBuilder_;
+
     /**
      *
      *
@@ -1425,6 +1462,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     public boolean hasRackSpace() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1447,6 +1485,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
         return rackSpaceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1471,6 +1510,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1493,6 +1533,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1564,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1586,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1603,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return getRackSpaceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1581,6 +1625,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
             : rackSpace_;
       }
     }
+
     /**
      *
      *
@@ -1610,6 +1655,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     }
 
     private int rackType_ = 0;
+
     /**
      *
      *
@@ -1627,6 +1673,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
     public int getRackTypeValue() {
       return rackType_;
     }
+
     /**
      *
      *
@@ -1647,6 +1694,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1671,6 +1719,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1695,6 +1744,7 @@ public final class HardwareInstallationInfo extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

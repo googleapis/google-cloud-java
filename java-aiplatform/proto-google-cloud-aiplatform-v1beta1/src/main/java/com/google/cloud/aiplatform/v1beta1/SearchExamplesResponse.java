@@ -34,6 +34,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SearchExamplesResponse)
     SearchExamplesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchExamplesResponse.newBuilder() to construct.
   private SearchExamplesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
      * @return Whether the example field is set.
      */
     boolean hasExample();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
      * @return The example.
      */
     com.google.cloud.aiplatform.v1beta1.Example getExample();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
      */
     float getSimilarityScore();
   }
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample)
       SimilarExampleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SimilarExample.newBuilder() to construct.
     private SimilarExample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -163,6 +168,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int EXAMPLE_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.Example example_;
+
     /**
      *
      *
@@ -178,6 +184,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
     public boolean hasExample() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -195,6 +202,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
           ? com.google.cloud.aiplatform.v1beta1.Example.getDefaultInstance()
           : example_;
     }
+
     /**
      *
      *
@@ -213,6 +221,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
 
     public static final int SIMILARITY_SCORE_FIELD_NUMBER = 2;
     private float similarityScore_ = 0F;
+
     /**
      *
      *
@@ -412,6 +421,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -642,6 +652,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.Example.Builder,
               com.google.cloud.aiplatform.v1beta1.ExampleOrBuilder>
           exampleBuilder_;
+
       /**
        *
        *
@@ -656,6 +667,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       public boolean hasExample() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -676,6 +688,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
           return exampleBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -698,6 +711,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -718,6 +732,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -745,6 +760,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -764,6 +780,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -778,6 +795,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return getExampleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -796,6 +814,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
               : example_;
         }
       }
+
       /**
        *
        *
@@ -823,6 +842,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
 
       private float similarityScore_;
+
       /**
        *
        *
@@ -838,6 +858,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       public float getSimilarityScore() {
         return similarityScore_;
       }
+
       /**
        *
        *
@@ -857,6 +878,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -948,6 +970,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample>
       results_;
+
   /**
    *
    *
@@ -964,6 +987,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       getResultsList() {
     return results_;
   }
+
   /**
    *
    *
@@ -982,6 +1006,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       getResultsOrBuilderList() {
     return results_;
   }
+
   /**
    *
    *
@@ -997,6 +1022,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
   public int getResultsCount() {
     return results_.size();
   }
+
   /**
    *
    *
@@ -1013,6 +1039,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       int index) {
     return results_.get(index);
   }
+
   /**
    *
    *
@@ -1192,6 +1219,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1463,6 +1491,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1510,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1500,6 +1530,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1526,6 +1557,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1550,6 +1582,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1608,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1635,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1659,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1684,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1672,6 +1709,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1731,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1753,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1729,6 +1769,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         getResultsBuilder(int index) {
       return getResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1748,6 +1789,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1769,6 +1811,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(results_);
       }
     }
+
     /**
      *
      *
@@ -1787,6 +1830,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1806,6 +1850,7 @@ public final class SearchExamplesResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample
                   .getDefaultInstance());
     }
+
     /**
      *
      *

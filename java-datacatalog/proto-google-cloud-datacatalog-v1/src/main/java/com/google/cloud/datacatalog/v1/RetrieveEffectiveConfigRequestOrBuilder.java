@@ -36,6 +36,7 @@ public interface RetrieveEffectiveConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkemulticloud.v1.AttachedCluster)
     AttachedClusterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AttachedCluster.newBuilder() to construct.
   private AttachedCluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -183,6 +184,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -193,6 +195,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>PROVISIONING = 1;</code>
      */
     public static final int PROVISIONING_VALUE = 1;
+
     /**
      *
      *
@@ -204,6 +207,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
+
     /**
      *
      *
@@ -215,6 +219,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>RECONCILING = 3;</code>
      */
     public static final int RECONCILING_VALUE = 3;
+
     /**
      *
      *
@@ -225,6 +230,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>STOPPING = 4;</code>
      */
     public static final int STOPPING_VALUE = 4;
+
     /**
      *
      *
@@ -236,6 +242,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 5;</code>
      */
     public static final int ERROR_VALUE = 5;
+
     /**
      *
      *
@@ -346,6 +353,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -375,6 +383,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -409,6 +418,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -433,6 +443,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -460,6 +471,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int OIDC_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.gkemulticloud.v1.AttachedOidcConfig oidcConfig_;
+
   /**
    *
    *
@@ -477,6 +489,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasOidcConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -496,6 +509,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.getDefaultInstance()
         : oidcConfig_;
   }
+
   /**
    *
    *
@@ -518,6 +532,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object platformVersion_ = "";
+
   /**
    *
    *
@@ -545,6 +560,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -577,6 +593,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object distribution_ = "";
+
   /**
    *
    *
@@ -602,6 +619,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -632,6 +650,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clusterRegion_ = "";
+
   /**
    *
    *
@@ -658,6 +677,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -687,6 +707,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int FLEET_FIELD_NUMBER = 5;
   private com.google.cloud.gkemulticloud.v1.Fleet fleet_;
+
   /**
    *
    *
@@ -703,6 +724,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasFleet() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -719,6 +741,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.gkemulticloud.v1.Fleet getFleet() {
     return fleet_ == null ? com.google.cloud.gkemulticloud.v1.Fleet.getDefaultInstance() : fleet_;
   }
+
   /**
    *
    *
@@ -736,6 +759,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -753,6 +777,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -779,6 +804,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -802,6 +828,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -828,6 +855,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int RECONCILING_FIELD_NUMBER = 8;
   private boolean reconciling_ = false;
+
   /**
    *
    *
@@ -846,6 +874,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -862,6 +891,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -878,6 +908,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -895,6 +926,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -911,6 +943,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -927,6 +960,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -946,6 +980,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -973,6 +1008,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1005,6 +1041,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kubernetesVersion_ = "";
+
   /**
    *
    *
@@ -1028,6 +1065,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1079,6 +1117,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
+
   /**
    *
    *
@@ -1104,12 +1143,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetAnnotations().getMap().containsKey(key);
   }
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
     return getAnnotationsMap();
   }
+
   /**
    *
    *
@@ -1132,6 +1173,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
+
   /**
    *
    *
@@ -1161,6 +1203,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1193,6 +1236,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int WORKLOAD_IDENTITY_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig workloadIdentityConfig_;
+
   /**
    *
    *
@@ -1210,6 +1254,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasWorkloadIdentityConfig() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1229,6 +1274,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.getDefaultInstance()
         : workloadIdentityConfig_;
   }
+
   /**
    *
    *
@@ -1250,6 +1296,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 15;
   private com.google.cloud.gkemulticloud.v1.LoggingConfig loggingConfig_;
+
   /**
    *
    *
@@ -1267,6 +1314,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasLoggingConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1286,6 +1334,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.LoggingConfig.getDefaultInstance()
         : loggingConfig_;
   }
+
   /**
    *
    *
@@ -1308,6 +1357,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterError> errors_;
+
   /**
    *
    *
@@ -1323,6 +1373,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.gkemulticloud.v1.AttachedClusterError> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -1339,6 +1390,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -1354,6 +1406,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -1369,6 +1422,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.gkemulticloud.v1.AttachedClusterError getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -1388,6 +1442,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int AUTHORIZATION_FIELD_NUMBER = 21;
   private com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization authorization_;
+
   /**
    *
    *
@@ -1405,6 +1460,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasAuthorization() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1424,6 +1480,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.getDefaultInstance()
         : authorization_;
   }
+
   /**
    *
    *
@@ -1445,6 +1502,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int MONITORING_CONFIG_FIELD_NUMBER = 23;
   private com.google.cloud.gkemulticloud.v1.MonitoringConfig monitoringConfig_;
+
   /**
    *
    *
@@ -1462,6 +1520,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasMonitoringConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1481,6 +1540,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.MonitoringConfig.getDefaultInstance()
         : monitoringConfig_;
   }
+
   /**
    *
    *
@@ -1502,6 +1562,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int PROXY_CONFIG_FIELD_NUMBER = 24;
   private com.google.cloud.gkemulticloud.v1.AttachedProxyConfig proxyConfig_;
+
   /**
    *
    *
@@ -1519,6 +1580,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasProxyConfig() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1538,6 +1600,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.getDefaultInstance()
         : proxyConfig_;
   }
+
   /**
    *
    *
@@ -1558,6 +1621,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int BINARY_AUTHORIZATION_FIELD_NUMBER = 25;
   private com.google.cloud.gkemulticloud.v1.BinaryAuthorization binaryAuthorization_;
+
   /**
    *
    *
@@ -1575,6 +1639,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasBinaryAuthorization() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1594,6 +1659,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.BinaryAuthorization.getDefaultInstance()
         : binaryAuthorization_;
   }
+
   /**
    *
    *
@@ -1615,6 +1681,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
 
   public static final int SECURITY_POSTURE_CONFIG_FIELD_NUMBER = 26;
   private com.google.cloud.gkemulticloud.v1.SecurityPostureConfig securityPostureConfig_;
+
   /**
    *
    *
@@ -1632,6 +1699,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public boolean hasSecurityPostureConfig() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1651,6 +1719,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.getDefaultInstance()
         : securityPostureConfig_;
   }
+
   /**
    *
    *
@@ -1696,6 +1765,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public int getTagsCount() {
     return internalGetTags().getMap().size();
   }
+
   /**
    *
    *
@@ -1726,12 +1796,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetTags().getMap().containsKey(key);
   }
+
   /** Use {@link #getTagsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getTags() {
     return getTagsMap();
   }
+
   /**
    *
    *
@@ -1759,6 +1831,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
     return internalGetTags().getMap();
   }
+
   /**
    *
    *
@@ -1793,6 +1866,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -2272,6 +2346,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2947,6 +3022,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2975,6 +3051,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3003,6 +3080,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3030,6 +3108,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3053,6 +3132,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3083,6 +3163,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3106,6 +3187,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3129,6 +3211,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3151,6 +3234,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3169,6 +3253,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3199,6 +3284,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AttachedOidcConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AttachedOidcConfigOrBuilder>
         oidcConfigBuilder_;
+
     /**
      *
      *
@@ -3215,6 +3301,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasOidcConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3237,6 +3324,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return oidcConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3261,6 +3349,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3283,6 +3372,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3313,6 +3403,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3334,6 +3425,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3350,6 +3442,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getOidcConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3370,6 +3463,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : oidcConfig_;
       }
     }
+
     /**
      *
      *
@@ -3399,6 +3493,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object platformVersion_ = "";
+
     /**
      *
      *
@@ -3425,6 +3520,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3451,6 +3547,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3476,6 +3573,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3497,6 +3595,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3525,6 +3624,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object distribution_ = "";
+
     /**
      *
      *
@@ -3549,6 +3649,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3573,6 +3674,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3596,6 +3698,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3615,6 +3718,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3641,6 +3745,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object clusterRegion_ = "";
+
     /**
      *
      *
@@ -3666,6 +3771,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3691,6 +3797,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3715,6 +3822,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3735,6 +3843,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3767,6 +3876,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.Fleet.Builder,
             com.google.cloud.gkemulticloud.v1.FleetOrBuilder>
         fleetBuilder_;
+
     /**
      *
      *
@@ -3783,6 +3893,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasFleet() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3805,6 +3916,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return fleetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3829,6 +3941,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3850,6 +3963,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3879,6 +3993,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3900,6 +4015,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3916,6 +4032,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFleetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3936,6 +4053,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : fleet_;
       }
     }
+
     /**
      *
      *
@@ -3965,6 +4083,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -3982,6 +4101,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4002,6 +4122,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4023,6 +4144,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.gkemulticloud.v1.AttachedCluster.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4046,6 +4168,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4067,6 +4190,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -4089,6 +4213,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4111,6 +4236,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4132,6 +4258,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4149,6 +4276,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4173,6 +4301,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean reconciling_;
+
     /**
      *
      *
@@ -4188,6 +4317,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean getReconciling() {
       return reconciling_;
     }
+
     /**
      *
      *
@@ -4207,6 +4337,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4231,6 +4362,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -4247,6 +4379,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -4269,6 +4402,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4293,6 +4427,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4314,6 +4449,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4343,6 +4479,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4364,6 +4501,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4380,6 +4518,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4400,6 +4539,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -4434,6 +4574,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -4450,6 +4591,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -4472,6 +4614,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4496,6 +4639,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4517,6 +4661,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4546,6 +4691,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4567,6 +4713,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4583,6 +4730,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4603,6 +4751,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -4632,6 +4781,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -4658,6 +4808,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4684,6 +4835,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4709,6 +4861,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4730,6 +4883,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4758,6 +4912,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object kubernetesVersion_ = "";
+
     /**
      *
      *
@@ -4780,6 +4935,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4802,6 +4958,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4823,6 +4980,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4840,6 +4998,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4891,6 +5050,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
+
     /**
      *
      *
@@ -4916,12 +5076,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetAnnotations().getMap().containsKey(key);
     }
+
     /** Use {@link #getAnnotationsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAnnotations() {
       return getAnnotationsMap();
     }
+
     /**
      *
      *
@@ -4944,6 +5106,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
+
     /**
      *
      *
@@ -4973,6 +5136,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetAnnotations().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5008,6 +5172,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotations().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5033,12 +5198,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       internalGetMutableAnnotations().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableAnnotations() {
       bitField0_ |= 0x00004000;
       return internalGetMutableAnnotations().getMutableMap();
     }
+
     /**
      *
      *
@@ -5068,6 +5235,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00004000;
       return this;
     }
+
     /**
      *
      *
@@ -5098,6 +5266,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfig.Builder,
             com.google.cloud.gkemulticloud.v1.WorkloadIdentityConfigOrBuilder>
         workloadIdentityConfigBuilder_;
+
     /**
      *
      *
@@ -5114,6 +5283,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasWorkloadIdentityConfig() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -5136,6 +5306,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return workloadIdentityConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5161,6 +5332,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5183,6 +5355,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5214,6 +5387,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5235,6 +5409,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5252,6 +5427,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getWorkloadIdentityConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5273,6 +5449,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : workloadIdentityConfig_;
       }
     }
+
     /**
      *
      *
@@ -5307,6 +5484,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.LoggingConfig.Builder,
             com.google.cloud.gkemulticloud.v1.LoggingConfigOrBuilder>
         loggingConfigBuilder_;
+
     /**
      *
      *
@@ -5323,6 +5501,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasLoggingConfig() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -5345,6 +5524,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return loggingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5369,6 +5549,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5391,6 +5572,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5421,6 +5603,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5442,6 +5625,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5458,6 +5642,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5478,6 +5663,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : loggingConfig_;
       }
     }
+
     /**
      *
      *
@@ -5542,6 +5728,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5560,6 +5747,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5578,6 +5766,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5603,6 +5792,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5625,6 +5815,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5649,6 +5840,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5674,6 +5866,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5696,6 +5889,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5718,6 +5912,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5741,6 +5936,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5762,6 +5958,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5783,6 +5980,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5798,6 +5996,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5817,6 +6016,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5836,6 +6036,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -5851,6 +6052,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.gkemulticloud.v1.AttachedClusterError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5868,6 +6070,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               index, com.google.cloud.gkemulticloud.v1.AttachedClusterError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5907,6 +6110,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorization.Builder,
             com.google.cloud.gkemulticloud.v1.AttachedClustersAuthorizationOrBuilder>
         authorizationBuilder_;
+
     /**
      *
      *
@@ -5923,6 +6127,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasAuthorization() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -5945,6 +6150,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return authorizationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5970,6 +6176,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5992,6 +6199,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6024,6 +6232,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6045,6 +6254,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6062,6 +6272,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getAuthorizationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6083,6 +6294,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : authorization_;
       }
     }
+
     /**
      *
      *
@@ -6117,6 +6329,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.MonitoringConfig.Builder,
             com.google.cloud.gkemulticloud.v1.MonitoringConfigOrBuilder>
         monitoringConfigBuilder_;
+
     /**
      *
      *
@@ -6133,6 +6346,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasMonitoringConfig() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -6155,6 +6369,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return monitoringConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6179,6 +6394,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6201,6 +6417,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6231,6 +6448,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6252,6 +6470,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6268,6 +6487,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMonitoringConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6289,6 +6509,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : monitoringConfig_;
       }
     }
+
     /**
      *
      *
@@ -6323,6 +6544,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.AttachedProxyConfig.Builder,
             com.google.cloud.gkemulticloud.v1.AttachedProxyConfigOrBuilder>
         proxyConfigBuilder_;
+
     /**
      *
      *
@@ -6339,6 +6561,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasProxyConfig() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -6361,6 +6584,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return proxyConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6385,6 +6609,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6407,6 +6632,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6437,6 +6663,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6458,6 +6685,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6474,6 +6702,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getProxyConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6495,6 +6724,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : proxyConfig_;
       }
     }
+
     /**
      *
      *
@@ -6529,6 +6759,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.BinaryAuthorization.Builder,
             com.google.cloud.gkemulticloud.v1.BinaryAuthorizationOrBuilder>
         binaryAuthorizationBuilder_;
+
     /**
      *
      *
@@ -6545,6 +6776,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasBinaryAuthorization() {
       return ((bitField0_ & 0x00200000) != 0);
     }
+
     /**
      *
      *
@@ -6567,6 +6799,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return binaryAuthorizationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6592,6 +6825,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6614,6 +6848,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6645,6 +6880,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6666,6 +6902,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6683,6 +6920,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getBinaryAuthorizationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6704,6 +6942,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : binaryAuthorization_;
       }
     }
+
     /**
      *
      *
@@ -6738,6 +6977,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkemulticloud.v1.SecurityPostureConfig.Builder,
             com.google.cloud.gkemulticloud.v1.SecurityPostureConfigOrBuilder>
         securityPostureConfigBuilder_;
+
     /**
      *
      *
@@ -6754,6 +6994,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public boolean hasSecurityPostureConfig() {
       return ((bitField0_ & 0x00400000) != 0);
     }
+
     /**
      *
      *
@@ -6776,6 +7017,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
         return securityPostureConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6801,6 +7043,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6823,6 +7066,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6854,6 +7098,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6875,6 +7120,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6892,6 +7138,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSecurityPostureConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6913,6 +7160,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
             : securityPostureConfig_;
       }
     }
+
     /**
      *
      *
@@ -6966,6 +7214,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public int getTagsCount() {
       return internalGetTags().getMap().size();
     }
+
     /**
      *
      *
@@ -6996,12 +7245,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetTags().getMap().containsKey(key);
     }
+
     /** Use {@link #getTagsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getTags() {
       return getTagsMap();
     }
+
     /**
      *
      *
@@ -7029,6 +7280,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getTagsMap() {
       return internalGetTags().getMap();
     }
+
     /**
      *
      *
@@ -7063,6 +7315,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetTags().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -7103,6 +7356,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -7133,12 +7387,14 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       internalGetMutableTags().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
       bitField0_ |= 0x00800000;
       return internalGetMutableTags().getMutableMap();
     }
+
     /**
      *
      *
@@ -7173,6 +7429,7 @@ public final class AttachedCluster extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00800000;
       return this;
     }
+
     /**
      *
      *

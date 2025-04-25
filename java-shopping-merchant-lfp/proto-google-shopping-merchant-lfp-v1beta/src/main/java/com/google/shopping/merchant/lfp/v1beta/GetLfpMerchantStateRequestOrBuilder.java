@@ -39,6 +39,7 @@ public interface GetLfpMerchantStateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

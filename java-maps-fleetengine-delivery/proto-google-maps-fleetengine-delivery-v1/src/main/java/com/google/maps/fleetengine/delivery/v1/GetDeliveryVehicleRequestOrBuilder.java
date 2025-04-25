@@ -38,6 +38,7 @@ public interface GetDeliveryVehicleRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GetDeliveryVehicleRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface GetDeliveryVehicleRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

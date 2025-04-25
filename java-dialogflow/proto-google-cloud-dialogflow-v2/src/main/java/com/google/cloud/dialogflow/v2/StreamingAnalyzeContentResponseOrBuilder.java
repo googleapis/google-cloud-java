@@ -36,6 +36,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the recognitionResult field is set.
    */
   boolean hasRecognitionResult();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The recognitionResult.
    */
   com.google.cloud.dialogflow.v2.StreamingRecognitionResult getRecognitionResult();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The replyText.
    */
   java.lang.String getReplyText();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the replyAudio field is set.
    */
   boolean hasReplyAudio();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The replyAudio.
    */
   com.google.cloud.dialogflow.v2.OutputAudio getReplyAudio();
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the automatedAgentReply field is set.
    */
   boolean hasAutomatedAgentReply();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The automatedAgentReply.
    */
   com.google.cloud.dialogflow.v2.AutomatedAgentReply getAutomatedAgentReply();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The message.
    */
   com.google.cloud.dialogflow.v2.Message getMessage();
+
   /**
    *
    *
@@ -252,6 +261,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    */
   java.util.List<com.google.cloud.dialogflow.v2.SuggestionResult>
       getHumanAgentSuggestionResultsList();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.SuggestionResult getHumanAgentSuggestionResults(int index);
+
   /**
    *
    *
@@ -280,6 +291,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * </code>
    */
   int getHumanAgentSuggestionResultsCount();
+
   /**
    *
    *
@@ -295,6 +307,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SuggestionResultOrBuilder>
       getHumanAgentSuggestionResultsOrBuilderList();
+
   /**
    *
    *
@@ -325,6 +338,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dialogflow.v2.SuggestionResult> getEndUserSuggestionResultsList();
+
   /**
    *
    *
@@ -339,6 +353,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.SuggestionResult getEndUserSuggestionResults(int index);
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * </code>
    */
   int getEndUserSuggestionResultsCount();
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2.SuggestionResultOrBuilder>
       getEndUserSuggestionResultsOrBuilderList();
+
   /**
    *
    *
@@ -396,6 +413,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the dtmfParameters field is set.
    */
   boolean hasDtmfParameters();
+
   /**
    *
    *
@@ -408,6 +426,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The dtmfParameters.
    */
   com.google.cloud.dialogflow.v2.DtmfParameters getDtmfParameters();
+
   /**
    *
    *
@@ -432,6 +451,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return Whether the debuggingInfo field is set.
    */
   boolean hasDebuggingInfo();
+
   /**
    *
    *
@@ -445,6 +465,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The debuggingInfo.
    */
   com.google.cloud.dialogflow.v2.CloudConversationDebuggingInfo getDebuggingInfo();
+
   /**
    *
    *
@@ -470,6 +491,7 @@ public interface StreamingAnalyzeContentResponseOrBuilder
    * @return The speechModel.
    */
   java.lang.String getSpeechModel();
+
   /**
    *
    *

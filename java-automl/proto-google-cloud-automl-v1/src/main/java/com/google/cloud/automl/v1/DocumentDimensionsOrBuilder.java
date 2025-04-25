@@ -36,6 +36,7 @@ public interface DocumentDimensionsOrBuilder
    * @return The enum numeric value on the wire for unit.
    */
   int getUnitValue();
+
   /**
    *
    *

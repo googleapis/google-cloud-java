@@ -34,6 +34,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CertificateExtensionConstraints)
     CertificateExtensionConstraintsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CertificateExtensionConstraints.newBuilder() to construct.
   private CertificateExtensionConstraints(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -191,6 +192,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>KNOWN_CERTIFICATE_EXTENSION_UNSPECIFIED = 0;</code>
      */
     public static final int KNOWN_CERTIFICATE_EXTENSION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -205,6 +207,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>BASE_KEY_USAGE = 1;</code>
      */
     public static final int BASE_KEY_USAGE_VALUE = 1;
+
     /**
      *
      *
@@ -220,6 +223,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>EXTENDED_KEY_USAGE = 2;</code>
      */
     public static final int EXTENDED_KEY_USAGE_VALUE = 2;
+
     /**
      *
      *
@@ -235,6 +239,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>CA_OPTIONS = 3;</code>
      */
     public static final int CA_OPTIONS_VALUE = 3;
+
     /**
      *
      *
@@ -250,6 +255,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>POLICY_IDS = 4;</code>
      */
     public static final int POLICY_IDS_VALUE = 4;
+
     /**
      *
      *
@@ -266,6 +272,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
      * <code>AIA_OCSP_SERVERS = 5;</code>
      */
     public static final int AIA_OCSP_SERVERS_VALUE = 5;
+
     /**
      *
      *
@@ -403,6 +410,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
                   : result;
             }
           };
+
   /**
    *
    *
@@ -428,6 +436,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
             .KnownCertificateExtension>(knownExtensions_, knownExtensions_converter_);
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   public int getKnownExtensionsCount() {
     return knownExtensions_.size();
   }
+
   /**
    *
    *
@@ -469,6 +479,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       getKnownExtensions(int index) {
     return knownExtensions_converter_.convert(knownExtensions_.get(index));
   }
+
   /**
    *
    *
@@ -488,6 +499,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   public java.util.List<java.lang.Integer> getKnownExtensionsValueList() {
     return knownExtensions_;
   }
+
   /**
    *
    *
@@ -515,6 +527,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.security.privateca.v1.ObjectId> additionalExtensions_;
+
   /**
    *
    *
@@ -534,6 +547,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       getAdditionalExtensionsList() {
     return additionalExtensions_;
   }
+
   /**
    *
    *
@@ -553,6 +567,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       getAdditionalExtensionsOrBuilderList() {
     return additionalExtensions_;
   }
+
   /**
    *
    *
@@ -571,6 +586,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   public int getAdditionalExtensionsCount() {
     return additionalExtensions_.size();
   }
+
   /**
    *
    *
@@ -589,6 +605,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
   public com.google.cloud.security.privateca.v1.ObjectId getAdditionalExtensions(int index) {
     return additionalExtensions_.get(index);
   }
+
   /**
    *
    *
@@ -799,6 +816,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1082,6 +1100,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         bitField0_ |= 0x00000001;
       }
     }
+
     /**
      *
      *
@@ -1106,6 +1125,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
           com.google.cloud.security.privateca.v1.CertificateExtensionConstraints
               .KnownCertificateExtension>(knownExtensions_, knownExtensions_converter_);
     }
+
     /**
      *
      *
@@ -1124,6 +1144,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     public int getKnownExtensionsCount() {
       return knownExtensions_.size();
     }
+
     /**
      *
      *
@@ -1145,6 +1166,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         getKnownExtensions(int index) {
       return knownExtensions_converter_.convert(knownExtensions_.get(index));
     }
+
     /**
      *
      *
@@ -1175,6 +1197,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1226,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1234,6 +1258,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1280,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1273,6 +1299,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     public java.util.List<java.lang.Integer> getKnownExtensionsValueList() {
       return java.util.Collections.unmodifiableList(knownExtensions_);
     }
+
     /**
      *
      *
@@ -1292,6 +1319,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
     public int getKnownExtensionsValue(int index) {
       return knownExtensions_.get(index);
     }
+
     /**
      *
      *
@@ -1315,6 +1343,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1337,6 +1366,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1402,6 +1432,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         return additionalExtensionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1454,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         return additionalExtensionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1444,6 +1476,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         return additionalExtensionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1472,6 +1505,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1497,6 +1531,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1524,6 +1559,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1552,6 +1588,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1577,6 +1614,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1602,6 +1640,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1666,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1651,6 +1691,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1716,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1693,6 +1735,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         int index) {
       return getAdditionalExtensionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1715,6 +1758,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         return additionalExtensionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1737,6 +1781,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(additionalExtensions_);
       }
     }
+
     /**
      *
      *
@@ -1756,6 +1801,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       return getAdditionalExtensionsFieldBuilder()
           .addBuilder(com.google.cloud.security.privateca.v1.ObjectId.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1775,6 +1821,7 @@ public final class CertificateExtensionConstraints extends com.google.protobuf.G
       return getAdditionalExtensionsFieldBuilder()
           .addBuilder(index, com.google.cloud.security.privateca.v1.ObjectId.getDefaultInstance());
     }
+
     /**
      *
      *

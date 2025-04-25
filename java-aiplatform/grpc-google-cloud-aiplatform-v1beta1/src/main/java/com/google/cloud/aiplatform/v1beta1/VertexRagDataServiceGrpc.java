@@ -614,6 +614,19 @@ public final class VertexRagDataServiceGrpc {
     return VertexRagDataServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VertexRagDataServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VertexRagDataServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VertexRagDataServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VertexRagDataServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VertexRagDataServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VertexRagDataServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1057,6 +1070,183 @@ public final class VertexRagDataServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VertexRagDataService.
+   *
+   * <pre>
+   * A service for managing user data for RAG.
+   * </pre>
+   */
+  public static final class VertexRagDataServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VertexRagDataServiceBlockingV2Stub> {
+    private VertexRagDataServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VertexRagDataServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VertexRagDataServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a RagCorpus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.CreateRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRagCorpusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagCorpus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRagCorpusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagCorpus.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagCorpus getRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.GetRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRagCorpusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagCorpora in a Location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagCorporaResponse listRagCorpora(
+        com.google.cloud.aiplatform.v1beta1.ListRagCorporaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRagCorporaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagCorpus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRagCorpus(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagCorpusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRagCorpusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upload a file into a RagCorpus.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.UploadRagFileResponse uploadRagFile(
+        com.google.cloud.aiplatform.v1beta1.UploadRagFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadRagFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Import files from Google Cloud Storage or Google Drive into a RagCorpus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importRagFiles(
+        com.google.cloud.aiplatform.v1beta1.ImportRagFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportRagFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagFile.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagFile getRagFile(
+        com.google.cloud.aiplatform.v1beta1.GetRagFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRagFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RagFiles in a RagCorpus.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListRagFilesResponse listRagFiles(
+        com.google.cloud.aiplatform.v1beta1.ListRagFilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRagFilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a RagFile.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRagFile(
+        com.google.cloud.aiplatform.v1beta1.DeleteRagFileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRagFileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a RagEngineConfig.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRagEngineConfig(
+        com.google.cloud.aiplatform.v1beta1.UpdateRagEngineConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRagEngineConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a RagEngineConfig.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagEngineConfig getRagEngineConfig(
+        com.google.cloud.aiplatform.v1beta1.GetRagEngineConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRagEngineConfigMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VertexRagDataService.
    *
    * <pre>
    * A service for managing user data for RAG.

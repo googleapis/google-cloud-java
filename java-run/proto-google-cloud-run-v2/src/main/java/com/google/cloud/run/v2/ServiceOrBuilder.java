@@ -41,6 +41,7 @@ public interface ServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ServiceOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface ServiceOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -171,9 +175,11 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface ServiceOrBuilder
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -281,9 +290,11 @@ public interface ServiceOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -330,6 +342,7 @@ public interface ServiceOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -365,6 +378,7 @@ public interface ServiceOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -378,6 +392,7 @@ public interface ServiceOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -403,6 +418,7 @@ public interface ServiceOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -416,6 +432,7 @@ public interface ServiceOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -442,6 +459,7 @@ public interface ServiceOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -456,6 +474,7 @@ public interface ServiceOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -483,6 +502,7 @@ public interface ServiceOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -497,6 +517,7 @@ public interface ServiceOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -522,6 +543,7 @@ public interface ServiceOrBuilder
    * @return The creator.
    */
   java.lang.String getCreator();
+
   /**
    *
    *
@@ -547,6 +569,7 @@ public interface ServiceOrBuilder
    * @return The lastModifier.
    */
   java.lang.String getLastModifier();
+
   /**
    *
    *
@@ -572,6 +595,7 @@ public interface ServiceOrBuilder
    * @return The client.
    */
   java.lang.String getClient();
+
   /**
    *
    *
@@ -597,6 +621,7 @@ public interface ServiceOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *
@@ -626,6 +651,7 @@ public interface ServiceOrBuilder
    * @return The enum numeric value on the wire for ingress.
    */
   int getIngressValue();
+
   /**
    *
    *
@@ -665,6 +691,7 @@ public interface ServiceOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *
@@ -702,6 +729,7 @@ public interface ServiceOrBuilder
    * @return Whether the binaryAuthorization field is set.
    */
   boolean hasBinaryAuthorization();
+
   /**
    *
    *
@@ -716,6 +744,7 @@ public interface ServiceOrBuilder
    * @return The binaryAuthorization.
    */
   com.google.cloud.run.v2.BinaryAuthorization getBinaryAuthorization();
+
   /**
    *
    *
@@ -743,6 +772,7 @@ public interface ServiceOrBuilder
    * @return Whether the template field is set.
    */
   boolean hasTemplate();
+
   /**
    *
    *
@@ -757,6 +787,7 @@ public interface ServiceOrBuilder
    * @return The template.
    */
   com.google.cloud.run.v2.RevisionTemplate getTemplate();
+
   /**
    *
    *
@@ -784,6 +815,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.TrafficTarget> getTrafficList();
+
   /**
    *
    *
@@ -798,6 +830,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.TrafficTarget getTraffic(int index);
+
   /**
    *
    *
@@ -812,6 +845,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getTrafficCount();
+
   /**
    *
    *
@@ -827,6 +861,7 @@ public interface ServiceOrBuilder
    */
   java.util.List<? extends com.google.cloud.run.v2.TrafficTargetOrBuilder>
       getTrafficOrBuilderList();
+
   /**
    *
    *
@@ -856,6 +891,7 @@ public interface ServiceOrBuilder
    * @return Whether the scaling field is set.
    */
   boolean hasScaling();
+
   /**
    *
    *
@@ -870,6 +906,7 @@ public interface ServiceOrBuilder
    * @return The scaling.
    */
   com.google.cloud.run.v2.ServiceScaling getScaling();
+
   /**
    *
    *
@@ -924,6 +961,7 @@ public interface ServiceOrBuilder
    * @return A list containing the urls.
    */
   java.util.List<java.lang.String> getUrlsList();
+
   /**
    *
    *
@@ -936,6 +974,7 @@ public interface ServiceOrBuilder
    * @return The count of urls.
    */
   int getUrlsCount();
+
   /**
    *
    *
@@ -949,6 +988,7 @@ public interface ServiceOrBuilder
    * @return The urls at the given index.
    */
   java.lang.String getUrls(int index);
+
   /**
    *
    *
@@ -979,6 +1019,7 @@ public interface ServiceOrBuilder
    * @return A list containing the customAudiences.
    */
   java.util.List<java.lang.String> getCustomAudiencesList();
+
   /**
    *
    *
@@ -995,6 +1036,7 @@ public interface ServiceOrBuilder
    * @return The count of customAudiences.
    */
   int getCustomAudiencesCount();
+
   /**
    *
    *
@@ -1012,6 +1054,7 @@ public interface ServiceOrBuilder
    * @return The customAudiences at the given index.
    */
   java.lang.String getCustomAudiences(int index);
+
   /**
    *
    *
@@ -1064,6 +1107,7 @@ public interface ServiceOrBuilder
    * @return Whether the terminalCondition field is set.
    */
   boolean hasTerminalCondition();
+
   /**
    *
    *
@@ -1081,6 +1125,7 @@ public interface ServiceOrBuilder
    * @return The terminalCondition.
    */
   com.google.cloud.run.v2.Condition getTerminalCondition();
+
   /**
    *
    *
@@ -1112,6 +1157,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Condition> getConditionsList();
+
   /**
    *
    *
@@ -1127,6 +1173,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Condition getConditions(int index);
+
   /**
    *
    *
@@ -1142,6 +1189,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -1157,6 +1205,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ConditionOrBuilder> getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -1189,6 +1238,7 @@ public interface ServiceOrBuilder
    * @return The latestReadyRevision.
    */
   java.lang.String getLatestReadyRevision();
+
   /**
    *
    *
@@ -1222,6 +1272,7 @@ public interface ServiceOrBuilder
    * @return The latestCreatedRevision.
    */
   java.lang.String getLatestCreatedRevision();
+
   /**
    *
    *
@@ -1253,6 +1304,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.TrafficTargetStatus> getTrafficStatusesList();
+
   /**
    *
    *
@@ -1267,6 +1319,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.TrafficTargetStatus getTrafficStatuses(int index);
+
   /**
    *
    *
@@ -1281,6 +1334,7 @@ public interface ServiceOrBuilder
    * </code>
    */
   int getTrafficStatusesCount();
+
   /**
    *
    *
@@ -1296,6 +1350,7 @@ public interface ServiceOrBuilder
    */
   java.util.List<? extends com.google.cloud.run.v2.TrafficTargetStatusOrBuilder>
       getTrafficStatusesOrBuilderList();
+
   /**
    *
    *
@@ -1323,6 +1378,7 @@ public interface ServiceOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -1363,6 +1419,7 @@ public interface ServiceOrBuilder
    * @return Whether the buildConfig field is set.
    */
   boolean hasBuildConfig();
+
   /**
    *
    *
@@ -1377,6 +1434,7 @@ public interface ServiceOrBuilder
    * @return The buildConfig.
    */
   com.google.cloud.run.v2.BuildConfig getBuildConfig();
+
   /**
    *
    *
@@ -1437,6 +1495,7 @@ public interface ServiceOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

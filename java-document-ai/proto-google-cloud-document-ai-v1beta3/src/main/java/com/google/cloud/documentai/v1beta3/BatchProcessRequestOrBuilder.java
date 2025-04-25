@@ -43,6 +43,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface BatchProcessRequestOrBuilder
   @java.lang.Deprecated
   java.util.List<com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
       getInputConfigsList();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface BatchProcessRequestOrBuilder
   @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig getInputConfigs(
       int index);
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BatchProcessRequestOrBuilder
    */
   @java.lang.Deprecated
   int getInputConfigsCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface BatchProcessRequestOrBuilder
           ? extends
               com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder>
       getInputConfigsOrBuilderList();
+
   /**
    *
    *
@@ -147,11 +152,12 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=591
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Deprecated
   boolean hasOutputConfig();
+
   /**
    *
    *
@@ -164,11 +170,12 @@ public interface BatchProcessRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.documentai.v1beta3.BatchProcessRequest.output_config is deprecated.
-   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=591
+   *     See google/cloud/documentai/v1beta3/document_processor_service.proto;l=594
    * @return The outputConfig.
    */
   @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig getOutputConfig();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the inputDocuments field is set.
    */
   boolean hasInputDocuments();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The inputDocuments.
    */
   com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getInputDocuments();
+
   /**
    *
    *
@@ -240,6 +249,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the documentOutputConfig field is set.
    */
   boolean hasDocumentOutputConfig();
+
   /**
    *
    *
@@ -254,6 +264,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The documentOutputConfig.
    */
   com.google.cloud.documentai.v1beta3.DocumentOutputConfig getDocumentOutputConfig();
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public interface BatchProcessRequestOrBuilder
    * @return Whether the processOptions field is set.
    */
   boolean hasProcessOptions();
+
   /**
    *
    *
@@ -306,6 +318,7 @@ public interface BatchProcessRequestOrBuilder
    * @return The processOptions.
    */
   com.google.cloud.documentai.v1beta3.ProcessOptions getProcessOptions();
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -347,9 +361,11 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -365,6 +381,7 @@ public interface BatchProcessRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -384,6 +401,7 @@ public interface BatchProcessRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

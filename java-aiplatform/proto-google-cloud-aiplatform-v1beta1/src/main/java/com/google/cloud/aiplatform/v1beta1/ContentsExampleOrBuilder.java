@@ -37,6 +37,7 @@ public interface ContentsExampleOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ContentsExampleOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.Content getContents(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface ContentsExampleOrBuilder
    * </code>
    */
   int getContentsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ContentsExampleOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
       getContentsOrBuilderList();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ContentsExampleOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent>
       getExpectedContentsList();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface ContentsExampleOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent getExpectedContents(
       int index);
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface ContentsExampleOrBuilder
    * </code>
    */
   int getExpectedContentsCount();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface ContentsExampleOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContentOrBuilder>
       getExpectedContentsOrBuilderList();
+
   /**
    *
    *

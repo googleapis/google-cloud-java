@@ -38,6 +38,7 @@ public interface VerifyNotificationChannelRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface VerifyNotificationChannelRequestOrBuilder
    * @return The code.
    */
   java.lang.String getCode();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface FeatureSelectorOrBuilder
    * @return Whether the idMatcher field is set.
    */
   boolean hasIdMatcher();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface FeatureSelectorOrBuilder
    * @return The idMatcher.
    */
   com.google.cloud.aiplatform.v1beta1.IdMatcher getIdMatcher();
+
   /**
    *
    *

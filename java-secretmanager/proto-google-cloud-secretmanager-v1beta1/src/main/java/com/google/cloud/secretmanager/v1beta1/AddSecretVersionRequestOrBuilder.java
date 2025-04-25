@@ -28,8 +28,10 @@ public interface AddSecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to associate with the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] to associate with the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -39,12 +41,15 @@ public interface AddSecretVersionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] to associate with the
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] to associate with the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -59,7 +64,8 @@ public interface AddSecretVersionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The secret payload of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Required. The secret payload of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -69,11 +75,13 @@ public interface AddSecretVersionRequestOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
    * <pre>
-   * Required. The secret payload of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Required. The secret payload of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -83,11 +91,13 @@ public interface AddSecretVersionRequestOrBuilder
    * @return The payload.
    */
   com.google.cloud.secretmanager.v1beta1.SecretPayload getPayload();
+
   /**
    *
    *
    * <pre>
-   * Required. The secret payload of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Required. The secret payload of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>

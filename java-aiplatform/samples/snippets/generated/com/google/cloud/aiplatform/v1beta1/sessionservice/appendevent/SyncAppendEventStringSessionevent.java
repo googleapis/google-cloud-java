@@ -36,8 +36,7 @@ public class SyncAppendEventStringSessionevent {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
       String name =
-          SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
-              .toString();
+          SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]").toString();
       SessionEvent event = SessionEvent.newBuilder().build();
       AppendEventResponse response = sessionServiceClient.appendEvent(name, event);
     }

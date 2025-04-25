@@ -33,6 +33,7 @@ public final class DeleteEventsResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse)
     DeleteEventsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteEventsResponse.newBuilder() to construct.
   private DeleteEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class DeleteEventsResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

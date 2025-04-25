@@ -37,6 +37,7 @@ public interface ExactMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.ExactMatchMetricValue>
       getExactMatchMetricValuesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ExactMatchResultsOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.ExactMatchMetricValue getExactMatchMetricValues(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ExactMatchResultsOrBuilder
    * </code>
    */
   int getExactMatchMetricValuesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ExactMatchResultsOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.ExactMatchMetricValueOrBuilder>
       getExactMatchMetricValuesOrBuilderList();
+
   /**
    *
    *

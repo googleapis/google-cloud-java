@@ -38,6 +38,7 @@ public interface UpdateSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return Whether the skadnetworkConversionValueSchema field is set.
    */
   boolean hasSkadnetworkConversionValueSchema();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface UpdateSKAdNetworkConversionValueSchemaRequestOrBuilder
    */
   com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
       getSkadnetworkConversionValueSchema();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface UpdateSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateSKAdNetworkConversionValueSchemaRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

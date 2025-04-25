@@ -38,6 +38,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the supportedServiceLevels.
    */
   java.util.List<com.google.cloud.netapp.v1.ServiceLevel> getSupportedServiceLevelsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface LocationMetadataOrBuilder
    * @return The count of supportedServiceLevels.
    */
   int getSupportedServiceLevelsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface LocationMetadataOrBuilder
    * @return The supportedServiceLevels at the given index.
    */
   com.google.cloud.netapp.v1.ServiceLevel getSupportedServiceLevels(int index);
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedServiceLevels.
    */
   java.util.List<java.lang.Integer> getSupportedServiceLevelsValueList();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the supportedFlexPerformance.
    */
   java.util.List<com.google.cloud.netapp.v1.FlexPerformance> getSupportedFlexPerformanceList();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface LocationMetadataOrBuilder
    * @return The count of supportedFlexPerformance.
    */
   int getSupportedFlexPerformanceCount();
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public interface LocationMetadataOrBuilder
    * @return The supportedFlexPerformance at the given index.
    */
   com.google.cloud.netapp.v1.FlexPerformance getSupportedFlexPerformance(int index);
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for supportedFlexPerformance.
    */
   java.util.List<java.lang.Integer> getSupportedFlexPerformanceValueList();
+
   /**
    *
    *

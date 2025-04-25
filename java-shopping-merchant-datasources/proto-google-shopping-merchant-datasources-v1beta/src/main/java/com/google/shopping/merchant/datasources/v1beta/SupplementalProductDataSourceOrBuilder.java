@@ -57,6 +57,7 @@ public interface SupplementalProductDataSourceOrBuilder
    * @return Whether the feedLabel field is set.
    */
   boolean hasFeedLabel();
+
   /**
    *
    *
@@ -90,6 +91,7 @@ public interface SupplementalProductDataSourceOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *
@@ -146,6 +148,7 @@ public interface SupplementalProductDataSourceOrBuilder
    * @return Whether the contentLanguage field is set.
    */
   boolean hasContentLanguage();
+
   /**
    *
    *
@@ -168,6 +171,7 @@ public interface SupplementalProductDataSourceOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -206,6 +210,7 @@ public interface SupplementalProductDataSourceOrBuilder
    */
   java.util.List<com.google.shopping.merchant.datasources.v1beta.DataSourceReference>
       getReferencingPrimaryDataSourcesList();
+
   /**
    *
    *
@@ -221,6 +226,7 @@ public interface SupplementalProductDataSourceOrBuilder
    */
   com.google.shopping.merchant.datasources.v1beta.DataSourceReference
       getReferencingPrimaryDataSources(int index);
+
   /**
    *
    *
@@ -235,6 +241,7 @@ public interface SupplementalProductDataSourceOrBuilder
    * </code>
    */
   int getReferencingPrimaryDataSourcesCount();
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public interface SupplementalProductDataSourceOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.datasources.v1beta.DataSourceReferenceOrBuilder>
       getReferencingPrimaryDataSourcesOrBuilderList();
+
   /**
    *
    *

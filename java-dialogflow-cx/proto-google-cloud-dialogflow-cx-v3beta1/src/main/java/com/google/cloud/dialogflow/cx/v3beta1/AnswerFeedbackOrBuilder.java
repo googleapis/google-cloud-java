@@ -38,6 +38,7 @@ public interface AnswerFeedbackOrBuilder
    * @return The enum numeric value on the wire for rating.
    */
   int getRatingValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface AnswerFeedbackOrBuilder
    * @return Whether the ratingReason field is set.
    */
   boolean hasRatingReason();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface AnswerFeedbackOrBuilder
    * @return The ratingReason.
    */
   com.google.cloud.dialogflow.cx.v3beta1.AnswerFeedback.RatingReason getRatingReason();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface AnswerFeedbackOrBuilder
    * @return The customRating.
    */
   java.lang.String getCustomRating();
+
   /**
    *
    *

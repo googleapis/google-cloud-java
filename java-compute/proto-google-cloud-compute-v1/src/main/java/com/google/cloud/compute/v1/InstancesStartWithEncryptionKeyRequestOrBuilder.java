@@ -35,6 +35,7 @@ public interface InstancesStartWithEncryptionKeyRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk> getDisksList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface InstancesStartWithEncryptionKeyRequestOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDisk getDisks(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface InstancesStartWithEncryptionKeyRequestOrBuilder
    * </code>
    */
   int getDisksCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface InstancesStartWithEncryptionKeyRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.CustomerEncryptionKeyProtectedDiskOrBuilder>
       getDisksOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface StreamingSynthesizeRequestOrBuilder
    * @return Whether the streamingConfig field is set.
    */
   boolean hasStreamingConfig();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StreamingSynthesizeRequestOrBuilder
    * @return The streamingConfig.
    */
   com.google.cloud.texttospeech.v1beta1.StreamingSynthesizeConfig getStreamingConfig();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface StreamingSynthesizeRequestOrBuilder
    * @return Whether the input field is set.
    */
   boolean hasInput();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface StreamingSynthesizeRequestOrBuilder
    * @return The input.
    */
   com.google.cloud.texttospeech.v1beta1.StreamingSynthesisInput getInput();
+
   /**
    *
    *

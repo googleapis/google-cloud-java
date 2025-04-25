@@ -36,6 +36,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.LogsPolicy)
     LogsPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogsPolicy.newBuilder() to construct.
   private LogsPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>DESTINATION_UNSPECIFIED = 0;</code>
      */
     public static final int DESTINATION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -132,6 +134,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_LOGGING = 1;</code>
      */
     public static final int CLOUD_LOGGING_VALUE = 1;
+
     /**
      *
      *
@@ -252,6 +255,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
      */
     boolean getUseGenericTaskMonitoredResource();
   }
+
   /**
    *
    *
@@ -267,6 +271,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption)
       CloudLoggingOptionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudLoggingOption.newBuilder() to construct.
     private CloudLoggingOption(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -297,6 +302,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
 
     public static final int USE_GENERIC_TASK_MONITORED_RESOURCE_FIELD_NUMBER = 1;
     private boolean useGenericTaskMonitoredResource_ = false;
+
     /**
      *
      *
@@ -487,6 +493,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -676,6 +683,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private boolean useGenericTaskMonitoredResource_;
+
       /**
        *
        *
@@ -700,6 +708,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       public boolean getUseGenericTaskMonitoredResource() {
         return useGenericTaskMonitoredResource_;
       }
+
       /**
        *
        *
@@ -728,6 +737,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -825,6 +835,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DESTINATION_FIELD_NUMBER = 1;
   private int destination_ = 0;
+
   /**
    *
    *
@@ -840,6 +851,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getDestinationValue() {
     return destination_;
   }
+
   /**
    *
    *
@@ -864,6 +876,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logsPath_ = "";
+
   /**
    *
    *
@@ -894,6 +907,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -927,6 +941,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLOUD_LOGGING_OPTION_FIELD_NUMBER = 3;
   private com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption cloudLoggingOption_;
+
   /**
    *
    *
@@ -945,6 +960,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudLoggingOption() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -965,6 +981,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption.getDefaultInstance()
         : cloudLoggingOption_;
   }
+
   /**
    *
    *
@@ -1171,6 +1188,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1403,6 +1421,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int destination_ = 0;
+
     /**
      *
      *
@@ -1418,6 +1437,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getDestinationValue() {
       return destination_;
     }
+
     /**
      *
      *
@@ -1436,6 +1456,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1455,6 +1476,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.batch.v1alpha.LogsPolicy.Destination.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1476,6 +1498,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1518,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object logsPath_ = "";
+
     /**
      *
      *
@@ -1524,6 +1548,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1578,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1581,6 +1607,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1632,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1669,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOption.Builder,
             com.google.cloud.batch.v1alpha.LogsPolicy.CloudLoggingOptionOrBuilder>
         cloudLoggingOptionBuilder_;
+
     /**
      *
      *
@@ -1658,6 +1687,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudLoggingOption() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1681,6 +1711,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
         return cloudLoggingOptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1707,6 +1738,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1762,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1763,6 +1796,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1819,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1803,6 +1838,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCloudLoggingOptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1825,6 +1861,7 @@ public final class LogsPolicy extends com.google.protobuf.GeneratedMessageV3
             : cloudLoggingOption_;
       }
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public interface FetchConnectedGa4PropertyRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *

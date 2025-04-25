@@ -34,6 +34,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.managedkafka.v1.ConnectNetworkConfig)
     ConnectNetworkConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConnectNetworkConfig.newBuilder() to construct.
   private ConnectNetworkConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object primarySubnet_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList additionalSubnets_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAdditionalSubnetsList() {
     return additionalSubnets_;
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public int getAdditionalSubnetsCount() {
     return additionalSubnets_.size();
   }
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public java.lang.String getAdditionalSubnets(int index) {
     return additionalSubnets_.get(index);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList dnsDomainNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -236,6 +244,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getDnsDomainNamesList() {
     return dnsDomainNames_;
   }
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public int getDnsDomainNamesCount() {
     return dnsDomainNames_.size();
   }
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
   public java.lang.String getDnsDomainNames(int index) {
     return dnsDomainNames_.get(index);
   }
+
   /**
    *
    *
@@ -485,6 +496,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -714,6 +726,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object primarySubnet_ = "";
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +824,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +895,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -897,6 +915,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       additionalSubnets_.makeImmutable();
       return additionalSubnets_;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public int getAdditionalSubnetsCount() {
       return additionalSubnets_.size();
     }
+
     /**
      *
      *
@@ -934,6 +954,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public java.lang.String getAdditionalSubnets(int index) {
       return additionalSubnets_.get(index);
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAdditionalSubnetsBytes(int index) {
       return additionalSubnets_.getByteString(index);
     }
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1053,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1076,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1114,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1107,6 +1134,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       dnsDomainNames_.makeImmutable();
       return dnsDomainNames_;
     }
+
     /**
      *
      *
@@ -1125,6 +1153,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public int getDnsDomainNamesCount() {
       return dnsDomainNames_.size();
     }
+
     /**
      *
      *
@@ -1144,6 +1173,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public java.lang.String getDnsDomainNames(int index) {
       return dnsDomainNames_.get(index);
     }
+
     /**
      *
      *
@@ -1163,6 +1193,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getDnsDomainNamesBytes(int index) {
       return dnsDomainNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1248,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1272,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1295,7 @@ public final class ConnectNetworkConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

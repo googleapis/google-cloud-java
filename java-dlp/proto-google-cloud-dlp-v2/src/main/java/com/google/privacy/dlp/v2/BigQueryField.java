@@ -33,6 +33,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.BigQueryField)
     BigQueryFieldOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryField.newBuilder() to construct.
   private BigQueryField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TABLE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.BigQueryTable table_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.BigQueryTable getTable() {
     return table_ == null ? com.google.privacy.dlp.v2.BigQueryTable.getDefaultInstance() : table_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FIELD_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.FieldId field_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
   public boolean hasField() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
   public com.google.privacy.dlp.v2.FieldId getField() {
     return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
   }
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +560,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.BigQueryTable.Builder,
             com.google.privacy.dlp.v2.BigQueryTableOrBuilder>
         tableBuilder_;
+
     /**
      *
      *
@@ -566,6 +575,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -586,6 +596,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
         return tableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +667,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +687,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +702,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -705,6 +721,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
             : table_;
       }
     }
+
     /**
      *
      *
@@ -737,6 +754,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.FieldId.Builder,
             com.google.privacy.dlp.v2.FieldIdOrBuilder>
         fieldBuilder_;
+
     /**
      *
      *
@@ -751,6 +769,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
     public boolean hasField() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -769,6 +788,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
         return fieldBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -791,6 +811,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +831,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +859,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +879,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +894,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getFieldFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -886,6 +911,7 @@ public final class BigQueryField extends com.google.protobuf.GeneratedMessageV3
         return field_ == null ? com.google.privacy.dlp.v2.FieldId.getDefaultInstance() : field_;
       }
     }
+
     /**
      *
      *

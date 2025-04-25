@@ -72,6 +72,7 @@ public enum BackoffMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACKOFF_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int BACKOFF_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum BackoffMode implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BACKOFF_MODE_LINEAR = 1;</code>
    */
   public static final int BACKOFF_MODE_LINEAR_VALUE = 1;
+
   /**
    *
    *

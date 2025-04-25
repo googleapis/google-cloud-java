@@ -214,6 +214,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,6 +273,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -328,6 +332,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -394,6 +400,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -460,6 +468,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -485,6 +495,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -530,6 +542,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setSubmitTime(Timestamp.newBuilder().build())
               .setBillingId("billingId1828026614")
               .addAllExistingHardware(new ArrayList<HardwareLocation>())
+              .setActualInstallationDate(Date.newBuilder().build())
+              .setEstimatedInstallationDate(Date.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateOrderAsync(order, updateMask).get();
@@ -646,6 +660,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -708,6 +724,8 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setSubmitTime(Timestamp.newBuilder().build())
             .setBillingId("billingId1828026614")
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3097,6 +3115,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRevisionId("revisionId-1507445162")
             .setIsActive(true)
             .setVcpuCount(936475650)
+            .addAllHardwareCountRanges(new ArrayList<Sku.Range>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3150,6 +3169,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRevisionId("revisionId-1507445162")
             .setIsActive(true)
             .setVcpuCount(936475650)
+            .addAllHardwareCountRanges(new ArrayList<Sku.Range>())
             .build();
     mockService.addResponse(expectedResponse);
 

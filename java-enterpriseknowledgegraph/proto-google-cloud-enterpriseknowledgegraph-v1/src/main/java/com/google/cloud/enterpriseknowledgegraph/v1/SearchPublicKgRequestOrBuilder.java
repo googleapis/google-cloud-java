@@ -40,6 +40,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return A list containing the languages.
    */
   java.util.List<java.lang.String> getLanguagesList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The count of languages.
    */
   int getLanguagesCount();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The languages at the given index.
    */
   java.lang.String getLanguages(int index);
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return A list containing the types.
    */
   java.util.List<java.lang.String> getTypesList();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The count of types.
    */
   int getTypesCount();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The types at the given index.
    */
   java.lang.String getTypes(int index);
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public interface SearchPublicKgRequestOrBuilder
    * @return The limit.
    */
   com.google.protobuf.Int32Value getLimit();
+
   /**
    *
    *

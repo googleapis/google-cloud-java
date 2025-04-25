@@ -33,6 +33,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest)
     SearchChangeHistoryEventsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchChangeHistoryEventsRequest.newBuilder() to construct.
   private SearchChangeHistoryEventsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object account_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
                   : result;
             }
           };
+
   /**
    *
    *
@@ -234,6 +240,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         java.lang.Integer, com.google.analytics.admin.v1alpha.ChangeHistoryResourceType>(
         resourceType_, resourceType_converter_);
   }
+
   /**
    *
    *
@@ -252,6 +259,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public int getResourceTypeCount() {
     return resourceType_.size();
   }
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public com.google.analytics.admin.v1alpha.ChangeHistoryResourceType getResourceType(int index) {
     return resourceType_converter_.convert(resourceType_.get(index));
   }
+
   /**
    *
    *
@@ -289,6 +298,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public java.util.List<java.lang.Integer> getResourceTypeValueList() {
     return resourceType_;
   }
+
   /**
    *
    *
@@ -329,6 +339,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
                   : result;
             }
           };
+
   /**
    *
    *
@@ -349,6 +360,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         java.lang.Integer, com.google.analytics.admin.v1alpha.ActionType>(
         action_, action_converter_);
   }
+
   /**
    *
    *
@@ -367,6 +379,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public int getActionCount() {
     return action_.size();
   }
+
   /**
    *
    *
@@ -386,6 +399,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public com.google.analytics.admin.v1alpha.ActionType getAction(int index) {
     return action_converter_.convert(action_.get(index));
   }
+
   /**
    *
    *
@@ -404,6 +418,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public java.util.List<java.lang.Integer> getActionValueList() {
     return action_;
   }
+
   /**
    *
    *
@@ -431,6 +446,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList actorEmail_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -446,6 +462,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public com.google.protobuf.ProtocolStringList getActorEmailList() {
     return actorEmail_;
   }
+
   /**
    *
    *
@@ -461,6 +478,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public int getActorEmailCount() {
     return actorEmail_.size();
   }
+
   /**
    *
    *
@@ -477,6 +495,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public java.lang.String getActorEmail(int index) {
     return actorEmail_.get(index);
   }
+
   /**
    *
    *
@@ -496,6 +515,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   public static final int EARLIEST_CHANGE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp earliestChangeTime_;
+
   /**
    *
    *
@@ -513,6 +533,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public boolean hasEarliestChangeTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -532,6 +553,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : earliestChangeTime_;
   }
+
   /**
    *
    *
@@ -552,6 +574,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   public static final int LATEST_CHANGE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp latestChangeTime_;
+
   /**
    *
    *
@@ -569,6 +592,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
   public boolean hasLatestChangeTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -588,6 +612,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : latestChangeTime_;
   }
+
   /**
    *
    *
@@ -608,6 +633,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 8;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -636,6 +662,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -663,6 +690,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -973,6 +1001,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1360,6 +1389,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object account_ = "";
+
     /**
      *
      *
@@ -1387,6 +1417,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1445,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1440,6 +1472,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1495,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1491,6 +1525,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     }
 
     private java.lang.Object property_ = "";
+
     /**
      *
      *
@@ -1519,6 +1554,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1547,6 +1583,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1611,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1635,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1673,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1694,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
           java.lang.Integer, com.google.analytics.admin.v1alpha.ChangeHistoryResourceType>(
           resourceType_, resourceType_converter_);
     }
+
     /**
      *
      *
@@ -1671,6 +1712,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getResourceTypeCount() {
       return resourceType_.size();
     }
+
     /**
      *
      *
@@ -1689,6 +1731,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public com.google.analytics.admin.v1alpha.ChangeHistoryResourceType getResourceType(int index) {
       return resourceType_converter_.convert(resourceType_.get(index));
     }
+
     /**
      *
      *
@@ -1715,6 +1758,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1784,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1810,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1831,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1849,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public java.util.List<java.lang.Integer> getResourceTypeValueList() {
       return java.util.Collections.unmodifiableList(resourceType_);
     }
+
     /**
      *
      *
@@ -1820,6 +1868,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getResourceTypeValue(int index) {
       return resourceType_.get(index);
     }
+
     /**
      *
      *
@@ -1842,6 +1891,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1863,6 +1913,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1895,6 +1946,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -1914,6 +1966,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
           java.lang.Integer, com.google.analytics.admin.v1alpha.ActionType>(
           action_, action_converter_);
     }
+
     /**
      *
      *
@@ -1931,6 +1984,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getActionCount() {
       return action_.size();
     }
+
     /**
      *
      *
@@ -1949,6 +2003,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public com.google.analytics.admin.v1alpha.ActionType getAction(int index) {
       return action_converter_.convert(action_.get(index));
     }
+
     /**
      *
      *
@@ -1974,6 +2029,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1998,6 +2054,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2022,6 +2079,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2100,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2118,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public java.util.List<java.lang.Integer> getActionValueList() {
       return java.util.Collections.unmodifiableList(action_);
     }
+
     /**
      *
      *
@@ -2077,6 +2137,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getActionValue(int index) {
       return action_.get(index);
     }
+
     /**
      *
      *
@@ -2099,6 +2160,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2182,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2216,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       bitField0_ |= 0x00000010;
     }
+
     /**
      *
      *
@@ -2169,6 +2233,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       actorEmail_.makeImmutable();
       return actorEmail_;
     }
+
     /**
      *
      *
@@ -2184,6 +2249,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getActorEmailCount() {
       return actorEmail_.size();
     }
+
     /**
      *
      *
@@ -2200,6 +2266,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public java.lang.String getActorEmail(int index) {
       return actorEmail_.get(index);
     }
+
     /**
      *
      *
@@ -2216,6 +2283,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public com.google.protobuf.ByteString getActorEmailBytes(int index) {
       return actorEmail_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2240,6 +2308,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2263,6 +2332,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2283,6 +2353,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2302,6 +2373,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2333,6 +2405,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         earliestChangeTimeBuilder_;
+
     /**
      *
      *
@@ -2349,6 +2422,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public boolean hasEarliestChangeTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2371,6 +2445,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return earliestChangeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2395,6 +2470,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2416,6 +2492,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2445,6 +2522,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2466,6 +2544,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2482,6 +2561,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return getEarliestChangeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2502,6 +2582,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
             : earliestChangeTime_;
       }
     }
+
     /**
      *
      *
@@ -2536,6 +2617,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         latestChangeTimeBuilder_;
+
     /**
      *
      *
@@ -2552,6 +2634,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public boolean hasLatestChangeTime() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2574,6 +2657,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return latestChangeTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2598,6 +2682,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2619,6 +2704,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2648,6 +2734,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -2669,6 +2756,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2685,6 +2773,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return getLatestChangeTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2705,6 +2794,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
             : latestChangeTime_;
       }
     }
+
     /**
      *
      *
@@ -2734,6 +2824,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -2757,6 +2848,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -2784,6 +2876,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2811,6 +2904,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -2837,6 +2931,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2863,6 +2958,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2888,6 +2984,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2909,6 +3006,7 @@ public final class SearchChangeHistoryEventsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

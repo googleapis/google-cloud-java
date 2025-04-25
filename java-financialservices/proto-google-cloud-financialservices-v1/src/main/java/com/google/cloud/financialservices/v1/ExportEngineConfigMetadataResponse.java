@@ -33,6 +33,7 @@ public final class ExportEngineConfigMetadataResponse extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.financialservices.v1.ExportEngineConfigMetadataResponse)
     ExportEngineConfigMetadataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportEngineConfigMetadataResponse.newBuilder() to construct.
   private ExportEngineConfigMetadataResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class ExportEngineConfigMetadataResponse extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

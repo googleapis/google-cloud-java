@@ -36,6 +36,7 @@ public interface GroundingFactOrBuilder
    * @return The factText.
    */
   java.lang.String getFactText();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GroundingFactOrBuilder
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -73,9 +75,11 @@ public interface GroundingFactOrBuilder
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface GroundingFactOrBuilder
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface GroundingFactOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

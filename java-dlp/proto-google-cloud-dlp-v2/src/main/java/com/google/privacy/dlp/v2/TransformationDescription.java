@@ -34,6 +34,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.TransformationDescription)
     TransformationDescriptionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TransformationDescription.newBuilder() to construct.
   private TransformationDescription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   private int bitField0_;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object condition_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
 
   public static final int INFO_TYPE_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.InfoType infoType_;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   public boolean hasInfoType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -260,6 +269,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
   public com.google.privacy.dlp.v2.InfoType getInfoType() {
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
+
   /**
    *
    *
@@ -469,6 +479,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +722,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -744,6 +757,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
           com.google.privacy.dlp.v2.TransformationType.forNumber(type_);
       return result == null ? com.google.privacy.dlp.v2.TransformationType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -782,6 +797,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +915,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     }
 
     private java.lang.Object condition_ = "";
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1078,6 +1104,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
             com.google.privacy.dlp.v2.InfoType.Builder,
             com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         infoTypeBuilder_;
+
     /**
      *
      *
@@ -1092,6 +1119,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
     public boolean hasInfoType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1112,6 +1140,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
         return infoTypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1163,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1183,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1211,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1199,6 +1231,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1246,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1231,6 +1265,7 @@ public final class TransformationDescription extends com.google.protobuf.Generat
             : infoType_;
       }
     }
+
     /**
      *
      *

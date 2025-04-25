@@ -33,6 +33,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.SnapshotPolicy)
     SnapshotPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SnapshotPolicy.newBuilder() to construct.
   private SnapshotPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEnabled() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int HOURLY_SCHEDULE_FIELD_NUMBER = 2;
   private com.google.cloud.netapp.v1.HourlySchedule hourlySchedule_;
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHourlySchedule() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.HourlySchedule.getDefaultInstance()
         : hourlySchedule_;
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DAILY_SCHEDULE_FIELD_NUMBER = 3;
   private com.google.cloud.netapp.v1.DailySchedule dailySchedule_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDailySchedule() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.DailySchedule.getDefaultInstance()
         : dailySchedule_;
   }
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WEEKLY_SCHEDULE_FIELD_NUMBER = 4;
   private com.google.cloud.netapp.v1.WeeklySchedule weeklySchedule_;
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWeeklySchedule() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.WeeklySchedule.getDefaultInstance()
         : weeklySchedule_;
   }
+
   /**
    *
    *
@@ -249,6 +261,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MONTHLY_SCHEDULE_FIELD_NUMBER = 5;
   private com.google.cloud.netapp.v1.MonthlySchedule monthlySchedule_;
+
   /**
    *
    *
@@ -264,6 +277,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMonthlySchedule() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +295,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.netapp.v1.MonthlySchedule.getDefaultInstance()
         : monthlySchedule_;
   }
+
   /**
    *
    *
@@ -517,6 +532,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -789,6 +805,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEnabled() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.HourlySchedule.Builder,
             com.google.cloud.netapp.v1.HourlyScheduleOrBuilder>
         hourlyScheduleBuilder_;
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHourlySchedule() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         return hourlyScheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +966,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +994,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1014,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1029,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getHourlyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1020,6 +1048,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             : hourlySchedule_;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1081,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.DailySchedule.Builder,
             com.google.cloud.netapp.v1.DailyScheduleOrBuilder>
         dailyScheduleBuilder_;
+
     /**
      *
      *
@@ -1066,6 +1096,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDailySchedule() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1086,6 +1117,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         return dailyScheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1108,6 +1140,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1161,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1189,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1174,6 +1209,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1224,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDailyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1206,6 +1243,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             : dailySchedule_;
       }
     }
+
     /**
      *
      *
@@ -1238,6 +1276,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.WeeklySchedule.Builder,
             com.google.cloud.netapp.v1.WeeklyScheduleOrBuilder>
         weeklyScheduleBuilder_;
+
     /**
      *
      *
@@ -1252,6 +1291,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWeeklySchedule() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1272,6 +1312,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         return weeklyScheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1294,6 +1335,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1356,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1341,6 +1384,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1404,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1419,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getWeeklyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1392,6 +1438,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             : weeklySchedule_;
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1471,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.netapp.v1.MonthlySchedule.Builder,
             com.google.cloud.netapp.v1.MonthlyScheduleOrBuilder>
         monthlyScheduleBuilder_;
+
     /**
      *
      *
@@ -1438,6 +1486,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMonthlySchedule() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1458,6 +1507,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
         return monthlyScheduleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1480,6 +1530,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1551,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1528,6 +1580,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1547,6 +1600,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1561,6 +1615,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMonthlyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1579,6 +1634,7 @@ public final class SnapshotPolicy extends com.google.protobuf.GeneratedMessageV3
             : monthlySchedule_;
       }
     }
+
     /**
      *
      *

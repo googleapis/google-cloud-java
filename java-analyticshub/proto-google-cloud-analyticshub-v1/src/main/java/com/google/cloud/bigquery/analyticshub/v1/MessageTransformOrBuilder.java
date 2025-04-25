@@ -39,6 +39,7 @@ public interface MessageTransformOrBuilder
    * @return Whether the javascriptUdf field is set.
    */
   boolean hasJavascriptUdf();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface MessageTransformOrBuilder
    * @return The javascriptUdf.
    */
   com.google.cloud.bigquery.analyticshub.v1.JavaScriptUDF getJavascriptUdf();
+
   /**
    *
    *

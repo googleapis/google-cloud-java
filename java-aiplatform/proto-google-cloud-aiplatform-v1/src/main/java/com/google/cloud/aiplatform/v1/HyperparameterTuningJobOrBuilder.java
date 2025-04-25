@@ -36,6 +36,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the studySpec field is set.
    */
   boolean hasStudySpec();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The studySpec.
    */
   com.google.cloud.aiplatform.v1.StudySpec getStudySpec();
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the trialJobSpec field is set.
    */
   boolean hasTrialJobSpec();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The trialJobSpec.
    */
   com.google.cloud.aiplatform.v1.CustomJobSpec getTrialJobSpec();
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public interface HyperparameterTuningJobOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.Trial> getTrialsList();
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public interface HyperparameterTuningJobOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.Trial getTrials(int index);
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface HyperparameterTuningJobOrBuilder
    * </code>
    */
   int getTrialsCount();
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public interface HyperparameterTuningJobOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.TrialOrBuilder> getTrialsOrBuilderList();
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -322,6 +334,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -348,6 +361,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -362,6 +376,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -405,6 +421,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -433,6 +450,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -447,6 +465,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -473,6 +492,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -486,6 +506,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -514,6 +535,7 @@ public interface HyperparameterTuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -530,9 +552,11 @@ public interface HyperparameterTuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -549,6 +573,7 @@ public interface HyperparameterTuningJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 16;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -569,6 +594,7 @@ public interface HyperparameterTuningJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -600,6 +626,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -614,6 +641,7 @@ public interface HyperparameterTuningJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
