@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.139.1](https://github.com/googleapis/java-pubsub/compare/v1.139.0...v1.139.1) (2025-04-25)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.46.2 ([#2394](https://github.com/googleapis/java-pubsub/issues/2394)) ([17f7fd7](https://github.com/googleapis/java-pubsub/commit/17f7fd77553a7ccd55029edb74829f1fe86a680c))
+
 ## [1.139.0](https://github.com/googleapis/java-pubsub/compare/v1.138.0...v1.139.0) (2025-04-25)
 
 
